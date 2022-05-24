@@ -1,7 +1,122 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
 .Header {
+  $component: &;
+
+  position: sticky;
+  top: 0;
+  padding: 50px 0;
+
   &-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+  }
+
+  &-links {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--end {
+      justify-content: flex-end;
+    }
+  }
+
+  &-logo {
+    color: $c-black;
+    font-family: $ff-b;
+    text-transform: uppercase;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child):after {
+      content: '';
+      background-image: url('../../assets/icons/filled-star.svg');
+      background-size: contain;
+      background-position: center center;
+      width: scale(15);
+      height: scale(15);
+      margin: 0 scale(20);
+    }
+
+    @include hover {
+      &:hover:not(.active) {
+        #{$component}-icon {
+          opacity: 1;
+
+          path {
+            animation: dash 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+
+    &.active {
+      #{$component}-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-text {
+    font-family: $ff-m;
+    color: $c-black;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  &-icon {
+    width: scale(74);
+    position: absolute;
+    left: scale(10);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity ease $d-hover;
+    opacity: 0;
+
+    path {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  &-social {
+    font-family: $ff-m;
+    color: $c-black;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: scale(30);
+    }
+
+    @include hover {
+      &:hover {
+        #{$component}-icon {
+          opacity: 1;
+
+          path {
+            animation: dash 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }

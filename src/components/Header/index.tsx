@@ -3,21 +3,51 @@ import { NavLink } from 'react-router-dom';
 import './index.scss';
 
 export default function Header() {
+  const links = {
+    navigation: [
+      { name: 'Обо мне', path: '/about' },
+      { name: 'Проекты', path: '/projects' },
+      { name: 'Контакты', path: '/contacts' },
+    ],
+    socials: [
+      { name: 'Behance', path: '#' },
+      { name: 'Dribbble', path: '#' },
+    ]
+  };
 
   return (
     <header className="Header">
       <div className="Header-container Container">
         <div className="Header-links">
-          <NavLink to="/" className="Header-link">Алиса С.</NavLink>
+          <NavLink to="/" className="Header-logo">Алиса С.</NavLink>
         </div>
-        <div className="Header-links">
-          <NavLink to="/about" className="Header-link">Обо мне</NavLink>
-          <NavLink to="/projects" className="Header-link">Проекты</NavLink>
-          <NavLink to="/contacts" className="Header-link">Контакты</NavLink>
+        <div className="Header-links Header-links--center">
+          {links.navigation.map(link =>
+            <NavLink to={link.path} className="Header-link" key={link.path}>
+              <div className="Header-text">
+                {link.name}
+                <svg className="Header-icon" width="74" height="30" viewBox="0 0 74 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.0448 24.5919C15.1704 24.5919 2.98098 23.2757 1.21866 18.0107C-0.984243 11.4295 13.7018 4.19023 34.2622 1.88681C43.0738 0.899633 70.8904 -0.806796 72.813 6.82271C75.1643 16.1538 56.3551 28.1838 14.5 29.5" stroke="#222222" strokeLinecap="round"/>
+                </svg>
+              </div>
+            </NavLink>
+          )}
         </div>
-        <div className="Header-links">
-          <a href="#" target="_blank">Behance</a>
-          <a href="#" target="_blank">Dribbble</a>
+        <div className="Header-links Header-links--end">
+          {links.socials.map(({name, path}) => 
+            <a 
+              href={path} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="Header-social" 
+              key={name}
+            >
+              {name}
+              <svg className="Header-icon" width="74" height="30" viewBox="0 0 74 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.0448 24.5919C15.1704 24.5919 2.98098 23.2757 1.21866 18.0107C-0.984243 11.4295 13.7018 4.19023 34.2622 1.88681C43.0738 0.899633 70.8904 -0.806796 72.813 6.82271C75.1643 16.1538 56.3551 28.1838 14.5 29.5" stroke="#222222" strokeLinecap="round"/>
+              </svg>
+            </a>
+          )}
         </div>
       </div>
     </header>
