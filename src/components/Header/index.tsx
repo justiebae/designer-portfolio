@@ -2,19 +2,19 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './index.scss';
 
-export default function Header() {
-  const links = {
-    navigation: [
-      { name: 'Обо мне', path: '/about' },
-      { name: 'Проекты', path: '/projects' },
-      { name: 'Контакты', path: '/contacts' },
-    ],
-    socials: [
-      { name: 'Behance', path: '#' },
-      { name: 'Dribbble', path: '#' },
-    ]
-  };
+const links = {
+  navigation: [
+    { name: 'Обо мне', path: '/about' },
+    { name: 'Проекты', path: '/projects' },
+    { name: 'Контакты', path: '/contacts' },
+  ],
+  socials: [
+    { name: 'Behance', path: '#' },
+    { name: 'Dribbble', path: '#' },
+  ]
+};
 
+export default function Header() {
   return (
     <header className="Header">
       <div className="Header-container Container">

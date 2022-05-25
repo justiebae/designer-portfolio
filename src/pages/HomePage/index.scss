@@ -1,0 +1,63 @@
+@import '../../styles/common/constants.scss';
+@import '../../styles/common/mixins.scss';
+
+.HomePage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: scale(50);
+  
+  &-body {
+    margin-top: scale(264);
+    margin-bottom: scale(50);
+    position: relative;
+
+    @include desktop {
+      margin-top: scale(180);
+    }
+  }
+
+  &-title {
+    text-align: center;
+  }
+
+  &-description {
+    max-width: scale(650);
+    margin-left: scale(160);
+    line-height: 1.5;
+  }
+
+  &-signature {
+    position: absolute;
+    top: scale(-200);
+    left: 519 * 100% / 1600;
+    max-width: scale(313);
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    right: 67 * 100% / 1600;
+    top: scale(-150);
+
+    @include desktop {
+      top: scale(-130);
+    }
+  }
+
+  &-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-currentPlace {
+    max-width: scale(255);
+    font-size: scale(14);
+    line-height: 1.5;
+  }
+}

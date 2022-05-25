@@ -1,0 +1,13 @@
+@import './constants.scss';
+@import './mixins.scss';
+
+.Title {
+  font-family: $ff-Mak;
+  font-size: scale(200);
+  color: $c-black;
+  line-height: 1.1;
+
+  @include desktop {
+    font-size: scale(180);
+  }
+}

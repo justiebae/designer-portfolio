@@ -7,7 +7,6 @@ export default function BaseLayout() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(location)
   }, [location])
 
   return (

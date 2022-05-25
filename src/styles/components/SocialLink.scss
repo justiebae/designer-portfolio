@@ -1,0 +1,22 @@
+.SocialLink {
+  display: flex;
+  align-items: center;
+
+  &-text {
+    font-size: scale(14);
+    color: $c-black;
+    line-height: 1.5;
+    max-width: scale(74);
+    margin-right: scale(20);
+  }
+
+  &-icon {
+    width: scale(50);
+    height: scale(50);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $c-black;
+  }
+}
