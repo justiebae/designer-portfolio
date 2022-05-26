@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CircleButton from '../../components/CircleButton';
 import './index.scss';
 
 export default function HomePage() {
-
   return (
     <div className="HomePage Container">
       <div className="HomePage-body">

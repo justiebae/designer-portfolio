@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import BaseLayout from '../../layouts/BaseLayout';
 import HomePage from '../../pages/HomePage';
@@ -8,23 +8,32 @@ import ProjectsPage from '../../pages/ProjectsPage';
 import ProjectPage from '../../pages/ProjectPage';
 import NotFoundPage from '../../pages/NotFoundPage';
 import './index.scss';
+import ThemeContext from '../../context/ThemeContext';
 
 function App() {
+  const [theme, setTheme] = useState('default');
+  const value = useMemo(
+    () => ({ theme, setTheme }), 
+    [theme]
+  );
+
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<BaseLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
-          <Route path="projects">
-            <Route index element={<ProjectsPage />} />
-            <Route path=":slug" element={<ProjectPage />} />
+    <ThemeContext.Provider value={value}>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<BaseLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="contacts" element={<ContactsPage />} />
+            <Route path="projects">
+              <Route index element={<ProjectsPage />} />
+              <Route path=":slug" element={<ProjectPage />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </div>
+        </Routes>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

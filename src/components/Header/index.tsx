@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import ThemeContext from '../../context/ThemeContext';
 import './index.scss';
 
 const links = {
@@ -15,8 +16,15 @@ const links = {
 };
 
 export default function Header() {
+  const { theme } = useContext(ThemeContext);
+  const classes = theme === 'white' ? 'Header Header--white' : 'Header';
+
+  useEffect(() => {
+    console.log(theme);
+  }, [theme])
+
   return (
-    <header className="Header">
+    <header className={classes}>
       <div className="Header-container Container">
         <div className="Header-links">
           <NavLink to="/" className="Header-logo">Алиса С.</NavLink>
