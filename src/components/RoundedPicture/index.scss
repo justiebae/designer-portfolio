@@ -1,0 +1,44 @@
+@import '../../styles/common/constants.scss';
+@import '../../styles/common/mixins.scss';
+
+.RoundedPicture {
+  display: flex;
+  position: relative;
+
+  &-image {
+    width: scale(188);
+    height: scale(220);
+    overflow: hidden;
+    border-top-left-radius: scale(100);
+    border-top-right-radius: scale(100);
+    object-fit: cover;
+
+    @include desktop {
+      width: scale(120);
+      height: scale(140);
+    }
+  }
+
+  &-stars {
+    position: absolute;
+    top: scale(5);
+    right: scale(-40);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 3;
+  }
+
+  &-star {
+    &--outlined {
+      width: scale(43);
+      height: scale(43);
+    }
+
+    &--filled {
+      width: scale(20);
+      height: scale(20);
+      margin-top: scale(15);
+    }
+  }
+}

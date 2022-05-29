@@ -29,4 +29,15 @@ body {
   padding-right: scale(20);
   width: 100%;
   margin: 0 auto;
+
+  @include desktop {
+    padding-left: scale(50);
+    padding-right: scale(50);
+  }
+}
+
+.Page {
+  flex: 1;
+  padding-top: scale(120);
+  padding-bottom: scale(50);
 }

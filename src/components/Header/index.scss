@@ -4,9 +4,32 @@
 .Header {
   $component: &;
 
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   padding: 50px 0;
+  z-index: 2;
+
+  &--black {
+    #{$component}-logo,
+    #{$component}-text,
+    #{$component}-social {
+      color: $c-gray;
+    }
+
+    #{$component}-star {
+      path {
+        fill: $c-gray;
+      }
+    }
+
+    #{$component}-icon {
+      path {
+        stroke: $c-gray;
+      }
+    }
+  }
 
   &-container {
     display: grid;
@@ -31,20 +54,17 @@
     color: $c-black;
     font-family: $ff-b;
     text-transform: uppercase;
+    transition: color ease $d-hover;
   }
 
   &-link {
     display: flex;
     align-items: center;
 
-    &:not(:last-child):after {
-      content: '';
-      background-image: url('../../assets/icons/filled-star.svg');
-      background-size: contain;
-      background-position: center center;
-      width: scale(15);
-      height: scale(15);
-      margin: 0 scale(20);
+    &:last-child {
+      #{$component}-star {
+        display: none;
+      }
     }
 
     @include hover {
@@ -66,11 +86,17 @@
     }
   }
 
+  &-star {
+    display: flex;
+    margin: 0 20px;
+  }
+
   &-text {
     font-family: $ff-m;
     color: $c-black;
     text-transform: uppercase;
     position: relative;
+    transition: color ease $d-hover;
   }
 
   &-icon {
@@ -93,6 +119,7 @@
     font-family: $ff-m;
     color: $c-black;
     position: relative;
+    transition: color ease $d-hover;
 
     &:not(:last-child) {
       margin-right: scale(30);

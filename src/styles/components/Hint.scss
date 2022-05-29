@@ -1,0 +1,13 @@
+.Hint {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    display: flex;
+    margin-right: scale(20);
+  }
+
+  &-message {
+    max-width: scale(210);
+  }
+}

@@ -1,0 +1,137 @@
+@import '../../styles/common/constants.scss';
+@import '../../styles/common/mixins.scss';
+
+.Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  &-circle {
+    border: 1px solid $c-black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(46);
+    height: scale(46);
+    position: absolute;
+
+    @include desktop {
+      width: scale(32);
+      height: scale(32);
+    }
+
+    &--large {
+      width: scale(154);
+      height: scale(154);
+
+      @include desktop {
+        width: scale(103);
+        height: scale(103);
+      }
+    }
+
+    &--medium {
+      width: scale(93);
+      height: scale(93);
+
+      @include desktop {
+        width: scale(62);
+        height: scale(62);
+      }
+    }
+
+    &--ae {
+      top: scale(188);
+      left: scale(909);
+
+      @include desktop {
+        top: scale(128);
+        left: scale(661);
+      }
+    }
+
+    &--premier {
+      top: scale(318);
+      left: scale(1087);
+
+      @include desktop {
+        top: scale(218);
+        left: scale(780);
+      }
+    }
+
+    &--blender {
+      top: scale(210);
+      right: scale(160);
+
+      @include desktop {
+        top: scale(139);
+        right: scale(50);
+      }
+    }
+
+    &--ps {
+      top: scale(685);
+      right: scale(538);
+
+      @include desktop {
+        top: scale(528);
+        right: scale(378);
+      }
+    }
+
+    &--figma {
+      bottom: scale(30);
+      right: scale(631);
+
+      @include desktop {
+        bottom: scale(64);
+        right: scale(440);
+      }
+    }
+
+    &--ai {
+      top: scale(577);
+      left: scale(179);
+
+      @include desktop {
+        top: scale(402);
+        left: scale(80);
+      }
+    }
+
+    &--top {
+      top: scale(187);
+      left: scale(-23);
+
+      @include desktop {
+        top: scale(148);
+        left: scale(-16);
+      }
+    }
+
+    &--middle {
+      top: scale(705);
+      left: scale(133);
+
+      @include desktop {
+        top: scale(488);
+        left: scale(50);
+      }
+    }
+
+    &--bottom {
+      bottom: scale(-100);
+      left: scale(83);
+
+      @include desktop {
+        bottom: scale(-50);
+        left: scale(103);
+      }
+    }
+  }
+}

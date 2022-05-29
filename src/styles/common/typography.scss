@@ -5,7 +5,7 @@
   line-height: 1.1;
 
   @include desktop {
-    font-size: scale(180);
+    font-size: scale(150);
   }
 }
 
@@ -13,4 +13,8 @@
   font-family: $ff-Mak;
   font-size: scale(150);
   line-height: 1.1;
+
+  @include desktop {
+    font-size: scale(120);
+  }
 }

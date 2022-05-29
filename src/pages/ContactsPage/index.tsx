@@ -7,7 +7,7 @@ import outlineStar from '../../assets/icons/outline-star.svg';
 
 export default function ContactsPage() {
   return (
-    <div className="ContactsPage Container">
+    <div className="ContactsPage Container Page">
       <div className="ContactsPage-body">
         <div className="ContactsPage-subtitle">Для связи со мной, пожалуйста, используйте</div>
         <div className="ContactsPage-heading">

@@ -19,7 +19,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={value}>
-      <div className="App">
+      <div className={`App App--${theme}`}>
         <Routes>
           <Route path="/" element={<BaseLayout />}>
             <Route index element={<HomePage />} />

@@ -1,5 +1,15 @@
+@import '../../styles/common/constants.scss';
+
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: $c-gray;
+  color: $c-black;
+  transition: background-color ease $d-hover, color ease $d-hover;
+
+  &--black {
+    background-color: $c-black;
+    color: $c-gray;
+  }
 }

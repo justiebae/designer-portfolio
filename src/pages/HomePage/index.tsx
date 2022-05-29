@@ -4,7 +4,7 @@ import './index.scss';
 
 export default function HomePage() {
   return (
-    <div className="HomePage Container">
+    <div className="HomePage Container Page">
       <div className="HomePage-body">
         <div className="HomePage-title Title">UI/UX Designer</div>
         <div className="HomePage-description">Анализирую, проектирую и графически прорабатываю пользовательские интерфейсы различной сложности</div>

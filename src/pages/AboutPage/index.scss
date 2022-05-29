@@ -1,0 +1,78 @@
+@import '../../styles//common/constants.scss';
+@import '../../styles//common/mixins.scss';
+
+.AboutPage {
+  position: relative;
+  overflow: hidden;
+
+  &-head {
+    margin: scale(70) 0 scale(30);
+    position: relative;
+    z-index: 1;
+
+    @include desktop {
+      margin: scale(50) 0 scale(30);
+    }
+  }
+
+  &-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    &:nth-child(2) {
+      margin-left: scale(160);
+
+      @include desktop {
+        margin-left: scale(100);
+      }
+    }
+  }
+
+  &-title {
+    transition: color ease $d-hover;
+    cursor: pointer;
+
+    &--black {
+      &:hover {
+        color: $c-gray;
+      }
+    }
+
+    &.disabled {
+      color: #7b7b7b;
+    }
+  }
+
+  &-pictures {
+    margin: 0 scale(105) scale(10) scale(50);
+  }
+
+  &-body {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-text {
+    max-width: scale(699);
+    margin-left: scale(160);
+
+    @include desktop {
+      margin-left: scale(100);
+    }
+  }
+
+  &-paragraph {
+    line-height: 1.5;
+
+    &:not(:last-child) {
+      margin-bottom: scale(20);
+    }
+  }
+
+  &-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
