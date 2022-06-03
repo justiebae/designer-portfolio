@@ -1,9 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import ThemeContext from '../../context/ThemeContext';
-import './index.scss';
+import Icon from '../../components/Icon';
 import CircleButton from '../../components/CircleButton';
-import icon404 from '../../assets/icons/404.svg';
-import {ReactComponent as SpaceMap} from '../../assets/icons/space-map.svg';
+import './index.scss';
 
 export default function NotFoundPage() {
   const { setTheme } = useContext(ThemeContext);
@@ -19,9 +18,7 @@ export default function NotFoundPage() {
   return (
     <div className="NotFoundPage Container Page">
       <div className="NotFoundPage-title">
-        <object type="image/svg+xml" data={icon404}>
-          Your browser does not support SVG
-        </object>
+        <Icon name="notFound" />
       </div>
       <div className="NotFoundPage-message">
         Совсем пусто, ничего нет...
@@ -35,7 +32,7 @@ export default function NotFoundPage() {
           на главную
         </CircleButton>
       </div>
-      <SpaceMap className="NotFoundPage-map" />
+      <Icon name="spaceMap" />
     </div>
   )
 }
