@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SpaceMapIcon() {
+export default function SpaceMapIcon(): JSX.Element {
   return (
     <svg width="1920" height="1010" viewBox="0 0 1920 1010" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect y="504" width="1920" height="1" fill="#BF9070" fillOpacity="0.2"/>

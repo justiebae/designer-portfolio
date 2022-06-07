@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FigmaIcon() {
+export default function FigmaIcon(): JSX.Element {
   return (
     <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_299_754)">

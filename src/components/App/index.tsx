@@ -10,7 +10,7 @@ import NotFoundPage from '../../pages/NotFoundPage';
 import './index.scss';
 import ThemeContext from '../../context/ThemeContext';
 
-function App() {
+function App(): JSX.Element {
   const [theme, setTheme] = useState('default');
   const value = useMemo(
     () => ({ theme, setTheme }), 

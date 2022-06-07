@@ -4,7 +4,7 @@ import Icon from '../../components/Icon';
 import CircleButton from '../../components/CircleButton';
 import './index.scss';
 
-export default function NotFoundPage() {
+export default function NotFoundPage(): JSX.Element {
   const { setTheme } = useContext(ThemeContext);
 
   useEffect(() => {

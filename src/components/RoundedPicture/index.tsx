@@ -8,7 +8,7 @@ interface IRoundedImage {
   stars?: boolean
 }
 
-export default function RoundedImage({ path, stars = false }: IRoundedImage) {
+export default function RoundedImage({ path, stars = false }: IRoundedImage): JSX.Element {
   return (
     <div className="RoundedPicture">
       <img className="RoundedPicture-image" src={path} alt="" />

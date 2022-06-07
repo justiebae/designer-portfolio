@@ -3,11 +3,11 @@ import Icon from '../Icon';
 import bubbles from '../../data/bubbles';
 import './index.scss';
 
-interface IBackground {
+interface IBackgroundProps {
   type: string
 }
 
-export default function Background({ type }: IBackground) {
+export default function Background({ type }: IBackgroundProps): JSX.Element {
   const renderCircles = () => {
     return (
       <>
@@ -29,9 +29,38 @@ export default function Background({ type }: IBackground) {
     )
   }
 
+  const renderDevices = () => {
+    return (
+      <>
+        <div className="Background-device Background-keyboard">
+          <Icon name="keyboard" />
+        </div>
+        <div className="Background-device Background-headphones">
+          <Icon name="headphones" />
+        </div>
+        <div className="Background-device Background-mouse">
+          <Icon name="mouse" />
+        </div>
+      </>
+    )
+  }
+
+  const render = () => {
+    switch (type) {
+      case 'design':
+        return renderCircles()
+      case 'space':
+        return renderCircles()
+      case 'cats':
+        return renderDevices()
+      default:
+        return <></>
+    }
+  }
+
   return (
     <div className="Background">
-        {renderCircles()}
+        {render()}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SignatureIcon() {
+export default function SignatureIcon(): JSX.Element {
   return (
     <svg width="315" height="241" viewBox="0 0 315 241" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M227.66 157.446C228.737 147.82 226.6 133.263 209.43 152.037C187.967 175.505 183.617 199.716 195.522 198.914C205.047 198.273 218.951 175.752 224.712 164.572C223.043 162.521 220.282 169.391 222.596 213.28" stroke="#222222" strokeWidth="2" strokeLinecap="round"/>

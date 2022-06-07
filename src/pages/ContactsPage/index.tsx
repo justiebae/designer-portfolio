@@ -5,7 +5,7 @@ import mailIcon from '../../assets/icons/mail.svg';
 import filledStar from '../../assets/icons/filled-star-2.svg';
 import outlineStar from '../../assets/icons/outline-star.svg';
 
-export default function ContactsPage() {
+export default function ContactsPage(): JSX.Element {
   return (
     <div className="ContactsPage Container Page">
       <div className="ContactsPage-body">

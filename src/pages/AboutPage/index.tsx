@@ -10,6 +10,9 @@ const data = [
   {
     paragraphs: [
       'Привет, меня зовут Алиса, мне 24 года и я работаю UI/UX дизайнером, имею опыт в разработке интернет магазинов, приложений, сайт-портфолио, лендингов, айдентике и баннеров для рекламы.'
+    ],
+    images: [
+      {id: 1, path: '/images/photo-1.jpg', stars: true}
     ]
   },
   {
@@ -26,11 +29,16 @@ const data = [
   {
     paragraphs: [
       'qeqwe',
+    ],
+    images: [
+      {id: 1, path: '/images/photo-1.jpg', stars: false},
+      {id: 2, path: '/images/photo-1.jpg', stars: false},
+      {id: 3, path: '/images/photo-1.jpg', stars: false}
     ]
   }
 ];
 
-export default function AboutPage() {
+export default function AboutPage(): JSX.Element {
   const [currentId, setCurrentId] = useState(0);
   const FirstHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const SecondHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -88,6 +96,26 @@ export default function AboutPage() {
     )
   }
 
+  const renderPictures = () => {
+    if (!data[currentId]['images']) {
+      return (
+        <div className="AboutPage-picture AboutPage-picture--hidden">
+          <RoundedImage path={''} stars={false} />
+        </div>
+      )
+    }
+
+    return (
+      <>
+        {data[currentId]['images']?.map(({id, path, stars}) =>
+          <div className="AboutPage-picture" key={id}>
+            <RoundedImage path={path} stars={stars} />
+          </div>
+        )}
+      </>
+    )
+  }
+
   const renderText = () => {
     return (
       <>
@@ -102,15 +130,15 @@ export default function AboutPage() {
     switch(currentId) {
       case 1:
         return (
-          <Background type="circles" />
+          <Background type="design" />
         )
       case 2:
         return (
-          <Background type="circles" />
+          <Background type="space" />
         )
       case 3:
         return (
-          <Background type="circles" />
+          <Background type="cats" />
         )
       default:
         return null
@@ -132,9 +160,7 @@ export default function AboutPage() {
               Дизайн,
             </div>
             <div className="AboutPage-pictures">
-              <div className="AboutPage-picture">
-                <RoundedImage path={'/images/photo-1.jpg'} stars />
-              </div>
+              {renderPictures()}
             </div>
             {renderHint()}
           </div>
@@ -156,7 +182,7 @@ export default function AboutPage() {
               onMouseLeave={handleMouseLeave}
             >
               &ensp;и Котики
-            </span>  
+            </span>
           </div>
         </div>
         <div className="AboutPage-body">

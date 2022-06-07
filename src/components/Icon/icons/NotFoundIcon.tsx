@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NotFoundIcon() {
+export default function NotFoundIcon(): JSX.Element {
   return (
     <svg width="394" height="156" viewBox="0 0 394 156" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M78.597 127.374V151.656H98.832V127.374H115.446V123.966H98.832V3.195H78.597C78.597 22.152 61.557 53.889 45.795 77.106C27.477 104.157 8.094 123.966 0 123.966V127.374H78.597ZM8.946 123.966C34.506 106.926 69.012 50.907 78.597 21.939V123.966H8.946Z" fill="#F6F6F6"/>

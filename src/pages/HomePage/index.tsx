@@ -3,7 +3,7 @@ import CircleButton from '../../components/CircleButton';
 import Icon from '../../components/Icon';
 import './index.scss';
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   return (
     <div className="HomePage Container Page">
       <div className="HomePage-body">

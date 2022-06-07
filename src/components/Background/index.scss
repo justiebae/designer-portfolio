@@ -52,6 +52,16 @@
         top: scale(128);
         left: scale(661);
       }
+
+      svg {
+        width: scale(70);
+        height: scale(43);
+
+        @include desktop {
+          width: scale(47);
+          height: scale(29);
+        }
+      }
     }
 
     &--premier {
@@ -61,6 +71,16 @@
       @include desktop {
         top: scale(218);
         left: scale(780);
+      }
+
+      svg {
+        width: scale(33);
+        height: scale(26);
+
+        @include desktop {
+          width: scale(22);
+          height: scale(17);
+        }
       }
     }
 
@@ -72,6 +92,16 @@
         top: scale(139);
         right: scale(50);
       }
+
+      svg {
+        width: scale(79);
+        height: scale(79);
+
+        @include desktop {
+          width: scale(53);
+          height: scale(53);
+        }
+      }
     }
 
     &--ps {
@@ -81,6 +111,16 @@
       @include desktop {
         top: scale(528);
         right: scale(378);
+      }
+
+      svg {
+        width: scale(47);
+        height: scale(47);
+
+        @include desktop {
+          width: scale(32);
+          height: scale(32);
+        }
       }
     }
 
@@ -92,6 +132,16 @@
         bottom: scale(64);
         right: scale(440);
       }
+
+      svg {
+        width: scale(74);
+        height: scale(74);
+
+        @include desktop {
+          width: scale(59);
+          height: scale(50);
+        }
+      }
     }
 
     &--ai {
@@ -101,6 +151,16 @@
       @include desktop {
         top: scale(402);
         left: scale(80);
+      }
+
+      svg {
+        width: scale(33);
+        height: scale(27);
+
+        @include desktop {
+          width: scale(22);
+          height: scale(18);
+        }
       }
     }
 
@@ -133,5 +193,31 @@
         left: scale(103);
       }
     }
+  }
+
+  &-device {
+    position: absolute;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &-keyboard {
+    bottom: scale(70);
+    left: scale(-30);
+    width: scale(270);
+  }
+
+  &-headphones {
+    width: scale(268);
+    right: scale(522);
+    bottom: scale(-20);
+  }
+
+  &-mouse {
+    width: scale(262);
+    top: scale(237);
+    right: scale(-5);
   }
 }

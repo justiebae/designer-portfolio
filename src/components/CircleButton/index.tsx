@@ -8,7 +8,7 @@ interface ICircleButtonProps {
   children: React.ReactNode
 }
 
-export default function CircleButton({ theme, path, children }: ICircleButtonProps) {
+export default function CircleButton({ theme, path, children }: ICircleButtonProps): JSX.Element {
   const classes = theme ? `CircleButton CircleButton--${theme}` : 'CircleButton'
 
   if (path) {

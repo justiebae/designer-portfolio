@@ -11,12 +11,15 @@ import SpaceMapIcon from './icons/SpaceMapIcon';
 import FilledStarIcon from './icons/FilledStarIcon';
 import NotFoundIcon from './icons/NotFoundIcon';
 import CurveIcon from './icons/CurveIcon';
+import KeyboardIcon from './icons/KeyboardIcon';
+import HeadphonesIcon from './icons/HeadphonesIcon';
+import MouseIcon from './icons/MouseIcon';
 
 interface IIconProps {
   name: string
 }
 
-export default function Icon({ name, ...props }: IIconProps) {
+export default function Icon({ name, ...props }: IIconProps): JSX.Element {
   switch (name) {
     case 'ps':
       return <PsIcon />
@@ -42,8 +45,14 @@ export default function Icon({ name, ...props }: IIconProps) {
       return <NotFoundIcon />
     case 'curve':
       return <CurveIcon />
+    case 'keyboard':
+      return <KeyboardIcon />
+    case 'mouse':
+      return <MouseIcon />
+    case 'headphones':
+      return <HeadphonesIcon />
 
     default: 
-      return null
+      return <></>
   }
 }
