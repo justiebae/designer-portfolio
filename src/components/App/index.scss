@@ -4,6 +4,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background-color: $c-gray;
   color: $c-black;
   transition: background-color ease $d-hover, color ease $d-hover;

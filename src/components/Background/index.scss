@@ -220,4 +220,225 @@
     top: scale(237);
     right: scale(-5);
   }
+
+  &-spaceMap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &-multiStar {
+    position: absolute;
+    left: scale(90);
+    bottom: scale(314);
+
+    svg {
+      width: scale(72);
+      height: scale(72);
+    }
+  }
+
+  &-moon {
+    position: absolute;
+    top: scale(142);
+    left: scale(356);
+
+    svg {
+      width: scale(44);
+      height: scale(44);
+    }
+  }
+
+  &-saturn {
+    position: absolute;
+    top: scale(147);
+    right: scale(567);
+
+    svg {
+      width: scale(106);
+      height: scale(75);
+    }
+  }
+
+  &-neptun {
+    position: absolute;
+    bottom: scale(125);
+    left: scale(127);
+
+    svg {
+      width: scale(126);
+      height: scale(126);
+    }
+  }
+
+  &-roundedStar {
+    position: absolute;
+    width: scale(5);
+    height: scale(5);
+    background-color: $c-white;
+    border-radius: 50%;
+
+    &--dark {
+      background-color: $c-brown;
+    }
+
+    &--first {
+      top: scale(41);
+      left: scale(478);
+    }
+
+    &--second {
+      top: scale(223);
+      left: scale(320);
+    }
+
+    &--third {
+      top: scale(62);
+      right: scale(492);
+    }
+
+    &--fourth {
+      top: scale(142);
+      right: scale(551);
+    }
+
+    &--fifth {
+      top: scale(186);
+      right: scale(138);
+    }
+
+    &--sixth {
+      top: scale(312);
+      right: scale(397);
+    }
+
+    &--seventh {
+      top: scale(368);
+      right: scale(523);
+    }
+
+    &--eighth {
+      top: scale(350);
+      right: scale(920);
+    }
+
+    &--ninth {
+      top: scale(396);
+      left: scale(57);
+    }
+
+    &--tenth {
+      bottom: scale(249);
+      left: scale(290);
+    }
+
+    &--eleventh {
+      bottom: scale(122);
+      left: scale(55);
+    }
+
+    &--twelveth {
+      bottom: scale(38);
+      left: scale(473);
+    }
+
+    &--thirteenth {
+      bottom: scale(244);
+      right: scale(875);
+    }
+
+    &--fourteenth {
+      bottom: scale(366);
+      right: scale(546);
+    }
+
+    &--fifteenth {
+      bottom: scale(73);
+      right: scale(349);
+    }
+
+    &--sixteenth {
+      bottom: scale(383);
+      right: scale(92);
+    }
+  }
+
+  &-filledStar {
+    position: absolute;
+
+    svg {
+      width: scale(24);
+      height: scale(24);
+    }
+
+    path {
+      fill: $c-brown;
+    }
+
+    &--white {
+      path {
+        fill: $c-white;
+      }
+    }
+
+
+    &--first {
+      top: scale(142);
+      left: scale(595);
+    }
+
+    &--second {
+      top: scale(176);
+      left: scale(68);
+    }
+
+    &--third {
+      top: scale(152);
+      right: scale(842);
+    }
+
+    &--fourth {
+      top: scale(237);
+      right: scale(350);
+    }
+
+    &--fifth {
+      top: scale(436);
+      right: scale(68);
+    }
+
+    &--sixth {
+      bottom: scale(388);
+      left: scale(148);
+    }
+
+    &--seventh {
+      bottom: scale(73);
+      left: scale(267);
+    }
+
+    &--eihgth {
+      bottom: scale(24);
+      left: scale(860);
+    }
+
+    &--ninth {
+      bottom: scale(169);
+      right: scale(649);
+    }
+
+    &--tenth {
+      bottom: scale(90);
+      right: scale(68);
+    }
+  }
 }

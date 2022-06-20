@@ -1,0 +1,57 @@
+@import '../../styles/common/constants.scss';
+@import '../../styles/common/mixins.scss';
+
+.ProjectCard {
+  $component: &;
+
+  display: flex;
+  align-items: center;
+  color: $c-black;
+
+  @include hover {
+    &:hover {
+      #{$component}-cover {
+        background-color: $c-yellow;
+      }
+    }
+  }
+
+  &-cover {
+    position: relative;
+    margin-right: scale(50);
+    min-width: scale(358);
+    max-width: scale(358);
+    height: scale(662);
+    border-radius: scale(179);
+    background-color: $c-black;
+    transition: background-color ease $d-hover;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: scale(12);
+      right: scale(12);
+      bottom: scale(12);
+      left: scale(12);
+      border: scale(2) solid $c-white;
+      border-radius: scale(179);
+    }
+  }
+
+  &-title {
+    font-family: $ff-Mak-bold;
+    font-size: scale(50);
+    margin-bottom: scale(10);
+  }
+
+  &-description {
+    font-family: $ff;
+    font-size: scale(16);
+  }
+
+  &-role {
+    font-family: $ff-m;
+    font-size: scale(18);
+    margin-top: scale(30);
+  }
+}

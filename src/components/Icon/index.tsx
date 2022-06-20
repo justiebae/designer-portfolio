@@ -14,6 +14,11 @@ import CurveIcon from './icons/CurveIcon';
 import KeyboardIcon from './icons/KeyboardIcon';
 import HeadphonesIcon from './icons/HeadphonesIcon';
 import MouseIcon from './icons/MouseIcon';
+import MultiStarIcon from './icons/MultiStarIcon';
+import SaturnIcon from './icons/SaturnIcon';
+import MoonIcon from './icons/MoonIcon';
+import NeptunIcon from './icons/NeptunIcon';
+import AngleStarIcon from './icons/AngleStarIcon';
 
 interface IIconProps {
   name: string
@@ -51,6 +56,16 @@ export default function Icon({ name, ...props }: IIconProps): JSX.Element {
       return <MouseIcon />
     case 'headphones':
       return <HeadphonesIcon />
+    case 'multiStar':
+      return <MultiStarIcon />
+    case 'saturn':
+      return <SaturnIcon />
+    case 'moon':
+      return <MoonIcon />
+    case 'neptun':
+      return <NeptunIcon />
+    case 'angleStar':
+      return <AngleStarIcon />
 
     default: 
       return <></>

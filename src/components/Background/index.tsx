@@ -29,6 +29,74 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
     )
   }
 
+  const renderSpace = () => {
+    return (
+      <>
+        <div className="Background-spaceMap">
+          <Icon name="spaceMap" />
+        </div>
+        <div className="Background-multiStar">
+          <Icon name="multiStar" />
+        </div>
+        <div className="Background-moon">
+          <Icon name="moon" />
+        </div>
+        <div className="Background-saturn">
+          <Icon name="saturn" />
+        </div>
+        <div className="Background-neptun">
+          <Icon name="neptun" />
+        </div>
+        <div className="Background-roundedStar Background-roundedStar--first"></div>
+        <div className="Background-roundedStar Background-roundedStar--second"></div>
+        <div className="Background-roundedStar Background-roundedStar--third"></div>
+        <div className="Background-roundedStar Background-roundedStar--fourth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--fifth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--sixth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--seventh Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--eighth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--ninth"></div>
+        <div className="Background-roundedStar Background-roundedStar--tenth"></div>
+        <div className="Background-roundedStar Background-roundedStar--eleventh Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--twelveth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--thirteenth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--fourteenth Background-roundedStar--dark"></div>
+        <div className="Background-roundedStar Background-roundedStar--fifteenth"></div>
+        <div className="Background-roundedStar Background-roundedStar--sixteenth Background-roundedStar--dark"></div>
+        <div className="Background-filledStar Background-filledStar--first">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--second Background-filledStar--white">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--third">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--fourth Background-filledStar--white">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--fifth Background-filledStar--white">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--sixth">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--seventh Background-filledStar--white">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--eihgth">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--ninth Background-filledStar--white">
+          <Icon name="angleStar" />
+        </div>
+        <div className="Background-filledStar Background-filledStar--tenth">
+          <Icon name="angleStar" />
+        </div>
+      </>
+    )
+  }
+
   const renderDevices = () => {
     return (
       <>
@@ -50,7 +118,7 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
       case 'design':
         return renderCircles()
       case 'space':
-        return renderCircles()
+        return renderSpace()
       case 'cats':
         return renderDevices()
       default:
