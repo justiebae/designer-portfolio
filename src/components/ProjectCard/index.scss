@@ -26,6 +26,14 @@
     background-color: $c-black;
     transition: background-color ease $d-hover;
 
+    @include desktop {
+      margin-right: scale(40);
+      min-width: scale(258);
+      max-width: scale(258);
+      height: scale(478);
+      border-radius: scale(150);
+    }
+
     &:before {
       content: '';
       position: absolute;
@@ -42,11 +50,20 @@
     font-family: $ff-Mak-bold;
     font-size: scale(50);
     margin-bottom: scale(10);
+
+    @include desktop {
+      font-size: scale(40);
+    }
   }
 
   &-description {
     font-family: $ff;
     font-size: scale(16);
+    line-height: 1.5;
+
+    @include desktop {
+      font-size: scale(14);
+    }
   }
 
   &-role {

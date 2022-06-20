@@ -1,6 +1,40 @@
+@import '../../styles/common/constants.scss';
+@import '../../styles/common/mixins.scss';
+
 .ProjectsPage {
-  .swiper {
-    width: 100%;
-    overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-top: auto;
+
+  &-slider {
+    .swiper {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
+      padding-bottom: scale(80);
+    }
+
+    .swiper-scrollbar {
+      height: scale(2);
+      background-color: #DADADA;
+      max-width: scale(200);
+    }
+
+    .swiper-scrollbar-drag {
+      height: scale(2);
+      background-color: $c-black;
+    }
+  }
+
+  &-amount {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: $ff-m;
+    font-size: scale(16);
   }
 }
