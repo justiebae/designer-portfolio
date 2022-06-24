@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProjectBanner from '../ProjectBanner';
 import './index.scss';
 
 interface IProductCardProps {
@@ -19,7 +20,7 @@ export default function ProjectCard(
     return (
       <>
         <div className="ProjectCard-cover">
-          <img className="ProjectCard-background" src={background} alt={title + ' cover'} />
+          <ProjectBanner />
         </div>
         <div className="ProjectCard-content">
           <div className="ProjectCard-title">{title}</div>

@@ -1,0 +1,36 @@
+@import '../../styles/common/constants';
+@import '../../styles/common/mixins';
+
+.ProjectPage {
+  &-hero {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - scale(120));
+    position: relative;
+  }
+
+  &-banner {
+    margin-right: scale(150);
+  }
+
+  &-name {
+    font-family: $ff-Mak-light;
+    font-size: scale(150);
+    line-height: 1.1;
+    margin-bottom: scale(10);
+  }
+
+  &-status {
+    margin-bottom: scale(100);
+  }
+
+  &-description {
+    max-width: scale(600);
+    margin-bottom: scale(20);
+  }
+
+  &-role {
+    font-family: $ff-m;
+    font-size: scale(18);
+  }
+}

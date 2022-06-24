@@ -10,40 +10,14 @@
 
   @include hover {
     &:hover {
-      #{$component}-cover {
+      .ProjectBanner {
         background-color: $c-yellow;
       }
     }
   }
 
   &-cover {
-    position: relative;
     margin-right: scale(50);
-    min-width: scale(358);
-    max-width: scale(358);
-    height: scale(662);
-    border-radius: scale(179);
-    background-color: $c-black;
-    transition: background-color ease $d-hover;
-
-    @include desktop {
-      margin-right: scale(40);
-      min-width: scale(258);
-      max-width: scale(258);
-      height: scale(478);
-      border-radius: scale(150);
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: scale(12);
-      right: scale(12);
-      bottom: scale(12);
-      left: scale(12);
-      border: scale(2) solid $c-white;
-      border-radius: scale(179);
-    }
   }
 
   &-title {

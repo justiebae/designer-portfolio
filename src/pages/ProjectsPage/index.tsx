@@ -41,7 +41,6 @@ export default function ProjectsPage(): JSX.Element {
   return (
     <div className="ProjectsPage Container Page">
       <div className="ProjectsPage-slider">
-
         <Swiper
           spaceBetween={100}
           slidesPerView={2.2}

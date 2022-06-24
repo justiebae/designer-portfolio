@@ -1,0 +1,17 @@
+@import '../../styles/common/constants';
+@import '../../styles/common/mixins';
+
+.Status {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    width: scale(15);
+    height: scale(15);
+    margin-right: scale(10);
+  }
+
+  &-text {
+    font-size: scale(16);
+  }
+}
