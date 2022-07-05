@@ -10,14 +10,10 @@ export default function ProjectsPage(): JSX.Element {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    getProjects()
-      .then(response => setProjects(response))
+    Projects.getProjects()
+      .then(data => setProjects(data))
+      .catch(error => alert(error))
   }, [])
-
-  const getProjects = async () => {
-    const { data } = await Projects.getProjects()
-    return data
-  }
 
   const renderProjects = () => {
     return (

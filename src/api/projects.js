@@ -2,6 +2,15 @@ import axios from "axios";
 
 export default class Projects {
   static async getProjects() {
-    return axios.get('/data/projects.json');
-  } 
+    try {
+      const { data } = await axios.get('/data/projects.json');
+      return data;
+    } catch (err) {
+      return err;
+    }
+  }
+
+  static async getProject(slug) {
+
+  }
 }
