@@ -1,12 +1,13 @@
 import React from 'react';
 import ProjectBanner from '../../components/ProjectBanner';
 import Status from '../../components/Status';
+import Switch from '../../components/Switch';
 import './index.scss';
 
 export default function ProjectPage(): JSX.Element {
   return (
-    <div className="ProjectPage Container Page">
-      <div className="ProjectPage-hero">
+    <div className="ProjectPage Page">
+      <div className="ProjectPage-hero Container">
         <div className="ProjectPage-banner">
           <ProjectBanner />
         </div>
@@ -20,6 +21,18 @@ export default function ProjectPage(): JSX.Element {
           </div>
           <div className="ProjectPage-description">Проектирование и разработка площадки с курсами по повышению квалификации в сфере безопасности</div>
           <div className="ProjectPage-role ">Роль — UI/UX Designer</div>
+        </div>
+      </div>
+      <div className="ProjectPage-showcase">
+        {/* <div className="ProjectPage-heading">
+          <div className="ProjectPage-headingText">Главная страница</div>
+          <div className="ProjectPage-headingAside"></div>
+        </div> */}
+        <div className="ProjectPage-showcaseBanner">
+          <img src="/images/rnb-banner.jpg" alt="" className="ProjectPage-showcaseImage" />
+        </div>
+        <div className="ProjectPage-showcaseSwitch">
+          <Switch />
         </div>
       </div>
     </div>

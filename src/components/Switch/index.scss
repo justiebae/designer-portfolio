@@ -1,0 +1,58 @@
+@import '../../styles/common/constants';
+@import '../../styles/common/mixins';
+
+.Switch {
+  $component: &;
+
+  display: flex;
+  align-items: center;
+  border: 1px solid #DADADA;
+  padding: scale(5) scale(15);
+  border-radius: scale(100);
+  background-color: $c-white;
+
+  &-label {
+    font-family: $ff-m;
+    font-size: scale(16);
+    color: #949494;
+
+    &.active {
+      color: $c-black;
+    }
+  }
+
+  &-input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &-element {
+    position: relative;
+    width: scale(43);
+    height: scale(24);
+    border-radius: scale(100);
+    border: 1px solid $c-black;
+    margin: 0 scale(10);
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: scale(18);
+      height: scale(18);
+      border-radius: 50%;
+      background-color: $c-black;
+      top: 50%;
+      left: 3px;
+      transform: translateY(-50%);
+    }
+
+    &.active {
+      &:before {
+        left: unset;
+        right: 3px;
+      }
+    }
+  }
+}

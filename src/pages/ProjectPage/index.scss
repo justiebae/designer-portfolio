@@ -5,8 +5,9 @@
   &-hero {
     display: flex;
     align-items: center;
-    min-height: calc(100vh - scale(120));
     position: relative;
+    padding-top: scale(50);
+    margin-bottom: scale(174) !important;
   }
 
   &-banner {
@@ -32,5 +33,31 @@
   &-role {
     font-family: $ff-m;
     font-size: scale(18);
+  }
+
+  &-heading {
+    display: flex;
+    align-items: center;
+    padding-bottom: scale(20);
+    border-bottom: 1px solid $c-black;
+
+    &Text {
+      text-transform: uppercase;
+      font-size: scale(16);
+    }
+  }
+
+  &-showcase {
+    &Banner {
+      position: relative;
+      width: 100%;
+      height: scale(840);
+    }
+
+    &Image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
