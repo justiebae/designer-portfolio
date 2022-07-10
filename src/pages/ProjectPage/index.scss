@@ -2,13 +2,22 @@
 @import '../../styles/common/mixins';
 
 .ProjectPage {
-  &-hero {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-top: scale(50);
-    margin-bottom: scale(174) !important;
+  &-section {
+    margin-bottom: scale(200);
   }
+
+  &-title {
+    font-family: $ff-Mak;
+    font-size: scale(100);
+  }
+}
+
+.ProjectHero {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: scale(50);
+  margin-bottom: scale(174) !important;
 
   &-banner {
     margin-right: scale(150);
@@ -46,18 +55,97 @@
       font-size: scale(16);
     }
   }
+}
 
-  &-showcase {
-    &Banner {
-      position: relative;
-      width: 100%;
-      height: scale(840);
+.ProjectShowcase {
+  position: relative;
+
+  &-banner {
+    position: relative;
+    width: 100%;
+    height: scale(840);
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-switch {
+    display: flex;
+    position: absolute;
+    bottom: scale(50);
+    left: 0;
+    right: 0;
+  }
+}
+
+.ProjectInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: scale(170);
+  margin-bottom: scale(200);
+
+  &-title {
+    margin-bottom: scale(30);
+  }
+
+  &-description {
+    font-size: scale(18);
+    line-height: 1.5;
+  }
+
+  &-list {
+    &Item {
+      display: flex;
+      align-items: flex-start;
+      font-size: scale(18);
+      line-height: 1.5;
+
+      &:not(:last-child) {
+        margin-bottom: scale(10);
+      }
+
+      svg {
+        width: scale(15);
+        margin-right: scale(15);
+        margin-top: scale(6);
+      }
     }
+  }
+}
 
-    &Image {
-      width: 100%;
+.ProjectPages {
+  background-color: $c-black;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-info {
+    padding: scale(60) 0 scale(40);
+  }
+
+  &-title {
+    color: $c-white;
+    font-family: $ff-Mak-light;
+    font-size: scale(150);
+    line-height: 1.1;
+  }
+
+  &-description {
+    color: $c-white;
+    font-size: scale(18);
+    margin-bottom: scale(30);
+  }
+
+  &-image {
+    display: flex;
+
+    img {
       height: 100%;
-      object-fit: cover;
     }
   }
 }

@@ -20,6 +20,7 @@ import MoonIcon from './icons/MoonIcon';
 import NeptunIcon from './icons/NeptunIcon';
 import AngleStarIcon from './icons/AngleStarIcon';
 import CurvesIcon from './icons/CurvesIcon';
+import OutlinedStar from './icons/OutlinedStar';
 
 interface IIconProps {
   name: string
@@ -69,8 +70,10 @@ export default function Icon({ name, ...props }: IIconProps): JSX.Element {
       return <AngleStarIcon />
     case 'curves':
       return <CurvesIcon />
+    case 'outlinedStar':
+      return <OutlinedStar />
 
-    default: 
+    default:
       return <></>
   }
 }

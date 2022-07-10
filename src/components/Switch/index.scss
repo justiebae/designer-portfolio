@@ -15,6 +15,7 @@
     font-family: $ff-m;
     font-size: scale(16);
     color: #949494;
+    cursor: pointer;
 
     &.active {
       color: $c-black;
@@ -46,6 +47,7 @@
       top: 50%;
       left: 3px;
       transform: translateY(-50%);
+      transition: left ease $d-hover, right ease $d-hover
     }
 
     &.active {
