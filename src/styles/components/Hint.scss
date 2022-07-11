@@ -5,6 +5,11 @@
   &-icon {
     display: flex;
     margin-right: scale(20);
+
+    svg {
+      width: scale(65);
+      height: scale(65);
+    }
   }
 
   &-message {

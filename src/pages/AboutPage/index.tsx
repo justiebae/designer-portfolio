@@ -1,11 +1,11 @@
 import React, { useRef, useState, useContext } from 'react';
 import RoundedImage from '../../components/RoundedPicture';
 import Background from '../../components/Background';
-import {ReactComponent as HandIcon} from '../../assets/icons/hand.svg'
 import CircleButton from '../../components/CircleButton';
 import ThemeContext from '../../context/ThemeContext';
 import about from '../../data/about';
 import './index.scss';
+import Icon from '../../components/Icon';
 
 export default function AboutPage(): JSX.Element {
   const [currentId, setCurrentId] = useState(0);
@@ -58,7 +58,7 @@ export default function AboutPage(): JSX.Element {
     return currentId === 0 && (
       <div className="AboutPage-hint Hint">
         <div className="Hint-icon">
-          <HandIcon />
+          <Icon name="handIcon" />
         </div>
         <div className="Hint-message">Наведи на заголовок, чтобы узнать побольше</div>
       </div>

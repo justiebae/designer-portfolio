@@ -51,7 +51,7 @@ export default function ProjectPage(): JSX.Element {
               <Icon name="outlinedStar" /> Идейные соображения высшего порядка;
             </li>
             <li className='ProjectInfo-listItem'>
-              <Icon name="outlinedStar" /> Для современного мира начало повседневной работы по формированию позиции прекрасно подходит для реализации поставленных;;
+              <Icon name="outlinedStar" /> Для современного мира начало повседневной работы по формированию позиции прекрасно подходит для реализации поставленных;
             </li>
             <li className='ProjectInfo-listItem'>
               <Icon name="outlinedStar" /> С учётом сложившейся международной обстановки;
@@ -66,7 +66,7 @@ export default function ProjectPage(): JSX.Element {
         </div>
       </div>
 
-      <div className="ProjectPages">
+      <div className="ProjectPages ProjectPage-section">
         <div className="ProjectPages-wrapper Container">
           <div className="ProjectPages-info">
             <div className="ProjectPages-description">Проект включает в себя разработку более</div>
@@ -74,6 +74,36 @@ export default function ProjectPage(): JSX.Element {
           </div>
           <div className="ProjectPages-image">
             <img src="/images/phones.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div className="ProjectUserflow ProjectPage-section">
+        <div className="ProjectUserflow-info Container">
+          <div className="ProjectUserflow-title ProjectPage-title">User flow</div>
+          <div className="ProjectUserflow-description">Покупка товара</div>
+        </div>
+        <div className="ProjectUserflow-image">
+          <img src="/images/userflow.png" alt="" />
+        </div>
+      </div>
+
+      <div className="ProjectBlocks Container">
+        <div className="ProjectBlocks-info">
+          <div className="ProjectBlocks-title ProjectPage-title">UI-Kit</div>
+          <div className="ProjectBlocks-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+        </div>
+        <div className="ProjectBlocks-items">
+          <div className="ProjectBlocks-item">
+            <div className="ProjectBlocks-itemHead">
+              <div className="ProjectBlocks-itemTitle">Принятие доставки курьером</div>
+              <div className="ProjectBlocks-itemDescription">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </div>
+            </div>
+            <div className="ProjectBlocks-itemBody">
+              <img src="" alt="" className='ProjectBlocks-itemImage' />
+            </div>
           </div>
         </div>
       </div>

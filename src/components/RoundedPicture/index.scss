@@ -31,14 +31,19 @@
 
   &-star {
     &--outlined {
-      width: scale(43);
-      height: scale(43);
+      svg {
+        width: scale(43);
+        height: scale(43);
+      }
     }
 
     &--filled {
-      width: scale(20);
-      height: scale(20);
       margin-top: scale(15);
+      
+      svg {
+        width: scale(20);
+        height: scale(20);
+      }
     }
   }
 }

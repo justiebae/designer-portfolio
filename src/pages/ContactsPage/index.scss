@@ -45,11 +45,21 @@
       right: scale(-70);
       align-items: flex-end;
     }
+  }
 
-    img {
-      &:first-child {
-        margin-bottom: scale(15);
-      }
+  &-star {
+    &:first-child {
+      margin-bottom: scale(16);
+    }
+
+    &--outlined {
+      width: scale(43);
+      height: scale(43);
+    }
+
+    &--filled {
+      width: scale(20);
+      height: scale(20);
     }
   }
 
@@ -78,10 +88,12 @@
     font-family: $ff-m;
     text-transform: uppercase;
     color: $c-black;
-  }
 
-  &-arrowIcon {
-    margin-left: scale(5);
+    svg {
+      margin-left: scale(5);
+      width: scale(18);
+      height: scale(18);
+    }
   }
 
   &-footer {
@@ -94,9 +106,14 @@
     color: $c-black;
     font-family: $ff-m;
     font-size: scale(18);
-  }
 
-  &-mailIcon {
-    margin-right: scale(10);
+    &Icon {
+      margin-right: scale(10);
+      display: flex;
+  
+      svg {
+        width: scale(24);
+      }
+    }
   }
 }

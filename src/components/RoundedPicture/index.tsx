@@ -1,6 +1,5 @@
 import React from 'react';
-import filledStarIcon from '../../assets/icons/filled-star-2.svg';
-import outlinedStarIcon from '../../assets/icons/outline-star.svg';
+import Icon from '../Icon';
 import './index.scss';
 
 interface IRoundedImage {
@@ -14,8 +13,12 @@ export default function RoundedImage({ path, stars = false }: IRoundedImage): JS
       <img className="RoundedPicture-image" src={path} alt="" />
       {stars && 
         <div className="RoundedPicture-stars">
-          <img className="RoundedPicture-star RoundedPicture-star--outlined" src={outlinedStarIcon} alt="" />
-          <img className="RoundedPicture-star RoundedPicture-star--filled" src={filledStarIcon} alt="" />
+          <div className="RoundedPicture-star RoundedPicture-star--outlined">
+            <Icon name="outlinedStar" />
+          </div>
+          <div className="RoundedPicture-star RoundedPicture-star--filled">
+            <Icon name="filledStar" />
+          </div>
         </div>
       }
     </div>

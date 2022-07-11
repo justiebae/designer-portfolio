@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 50px 0;
+  padding: scale(50) 0;
   z-index: 2;
 
   &--black {
@@ -34,7 +34,7 @@
   &-container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 10px;
+    grid-gap: scale(10);
   }
 
   &-links {
@@ -88,7 +88,12 @@
 
   &-star {
     display: flex;
-    margin: 0 20px;
+    margin: 0 scale(20);
+
+    svg {
+      width: scale(15);
+      height: scale(15);
+    }
   }
 
   &-text {
@@ -100,7 +105,6 @@
   }
 
   &-icon {
-    width: scale(74);
     position: absolute;
     left: scale(10);
     top: 50%;
@@ -108,6 +112,10 @@
     transform: translate(-50%, -50%);
     transition: opacity ease $d-hover;
     opacity: 0;
+
+    svg {
+      width: scale(74);
+    }
 
     path {
       stroke-dasharray: 320;
@@ -120,6 +128,10 @@
     color: $c-black;
     position: relative;
     transition: color ease $d-hover;
+
+    svg {
+      width: scale(74);
+    }
 
     &:not(:last-child) {
       margin-right: scale(30);
