@@ -10,6 +10,7 @@
   height: scale(662);
   border-radius: scale(179);
   background-color: $c-black;
+  border: 2px solid transparent;
   transition: background-color ease $d-hover;
   padding: scale(32) 0;
   display: flex;
@@ -35,6 +36,26 @@
     border: scale(2) solid $c-white;
     border-radius: scale(179);
     pointer-events: none;
+    z-index: 1;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border-color: $c-black;
+
+    &:before {
+      border-color: $c-black;
+    }
+
+    #{$component}-star {
+      path {
+        fill: $c-black;
+      }
+    }
+
+    path {
+      fill: $c-black;
+    }
   }
 
   &-icons {
@@ -57,7 +78,15 @@
     height: scale(22);
   }
 
+  &-head {
+    position: relative;
+    z-index: 1;
+  }
+
   &-bottom {
+    position: relative;
+    z-index: 1;
+
     #{$component}-icons {
       transform: rotate(180deg);
     }

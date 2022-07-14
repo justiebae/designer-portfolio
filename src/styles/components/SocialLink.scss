@@ -18,5 +18,10 @@
     align-items: center;
     justify-content: center;
     background-color: $c-black;
+
+    svg {
+      width: scale(30);
+      height: scale(30);
+    }
   }
 }

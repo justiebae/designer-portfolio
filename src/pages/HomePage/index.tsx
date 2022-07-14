@@ -10,13 +10,10 @@ export default function HomePage(): JSX.Element {
         <div className="HomePage-title Title">UI/UX Designer</div>
         <div className="HomePage-description">Анализирую, проектирую и графически прорабатываю пользовательские интерфейсы различной сложности</div>
         <div className="HomePage-signature">
-          <Icon name="signature" />
-          
+          <Icon name="signature" />   
         </div>
         <div className="HomePage-button">
-          <CircleButton
-            path="/projects"
-          >
+          <CircleButton path="/projects">
             Посмотреть портфолио
           </CircleButton>
         </div>

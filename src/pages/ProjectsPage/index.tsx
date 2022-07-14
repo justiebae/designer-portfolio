@@ -5,6 +5,7 @@ import ProjectCard from '../../components/ProjectCard';
 import Projects from '../../api/projects';
 import 'swiper/css';
 import './index.scss';
+import moreBg from '../../assets/images/more.svg'
 
 export default function ProjectsPage(): JSX.Element {
   const [projects, setProjects] = useState([]);
@@ -15,21 +16,34 @@ export default function ProjectsPage(): JSX.Element {
       .catch(error => alert(error))
   }, [])
 
+  const formattedWord = (forms: Array<String>, val: number) => {
+    const cases = [ 2, 0, 1, 1, 1, 2 ];
+    return forms[(val % 100 > 4 && val % 100 < 20) ? 2 : cases[(val % 10 < 5) ? val % 10 : 5]];
+  }
+
   const renderProjects = () => {
     return (
       <>
-        {projects.map(({id, title, description, year, role, path}) => 
+        {projects.map(({id, title, description, year, role, path, cover}) => 
           <SwiperSlide key={id}>
             <ProjectCard 
               title={title}
               desription={description}
               year={year}
               role={role}
-              background=""
+              cover={cover}
               path={path}
             />
           </SwiperSlide>
         )}
+        <SwiperSlide key={Date.now()}>
+            <ProjectCard
+              title="Дальше больше"
+              desription="В скором времени тут появятся новые проекты"
+              cover={moreBg}
+              transparent={true}
+            />
+          </SwiperSlide>
       </>
     )
   }
@@ -46,7 +60,7 @@ export default function ProjectsPage(): JSX.Element {
           modules={[Scrollbar]}
         >
           {renderProjects()}
-          <div className="ProjectsPage-amount">5 проектов</div>
+          <div className="ProjectsPage-amount">{projects.length} {formattedWord(['проект', 'проекта', 'проектов'], projects.length)}</div>
         </Swiper>
       </div>
     </div>

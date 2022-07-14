@@ -79,6 +79,8 @@ export default function Icon({ name, ...props }: IIconProps): JSX.Element {
       return <MailIcon />
     case 'handIcon':
       return <HandIcon />
+    case 'arrowIcon':
+      return <ArrowIcon />
 
     default:
       return <></>

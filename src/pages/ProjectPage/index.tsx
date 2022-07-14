@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Icon from '../../components/Icon';
 import ProjectBanner from '../../components/ProjectBanner';
 import Status from '../../components/Status';
 import Switch from '../../components/Switch';
+import Projects from '../../api/projects';
 import './index.scss';
 
 export default function ProjectPage(): JSX.Element {
+  const { slug } = useParams();
+  // todo: add type for data object
+  const [data, setData] = useState<any>({})
+
+  useEffect(() => {
+    Projects
+      .getProject(slug)
+      .then((response) => setData(response))
+  }, [])
+  
   return (
     <div className="ProjectPage Page">
-
       <div className="ProjectHero ProjectPage-section Container">
         <div className="ProjectHero-banner">
-          <ProjectBanner />
+          <ProjectBanner cover={data.cover} year={data.year} />
         </div>
         <div className="ProjectHero-info">
-          <div className="ProjectHero-name">Маит Академия</div>
+          <div className="ProjectHero-name">{data.title}</div>
           <div className="ProjectHero-status">
             <Status />
           </div>
-          <div className="ProjectHero-link ">
-            Скачать на Android
-          </div>
-          <div className="ProjectHero-description">Проектирование и разработка площадки с курсами по повышению квалификации в сфере безопасности</div>
-          <div className="ProjectHero-role ">Роль — UI/UX Designer</div>
+          <div className="ProjectHero-description">{data.description}</div>
+          <div className="ProjectHero-role ">{data.role}</div>
         </div>
       </div>
 

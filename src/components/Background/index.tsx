@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from '../Icon';
 import bubbles from '../../data/bubbles';
+import backgroundImg from '../../assets/images/dots.svg';
 import './index.scss';
 
 interface IBackgroundProps {
@@ -47,22 +48,6 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
         <div className="Background-neptun">
           <Icon name="neptun" />
         </div>
-        <div className="Background-roundedStar Background-roundedStar--first"></div>
-        <div className="Background-roundedStar Background-roundedStar--second"></div>
-        <div className="Background-roundedStar Background-roundedStar--third"></div>
-        <div className="Background-roundedStar Background-roundedStar--fourth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--fifth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--sixth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--seventh Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--eighth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--ninth"></div>
-        <div className="Background-roundedStar Background-roundedStar--tenth"></div>
-        <div className="Background-roundedStar Background-roundedStar--eleventh Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--twelveth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--thirteenth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--fourteenth Background-roundedStar--dark"></div>
-        <div className="Background-roundedStar Background-roundedStar--fifteenth"></div>
-        <div className="Background-roundedStar Background-roundedStar--sixteenth Background-roundedStar--dark"></div>
         <div className="Background-filledStar Background-filledStar--first">
           <Icon name="angleStar" />
         </div>
@@ -92,6 +77,9 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
         </div>
         <div className="Background-filledStar Background-filledStar--tenth">
           <Icon name="angleStar" />
+        </div>
+        <div className="Background-stars">
+          <img src={backgroundImg} alt="" />
         </div>
       </>
     )

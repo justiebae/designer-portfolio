@@ -1,10 +1,19 @@
 import React from 'react';
+import classNames from 'classnames';
 import Icon from '../Icon';
 import './index.scss';
 
-export default function ProjectBanner() {
+interface IBanner {
+  cover?: string,
+  year?: number,
+  transparent?: boolean
+}
+
+export default function ProjectBanner({ cover, year, transparent }: IBanner) {
+  const bannerClasses = classNames('ProjectBanner', { 'ProjectBanner--transparent': transparent });
+
   return (
-    <div className="ProjectBanner">
+    <div className={bannerClasses}>
       <div className="ProjectBanner-head">
         <div className="ProjectBanner-icons">
           <div className="ProjectBanner-star">
@@ -15,9 +24,8 @@ export default function ProjectBanner() {
           </div>
         </div>
       </div>
-      <img className="ProjectBanner-image" src="" alt="" />
       <div className="ProjectBanner-bottom">
-        <div className="ProjectBanner-year">2021</div>
+        {year && <div className="ProjectBanner-year">{year}</div>}
         <div className="ProjectBanner-icons">
           <div className="ProjectBanner-star">
               <Icon name="filledStar" />
@@ -27,6 +35,7 @@ export default function ProjectBanner() {
           </div>
         </div>
       </div>
+      <img className="ProjectBanner-image" src={cover} alt="" />
     </div>
   )
 }

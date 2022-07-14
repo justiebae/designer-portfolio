@@ -1,10 +1,15 @@
+import alisaPhoto from '../assets/images/photo-1.jpg';
+import cat1 from '../assets/images/cat-1.jpg';
+import cat2 from '../assets/images/cat-2.jpg';
+import cat3 from '../assets/images/cat-3.jpg';
+
 const about = [
   {
     paragraphs: [
       'Привет, меня зовут Алиса, мне 24 года и я работаю UI/UX дизайнером, имею опыт в разработке интернет магазинов, приложений, сайт-портфолио, лендингов, айдентике и баннеров для рекламы.'
     ],
     images: [
-      {id: 1, path: '/images/photo-1.jpg', stars: true}
+      {id: 1, path: alisaPhoto, stars: true}
     ]
   },
   {
@@ -23,9 +28,9 @@ const about = [
       'qeqwe',
     ],
     images: [
-      {id: 1, path: '/images/photo-1.jpg', stars: false},
-      {id: 2, path: '/images/photo-1.jpg', stars: false},
-      {id: 3, path: '/images/photo-1.jpg', stars: false}
+      {id: 1, path: cat1, stars: false},
+      {id: 2, path: cat2, stars: false},
+      {id: 3, path: cat3, stars: false}
     ]
   }
 ];

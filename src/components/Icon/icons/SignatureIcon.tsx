@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SignatureIcon(): JSX.Element {
   return (
-    <svg width="315" height="241" viewBox="0 0 315 241" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 315 241" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M227.66 157.446C228.737 147.82 226.6 133.263 209.43 152.037C187.967 175.505 183.617 199.716 195.522 198.914C205.047 198.273 218.951 175.752 224.712 164.572C223.043 162.521 220.282 169.391 222.596 213.28" stroke="#222222" strokeWidth="2" strokeLinecap="round"/>
       <path d="M206.279 109.192C237.769 92.755 284.763 66.5333 307.748 35.3505C336.48 -3.62802 253.259 29.6853 259.413 70.1798C265.567 110.674 303.915 108.384 250.657 135.086" stroke="#222222" strokeWidth="2" strokeLinecap="round"/>
       <path d="M194.301 88.9409C184.816 112.575 165.033 153.288 152.533 173.847C136.908 199.547 162.805 156.156 210.74 115.374" stroke="#222222" strokeWidth="2" strokeLinecap="round"/>

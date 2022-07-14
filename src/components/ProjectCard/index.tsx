@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectBanner from '../ProjectBanner';
@@ -5,27 +6,30 @@ import './index.scss';
 
 interface IProductCardProps {
   path?: string,
-  background: string,
-  year: number,
+  cover?: string,
+  year?: number,
   title: string,
   desription: string,
-  role: string
+  role?: string,
+  transparent?: boolean
 }
 
 export default function ProjectCard(
-  { path, background, year, title, desription, role  }: IProductCardProps
+  { path, cover, year, title, desription, role, transparent  }: IProductCardProps
 ): JSX.Element {
+
+  const cardClasses = classNames('ProjectCard', { 'ProjectCard--transparent': transparent })
 
   const renderContent = () => {
     return (
       <>
         <div className="ProjectCard-cover">
-          <ProjectBanner />
+          <ProjectBanner cover={cover} year={year} transparent={transparent} />
         </div>
         <div className="ProjectCard-content">
           <div className="ProjectCard-title">{title}</div>
           <div className="ProjectCard-description">{desription}</div>
-          <div className="ProjectCard-role">{role}</div>
+          {role && <div className="ProjectCard-role">{role}</div>}
         </div>
       </>
     )
@@ -33,14 +37,14 @@ export default function ProjectCard(
 
   if (path) {
     return (
-      <Link to={path} className="ProjectCard">
+      <Link to={path} className={cardClasses}>
         {renderContent()}
       </Link>
     )
   }
 
   return (
-    <div className="ProjectCard">
+    <div className={cardClasses}>
       {renderContent()}
     </div>
   )

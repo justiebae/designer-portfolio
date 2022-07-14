@@ -9,7 +9,7 @@
   color: $c-black;
 
   @include hover {
-    &:hover {
+    &:hover:not(.ProjectCard--transparent) {
       .ProjectBanner {
         background-color: $c-yellow;
       }
