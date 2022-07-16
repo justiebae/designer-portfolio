@@ -1,0 +1,62 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.ProjectBlocks {
+  &-info {
+    margin-bottom: scale(50);
+  }
+
+  &-description {
+    max-width: scale(800);
+    font-size: scale(18);
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: scale(100);
+
+    &--two-per-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--three-per-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--centered {
+      max-width: scale(1320);
+      margin: 0 auto;
+    }
+  }
+
+  &-item {
+    &Head {
+      display: flex;
+      align-items: center;
+      padding-bottom: scale(18);
+      border-bottom: 1px solid $c-black;
+      margin-bottom: scale(50);
+    }
+
+    &Title {
+      font-family: $ff-m;
+      font-size: scale(16);
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+        margin-right: scale(100);
+        max-width: scale(280);
+      }
+    }
+
+    &Description {
+      font-size: scale(16);
+      max-width: scale(700);
+    }
+
+    &Image {
+      max-width: 100%;
+    }
+  }
+}

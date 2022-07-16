@@ -10,6 +10,8 @@
   right: 0;
   padding: scale(50) 0;
   z-index: 2;
+  border-bottom: 1px solid transparent;
+  transition: padding ease $d-hover, border-color ease $d-hover;
 
   &--black {
     #{$component}-logo,
@@ -28,6 +30,17 @@
       path {
         stroke: $c-gray;
       }
+    }
+  }
+
+  &--active {
+    background-color: rgba($c-gray, 0.5);
+    backdrop-filter: blur(10px);
+    padding: scale(20) 0;
+    border-color: #DADADA;
+
+    #{$component}--black {
+      background-color: rgba($c-black, 0.5);
     }
   }
 

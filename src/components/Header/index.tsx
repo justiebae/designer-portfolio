@@ -1,26 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ThemeContext from '../../context/ThemeContext';
 import Icon from '../Icon/index';
+import links from '../../data/links';
 import './index.scss';
-
-const links = {
-  navigation: [
-    { name: 'Обо мне', path: '/about' },
-    { name: 'Проекты', path: '/projects' },
-    { name: 'Контакты', path: '/contacts' },
-  ],
-  socials: [
-    { name: 'Behance', path: '#' },
-    { name: 'Dribbble', path: '#' },
-  ]
-};
+import classNames from 'classnames';
 
 export default function Header(): JSX.Element {
   const { theme } = useContext(ThemeContext);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const headerRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  useEffect(() => {
+    const cb = () => {
+      const positionFromTop = headerRef.current.ownerDocument.defaultView?.pageYOffset || 0;
+
+      if (positionFromTop > 50) setHasScrolled(true)
+      else setHasScrolled(false)
+    }
+
+    window.addEventListener('scroll', cb, false)
+
+    return () => {
+      window.removeEventListener('scroll', cb, false)
+    }
+  }, [])
+
+  const headerClassses = classNames('Header', `Header--${theme}`, {
+    'Header--active': hasScrolled
+  })
 
   return (
-    <header className={`Header Header--${theme}`}>
+    <header className={headerClassses} ref={headerRef}>
       <div className="Header-container Container">
         <div className="Header-links">
           <NavLink to="/" className="Header-logo">Алиса С.</NavLink>
@@ -54,7 +65,6 @@ export default function Header(): JSX.Element {
                 <path d="M21.0448 24.5919C15.1704 24.5919 2.98098 23.2757 1.21866 18.0107C-0.984243 11.4295 13.7018 4.19023 34.2622 1.88681C43.0738 0.899633 70.8904 -0.806796 72.813 6.82271C75.1643 16.1538 56.3551 28.1838 14.5 29.5" stroke="#222222" strokeLinecap="round"/>
               </svg>
             </a>
-            
           )}
         </div>
       </div>

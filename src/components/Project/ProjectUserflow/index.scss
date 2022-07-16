@@ -1,0 +1,24 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.ProjectUserflow {
+  &-title {
+    margin-bottom: scale(20);
+  }
+
+  &-description {
+    font-size: scale(18);
+  }
+
+  &-info {
+    margin-bottom: scale(100);
+  }
+
+  &-image {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

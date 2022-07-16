@@ -4,5 +4,59 @@
   "status": "in-work",
   "role": "Роль — UI/UX Design",
   "cover": "/images/projects/king.svg",
-  "year": 2021
+  "year": 2021,
+  "showcase": {
+    "variant": "full",
+    "designImageURL": "/images/king/design.jpg",
+    "protoImageURL": "/images/king/proto.jpg"
+  },
+  "info": {
+    "goals": "Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей",
+    "tasks": [
+      "Идейные соображения высшего порядка;",
+      "Для современного мира начало повседневной работы по формированию позиции прекрасно подходит для реализации поставленных;",
+      "С учётом сложившейся международной обстановки;",
+      "С другой стороны, экономическая повестка сегодняшнего;",
+      "Безусловно, повышение уровня"
+    ]
+  },
+  "pages": {
+    "text": "Проект включает в себя разработку более",
+    "amount": "100 стр.",
+    "image": "/images/phones.png "
+  },
+  "userflow": {
+    "title": "User flow",
+    "description": "Принятие доставки курьером",
+    "image": "/images/king/userflow.png"
+  },
+  "sections": [
+    {
+      "id": 1,
+      "blocks": [
+        {
+          "id": 1,
+          "title": "Выбор свободного графика",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+          "image": "/images/king/graphik.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "centered": true,
+      "blocks": [
+        {
+          "id": 1,
+          "title": "статистика",
+          "image": "/images/king/statistic.jpg"
+        },
+        {
+          "id": 2,
+          "title": "статистика",
+          "image": "/images/king/navigation.jpg"
+        }
+      ]
+    }
+  ]
 }

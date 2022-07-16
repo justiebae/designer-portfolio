@@ -1,0 +1,36 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.ProjectPages {
+  background-color: $c-black;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-info {
+    padding: scale(60) 0 scale(40);
+  }
+
+  &-title {
+    color: $c-white;
+    font-family: $ff-Mak-light;
+    font-size: scale(150);
+    line-height: 1.1;
+  }
+
+  &-description {
+    color: $c-white;
+    font-size: scale(18);
+    margin-bottom: scale(30);
+  }
+
+  &-image {
+    display: flex;
+
+    img {
+      height: 100%;
+    }
+  }
+}

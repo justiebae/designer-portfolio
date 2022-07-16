@@ -1,0 +1,26 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.ProjectShowcase {
+  position: relative;
+
+  &-banner {
+    position: relative;
+    width: 100%;
+    height: scale(840);
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-switch {
+    display: flex;
+    position: absolute;
+    bottom: scale(50);
+    left: 0;
+    right: 0;
+  }
+}

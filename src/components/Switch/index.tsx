@@ -4,25 +4,30 @@ import './index.scss';
 
 interface ISwitch {
   leftValue: string,
-  rightValue: string
+  rightValue: string,
+  value: boolean,
+  onChange: (value: boolean) => void
 }
 
-export default function Switch({ leftValue, rightValue }: ISwitch) {
-  const [value, setValue] = useState<boolean>(true);
+export default function Switch({ 
+  leftValue, rightValue, value, onChange 
+}: ISwitch) {
+  const [state, setState] = useState<boolean>(value);
 
   const click = (value: boolean) => {
-    setValue(value)
+    setState(value)
+    onChange(value)
   }
 
   const leftLabelClasses = classNames('Switch-label Switch-label--left', {
-    'active': value === false
+    'active': state === false
   });
 
   const rightLabelClasses = classNames('Switch-label Switch-label--right', {
-    'active': value === true
+    'active': state === true
   });
 
-  const elementClasses = classNames('Switch-element', { 'active': value });
+  const elementClasses = classNames('Switch-element', { 'active': state });
 
   return (
     <div className="Switch">
@@ -33,8 +38,8 @@ export default function Switch({ leftValue, rightValue }: ISwitch) {
         <input 
           type="checkbox" 
           className="Switch-input" 
-          checked={value} 
-          onChange={() => click(!value)} 
+          checked={state} 
+          onChange={() => click(!state)} 
         />
       </label>
       <div className={rightLabelClasses} onClick={() => click(true)}>

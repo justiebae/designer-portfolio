@@ -45,7 +45,7 @@
       border-radius: 50%;
       background-color: $c-black;
       top: 50%;
-      left: 3px;
+      left: scale(3);
       transform: translateY(-50%);
       transition: left ease $d-hover, right ease $d-hover
     }
@@ -53,7 +53,7 @@
     &.active {
       &:before {
         left: unset;
-        right: 3px;
+        right: scale(3);
       }
     }
   }

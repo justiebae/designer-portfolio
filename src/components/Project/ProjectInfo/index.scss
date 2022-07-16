@@ -1,0 +1,37 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.ProjectInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: scale(170);
+  margin-bottom: scale(200);
+
+  &-title {
+    margin-bottom: scale(30);
+  }
+
+  &-description {
+    font-size: scale(18);
+    line-height: 1.5;
+  }
+
+  &-list {
+    &Item {
+      display: flex;
+      align-items: flex-start;
+      font-size: scale(18);
+      line-height: 1.5;
+
+      &:not(:last-child) {
+        margin-bottom: scale(10);
+      }
+
+      svg {
+        width: scale(15);
+        margin-right: scale(15);
+        margin-top: scale(6);
+      }
+    }
+  }
+}
