@@ -13,6 +13,10 @@
   border-bottom: 1px solid transparent;
   transition: padding ease $d-hover, border-color ease $d-hover;
 
+  @include desktop {
+    padding: scale(30) 0;
+  }
+
   &--black {
     #{$component}-logo,
     #{$component}-text,

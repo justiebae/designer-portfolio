@@ -15,12 +15,16 @@
     margin-top: scale(226);
 
     @include desktop {
-      margin-top: scale(130);
+      margin-top: auto;
     }
   }
 
   &-subtitle {
     margin-bottom: scale(50);
+
+    @include desktop {
+      margin-bottom: scale(30);
+    }
   }
 
   &-heading {

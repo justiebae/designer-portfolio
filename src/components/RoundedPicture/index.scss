@@ -27,22 +27,43 @@
     flex-direction: column;
     align-items: flex-end;
     z-index: 3;
+
+    @include desktop {
+      top: scale(-20);
+      right: scale(-30);
+    }
   }
 
   &-star {
+    display: flex;
+
     &--outlined {
       svg {
         width: scale(43);
         height: scale(43);
+
+        @include desktop {
+          width: scale(30);
+          height: scale(30);
+        }
       }
     }
 
     &--filled {
       margin-top: scale(15);
+
+      @include desktop {
+        margin-top: scale(10);
+      }
       
       svg {
         width: scale(20);
         height: scale(20);
+
+        @include desktop {
+          width: scale(14);
+          height: scale(14);
+        }
       }
     }
   }

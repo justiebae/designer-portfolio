@@ -5,13 +5,17 @@
   position: relative;
   overflow: hidden;
 
+  &-wrapper {
+    margin-top: auto;
+  }
+
   &-head {
     margin: scale(70) 0 scale(30);
     position: relative;
     z-index: 1;
 
     @include desktop {
-      margin: scale(50) 0 scale(30);
+      margin: scale(60) 0 scale(30);
     }
   }
 
@@ -24,7 +28,7 @@
       margin-left: scale(160);
 
       @include desktop {
-        margin-left: scale(100);
+        margin-left: scale(120);
       }
     }
   }
@@ -48,11 +52,19 @@
     display: flex;
     align-items: flex-end;
     margin: 0 scale(105) scale(10) scale(50);
+
+    @include desktop {
+      margin: 0 scale(50) scale(10);
+    }
   }
 
   &-picture {
     &:not(:last-child) {
       margin-right: scale(50);
+
+      @include desktop {
+        margin-right: scale(30);
+      }
     }
 
     &--hidden {
@@ -71,12 +83,17 @@
     margin-left: scale(160);
 
     @include desktop {
-      margin-left: scale(100);
+      margin-left: scale(120);
+      max-width: scale(600);
     }
   }
 
   &-paragraph {
     line-height: 1.5;
+
+    @include desktop {
+      font-size: scale(14);
+    }
 
     &:not(:last-child) {
       margin-bottom: scale(20);

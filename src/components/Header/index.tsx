@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 import ThemeContext from '../../context/ThemeContext';
 import Icon from '../Icon/index';
 import links from '../../data/links';
 import './index.scss';
-import classNames from 'classnames';
 
 export default function Header(): JSX.Element {
   const { theme } = useContext(ThemeContext);

@@ -8,13 +8,9 @@
   padding-bottom: scale(50);
   
   &-body {
-    margin-top: scale(264);
+    margin-top: auto;
     margin-bottom: scale(50);
     position: relative;
-
-    @include desktop {
-      margin-top: scale(180);
-    }
   }
 
   &-title {
@@ -25,6 +21,10 @@
     max-width: scale(650);
     margin-left: scale(160);
     line-height: 1.5;
+
+    @include desktop {
+      margin-left: scale(200);
+    }
   }
 
   &-signature {
@@ -32,6 +32,11 @@
     top: scale(-200);
     left: 519 * 100% / 1600;
     max-width: scale(313);
+
+    @include desktop {
+      max-width: scale(225);
+      top: scale(-130);
+    }
 
     svg {
       width: 100%;

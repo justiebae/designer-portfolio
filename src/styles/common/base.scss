@@ -45,6 +45,8 @@ body {
 
 .Page {
   flex: 1;
-  padding-top: scale(120);
-  padding-bottom: scale(50);
+  padding: {
+    top: scale(120);
+    bottom: scale(50);
+  };
 }

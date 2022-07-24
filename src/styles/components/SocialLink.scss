@@ -19,6 +19,11 @@
     justify-content: center;
     background-color: $c-black;
 
+    @include desktop {
+      width: scale(52);
+      height: scale(52);
+    }
+
     svg {
       width: scale(30);
       height: scale(30);

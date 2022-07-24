@@ -20,12 +20,14 @@ const about = [
   },
   {
     paragraphs: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Смотреть за мерцающими звездами, наблюдать за развитием небесных тел, изучать теории о том, как было создано все вокруг, и что будет дальше поистине завораживает. Это заставило меня многое переосмыслить в жизни и взглянуть на мир по-новому.',
+      'Желание узнать, что там, за пределами нашей солнечной системы, галактики, видимой Вселенной, никогда меня не покидало и это вылилось в большую страсть и хобби - Любительская астрономия.',
     ]
   },
   {
     paragraphs: [
-      'qeqwe',
+      'На фотографиях присутствуют главные пакостники моих вещей - Орион, что вечно прекрасен и невозмутим, который похож на Шрама из Короля льва и Кнопик, просто Кнопик, вечно дурачится, из-за чего бесит Ориона',
+      'Заботой о пушистиках я занимаюсь с самого детства, они стали неотъемлемой частью жизни. Эти удивительно серьезные, милые и добрые создания занимают отдельное место в моем сердце.',
     ],
     images: [
       {id: 1, path: cat1, stars: false},

@@ -7,6 +7,10 @@
   grid-gap: scale(170);
   margin-bottom: scale(200);
 
+  @include desktop {
+    grid-gap: scale(100);
+  }
+
   &-title {
     margin-bottom: scale(30);
   }

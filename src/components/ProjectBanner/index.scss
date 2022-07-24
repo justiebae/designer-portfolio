@@ -19,7 +19,6 @@
   overflow: hidden;
 
   @include desktop {
-    margin-right: scale(40);
     min-width: scale(258);
     max-width: scale(258);
     height: scale(478);
@@ -37,6 +36,13 @@
     border-radius: scale(179);
     pointer-events: none;
     z-index: 1;
+
+    @include desktop {
+      top: scale(10);
+      right: scale(10);
+      bottom: scale(10);
+      left: scale(10);
+    }
   }
 
   &--transparent {
@@ -67,6 +73,11 @@
   &-star {
     width: scale(15);
     height: scale(15);
+
+    @include desktop {
+      width: scale(12);
+      height: scale(12);
+    }
 
     path {
       fill: $c-white;
@@ -107,5 +118,10 @@
     font-size: scale(24);
     color: $c-white;
     margin-bottom: scale(30);
+
+    @include desktop {
+      font-size: scale(20);
+      margin-bottom: scale(20);
+    }
   }
 }

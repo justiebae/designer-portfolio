@@ -4,6 +4,10 @@
 .ProjectPage {
   &-section {
     margin-bottom: scale(200);
+
+    @include desktop {
+      margin-bottom: scale(180);
+    }
   }
 
   &-title {
@@ -17,10 +21,13 @@
   align-items: center;
   position: relative;
   padding-top: scale(50);
-  margin-bottom: scale(174) !important;
 
   &-banner {
     margin-right: scale(150);
+
+    @include desktop {
+      margin-right: scale(100);
+    }
   }
 
   &-name {
@@ -28,10 +35,18 @@
     font-size: scale(150);
     line-height: 1.1;
     margin-bottom: scale(10);
+
+    @include desktop {
+      font-size: scale(120);
+    }
   }
 
   &-status {
     margin-bottom: scale(100);
+
+    @include desktop {
+      margin-bottom: scale(80);
+    }
   }
 
   &-description {

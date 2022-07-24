@@ -8,6 +8,10 @@
     position: relative;
     width: 100%;
     height: scale(840);
+
+    @include desktop {
+      height: scale(750);
+    }
   }
 
   &-image {
