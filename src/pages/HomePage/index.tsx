@@ -1,6 +1,7 @@
 import React from 'react';
 import CircleButton from '../../components/CircleButton';
 import Icon from '../../components/Icon';
+
 import './index.scss';
 
 export default function HomePage(): JSX.Element {
@@ -8,7 +9,9 @@ export default function HomePage(): JSX.Element {
     <div className="HomePage Container Page">
       <div className="HomePage-body">
         <div className="HomePage-title Title">UI/UX Designer</div>
-        <div className="HomePage-description">Анализирую, проектирую и графически прорабатываю пользовательские интерфейсы различной сложности</div>
+        <div className="HomePage-description">
+          Анализирую, проектирую и графически прорабатываю пользовательские интерфейсы различной сложности
+        </div>
         <div className="HomePage-signature">
           <Icon name="signature" />   
         </div>
@@ -20,7 +23,7 @@ export default function HomePage(): JSX.Element {
       </div>
       <div className="HomePage-footer">
         <div className="HomePage-currentPlace">
-          На данный момент UI/UX Designer в digital-agency Webest
+          На данный момент UI/UX Designer в&nbsp;digital-agency Webest
         </div>
         <a href="/" rel="noreferrer" target="_blank" className="HomePage-contact SocialLink">
           <div className="SocialLink-text">Для связи со мной</div>

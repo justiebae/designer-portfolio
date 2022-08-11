@@ -19,6 +19,11 @@
     height: scale(178);
   }
 
+  @include mobile {
+    width: scale(176);
+    height: scale(176);
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -29,6 +34,14 @@
     right: scale(12);
     border-radius: 50%;
     transition: border-color ease $d-hover;
+
+    @include mobile {
+      border-width: 2px;
+      top: scale(9);
+      left: scale(9);
+      bottom: scale(9);
+      right: scale(9);
+    }
   }
 
   &--black {
@@ -50,11 +63,15 @@
     text-transform: uppercase;
     text-align: center;
     transform: rotate(10deg);
-    max-width: (150);
+    max-width: scale(150);
     line-height: 1.3;
     transition: color ease $d-hover;
 
     @include desktop {
+      font-size: scale(14);
+    }
+
+    @include mobile {
       font-size: scale(14);
     }
   }

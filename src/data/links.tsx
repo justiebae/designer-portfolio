@@ -1,4 +1,4 @@
-const links = {
+export const links = {
   navigation: [
     { name: 'Обо мне', path: '/about' },
     { name: 'Проекты', path: '/projects' },
@@ -10,4 +10,4 @@ const links = {
   ]
 };
 
-export default links;
+export const telegram = 'https://'

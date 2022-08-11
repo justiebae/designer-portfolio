@@ -7,6 +7,10 @@
   @include desktop {
     font-size: scale(150);
   }
+
+  @include mobile {
+    font-size: scale(70);
+  }
 }
 
 .Title-second {
@@ -16,5 +20,9 @@
 
   @include desktop {
     font-size: scale(120);
+  }
+
+  @include mobile {
+    font-size: scale(70);
   }
 }

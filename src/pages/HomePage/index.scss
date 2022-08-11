@@ -15,6 +15,11 @@
 
   &-title {
     text-align: center;
+
+    @include mobile {
+      text-align: left;
+      margin-bottom: scale(20);
+    }
   }
 
   &-description {
@@ -24,6 +29,10 @@
 
     @include desktop {
       margin-left: scale(200);
+    }
+
+    @include mobile {
+      margin-left: 0;
     }
   }
 
@@ -36,6 +45,11 @@
     @include desktop {
       max-width: scale(225);
       top: scale(-130);
+    }
+
+    @include mobile {
+      max-width: scale(155);
+      top: scale(-100);
     }
 
     svg {
@@ -51,6 +65,11 @@
     @include desktop {
       top: scale(-130);
     }
+
+    @include mobile {
+      top: scale(280);
+      right: 0;
+    }
   }
 
   &-footer {
@@ -60,9 +79,19 @@
     justify-content: space-between;
   }
 
+  &-contact {
+    @include mobile {
+      display: none !important;
+    }
+  }
+
   &-currentPlace {
     max-width: scale(255);
     font-size: scale(14);
     line-height: 1.5;
+
+    @include mobile {
+      max-width: scale(170);
+    }
   }
 }

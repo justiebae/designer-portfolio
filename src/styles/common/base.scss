@@ -7,6 +7,10 @@
   @include desktop {
     --scale: 100vw / #{$sw-desktop};
   }
+
+  @include mobile {
+    --scale: 100vw / #{$sw-mobile};
+  }
 }
 
 body {
@@ -17,6 +21,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  @include mobile {
+    font-size: scale(14);
+  }
 }
 
 #root {
@@ -41,6 +49,13 @@ body {
       right: scale(50);
     } 
   }
+
+  @include mobile {
+    padding: {
+      left: scale(20);
+      right: scale(20);
+    } 
+  }
 }
 
 .Page {
@@ -49,4 +64,11 @@ body {
     top: scale(120);
     bottom: scale(50);
   };
+
+  @include mobile {
+    padding: {
+      top: scale(80);
+      bottom: scale(20);
+    } 
+  }
 }

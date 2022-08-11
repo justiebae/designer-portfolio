@@ -1,0 +1,77 @@
+@import '../../styles/common/constants.scss';
+@import '../../styles/common/mixins.scss';
+
+.MobileNavigation {
+  $component: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $c-gray;
+  z-index: 1;
+  display: flex;
+
+  &-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    border: {
+      top: 1px solid #DADADA;
+      bottom: 1px solid #DADADA;
+    }
+    margin-top: scale(70);
+  }
+
+  &-link {
+    position: relative;
+    text-align: center;
+    padding: scale(20);
+    color: $c-black;
+    text-transform: uppercase;
+    font-family: $ff-m;
+    font-size: scale(24);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #DADADA;
+    }
+
+    &.active {
+      #{$component}-linkIcon {
+        display: flex;
+      }
+    }
+  }
+
+  &-linkIcon {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: scale(110);
+  }
+
+  &-socials {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-social {
+    font-family: $ff-m;
+    font-size: scale(16);
+    color: $c-black;
+
+    &:not(:last-child) {
+      margin-right: scale(30);
+    }
+  }
+}
