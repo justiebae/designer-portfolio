@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+
 import ProjectBanner from '../../components/ProjectBanner';
 import ProjectShowcase from '../../components/Project/ProjectShowcase';
 import ProjectInfo from '../../components/Project/ProjectInfo';
 import Status from '../../components/Status';
-import Projects from '../../api/projects';
 import ProjectPages from '../../components/Project/ProjectPages';
 import ProjectUserflow from '../../components/Project/ProjectUserflow';
 import ProjectBlocks from '../../components/Project/ProjectBlocks';
+
+import Projects from '../../api/projects';
 import './index.scss';
 
 export default function ProjectPage(): JSX.Element {

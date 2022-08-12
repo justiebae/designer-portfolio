@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import Switch from '../../Switch';
+
 import './index.scss';
 
 interface IProjectShowcase {

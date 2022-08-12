@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
+
 import Icon from '../Icon/index';
 import MobileNavigation from '../MobileNavigation';
-import ThemeContext from '../../context/ThemeContext';
 
+import ThemeContext from '../../context/ThemeContext';
 import { links, telegram } from '../../data/links';
 import './index.scss';
 

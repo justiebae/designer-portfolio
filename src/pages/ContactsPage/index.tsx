@@ -1,6 +1,8 @@
 import React from 'react';
-import './index.scss';
+
 import Icon from '../../components/Icon';
+
+import './index.scss';
 
 export default function ContactsPage(): JSX.Element {
   return (

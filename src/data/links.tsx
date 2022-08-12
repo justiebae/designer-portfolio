@@ -5,9 +5,9 @@ export const links = {
     { name: 'Контакты', path: '/contacts' },
   ],
   socials: [
-    { name: 'Behance', path: '#' },
-    { name: 'Dribbble', path: '#' },
+    { name: 'Behance', path: 'https://www.behance.net/alisasid' },
+    { name: 'Dribbble', path: 'https://dribbble.com/alisasid' },
   ]
 };
 
-export const telegram = 'https://'
+export const telegram = 'https://t.me/silvermirage'

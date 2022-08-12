@@ -5,6 +5,10 @@
   display: flex;
   position: relative;
 
+  @include mobile {
+    justify-content: center;
+  }
+
   &-image {
     width: scale(188);
     height: scale(220);
@@ -16,6 +20,11 @@
     @include desktop {
       width: scale(120);
       height: scale(140);
+    }
+
+    @include mobile {
+      width: scale(158);
+      height: scale(185);
     }
   }
 
@@ -29,6 +38,11 @@
     z-index: 3;
 
     @include desktop {
+      top: scale(-20);
+      right: scale(-30);
+    }
+
+    @include mobile {
       top: scale(-20);
       right: scale(-30);
     }

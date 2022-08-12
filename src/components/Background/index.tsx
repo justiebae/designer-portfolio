@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Icon from '../Icon';
+
 import bubbles from '../../data/bubbles';
 import backgroundImg from '../../assets/images/dots.svg';
 import './index.scss';

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import BaseLayout from '../../layouts/BaseLayout';
 import HomePage from '../../pages/HomePage';
 import AboutPage from '../../pages/AboutPage';
@@ -7,8 +8,9 @@ import ContactsPage from '../../pages/ContactsPage';
 import ProjectsPage from '../../pages/ProjectsPage';
 import ProjectPage from '../../pages/ProjectPage';
 import NotFoundPage from '../../pages/NotFoundPage';
-import './index.scss';
 import ThemeContext from '../../context/ThemeContext';
+
+import './index.scss';
 
 function App(): JSX.Element {
   const [theme, setTheme] = useState('default');

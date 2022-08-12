@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import { Scrollbar } from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
+
 import ProjectCard from '../../components/ProjectCard';
+
 import Projects from '../../api/projects';
+import moreBg from '../../assets/images/more.svg'
 import 'swiper/css';
 import './index.scss';
-import moreBg from '../../assets/images/more.svg'
 
 export default function ProjectsPage(): JSX.Element {
   const [projects, setProjects] = useState([]);

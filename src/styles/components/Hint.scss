@@ -9,10 +9,19 @@
     svg {
       width: scale(65);
       height: scale(65);
+
+      @include mobile {
+        width: scale(50);
+        height: scale(50);
+      }
     }
   }
 
   &-message {
     max-width: scale(210);
+
+    @include mobile {
+      max-width: scale(175);
+    }
   }
 }

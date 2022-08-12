@@ -53,6 +53,13 @@
         left: scale(661);
       }
 
+      @include mobile {
+        width: scale(22);
+        height: scale(22);
+        top: scale(94);
+        left: scale(330);
+      }
+
       svg {
         width: scale(70);
         height: scale(43);
@@ -60,6 +67,10 @@
         @include desktop {
           width: scale(47);
           height: scale(29);
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -73,6 +84,13 @@
         left: scale(780);
       }
 
+      @include mobile {
+        width: scale(46);
+        height: scale(46);
+        top: scale(204);
+        left: scale(340);
+      }
+
       svg {
         width: scale(33);
         height: scale(26);
@@ -80,6 +98,10 @@
         @include desktop {
           width: scale(22);
           height: scale(17);
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -93,6 +115,13 @@
         right: scale(50);
       }
 
+      @include mobile {
+        width: scale(22);
+        height: scale(22);
+        top: scale(320);
+        left: scale(-11);
+      }
+
       svg {
         width: scale(79);
         height: scale(79);
@@ -100,6 +129,10 @@
         @include desktop {
           width: scale(53);
           height: scale(53);
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -113,6 +146,13 @@
         right: scale(378);
       }
 
+      @include mobile {
+        width: scale(80);
+        height: scale(80);
+        top: scale(657);
+        left: scale(-35);
+      }
+
       svg {
         width: scale(47);
         height: scale(47);
@@ -120,6 +160,10 @@
         @include desktop {
           width: scale(32);
           height: scale(32);
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -133,6 +177,14 @@
         right: scale(440);
       }
 
+      @include mobile {
+        width: scale(200);
+        height: scale(200);
+        bottom: unset;
+        top: scale(670);
+        right: scale(-40);
+      }
+
       svg {
         width: scale(74);
         height: scale(74);
@@ -140,6 +192,10 @@
         @include desktop {
           width: scale(59);
           height: scale(50);
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -151,6 +207,10 @@
       @include desktop {
         top: scale(402);
         left: scale(80);
+      }
+
+      @include mobile {
+        display: none;
       }
 
       svg {
@@ -193,6 +253,14 @@
         left: scale(103);
       }
     }
+
+    &--top,
+    &--middle,
+    &--bottom {
+      @include mobile {
+        display: none;
+      }
+    }
   }
 
   &-device {
@@ -212,6 +280,15 @@
       width: scale(150);
       bottom: scale(90);
     }
+
+    @include mobile {
+      transform: scaleX(-1) rotate(-9deg);
+      width: scale(170);
+      right: scale(-60);
+      left: unset;
+      bottom: scale(-122);
+      z-index: 1;
+    }
   }
 
   &-headphones {
@@ -224,6 +301,14 @@
       right: scale(350);
       bottom: scale(-10);
     }
+
+    @include mobile {
+      width: scale(250);
+      right: unset;
+      left: scale(36);
+      bottom: scale(-20);
+      z-index: 1;
+    }
   }
 
   &-mouse {
@@ -234,6 +319,10 @@
     @include desktop {
       width: scale(140);
       top: scale(150);
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 
@@ -258,11 +347,21 @@
     bottom: scale(314);
     display: flex;
 
+    @include mobile {
+      bottom: scale(-20);
+      left: scale(116);
+    }
+
     svg {
       width: scale(72);
       height: scale(72);
 
       @include desktop {
+        width: scale(50);
+        height: scale(50);
+      }
+
+      @include mobile {
         width: scale(50);
         height: scale(50);
       }
@@ -277,6 +376,10 @@
     @include desktop {
       top: scale(113);
       left: scale(285);
+    }
+
+    @include mobile {
+      display: none;
     }
 
     svg {
@@ -300,6 +403,12 @@
       right: scale(460);
     }
 
+    @include mobile {
+      top: unset;
+      bottom: scale(20);
+      right: scale(-60);
+    }
+
     svg {
       width: scale(106);
       height: scale(75);
@@ -307,6 +416,11 @@
       @include desktop {
         width: scale(79);
         height: scale(56);
+      }
+
+      @include mobile {
+        width: scale(179);
+        height: scale(126);
       }
     }
   }
@@ -321,6 +435,11 @@
       left: scale(77);
     }
 
+    @include mobile {
+      bottom: scale(90);
+      left: scale(52);
+    }
+
     svg {
       width: scale(126);
       height: scale(126);
@@ -328,6 +447,11 @@
       @include desktop {
         width: scale(90);
         height: scale(90);
+      }
+
+      @include mobile {
+        width: scale(67);
+        height: scale(67);
       }
     }
   }
@@ -345,6 +469,11 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+
+      @include mobile {
+        object-fit: cover;
+        object-position: left;
+      }
     }
   }
 
@@ -380,6 +509,10 @@
         top: scale(100);
         left: scale(440);
       }
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &--second {
@@ -389,6 +522,11 @@
       @include desktop {
         top: scale(158);
         left: scale(60);
+      }
+
+      @include mobile {
+        top: scale(64);
+        left: scale(197);
       }
     }
 
@@ -400,6 +538,10 @@
         top: scale(130);
         right: scale(625);
       }
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &--fourth {
@@ -409,6 +551,11 @@
       @include desktop {
         top: scale(170);
         right: scale(255);
+      }
+
+      @include mobile {
+        top: scale(203);
+        right: scale(29);
       }
     }
 
@@ -420,6 +567,12 @@
         top: scale(315);
         right: scale(30);
       }
+
+      @include mobile {
+        top: unset;
+        bottom: scale(107);
+        right: scale(111);
+      }
     }
 
     &--sixth {
@@ -430,6 +583,10 @@
         bottom: scale(260);
         left: scale(50);
       }
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &--seventh {
@@ -439,6 +596,10 @@
       @include desktop {
         bottom: scale(157);
         left: scale(890);
+      }
+
+      @include mobile {
+        display: none;
       }
     }
 
@@ -464,6 +625,10 @@
     &--tenth {
       bottom: scale(90);
       right: scale(68);
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 }

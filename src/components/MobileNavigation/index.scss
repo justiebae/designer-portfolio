@@ -13,6 +13,31 @@
   z-index: 1;
   display: flex;
 
+  &--black {
+    background-color: $c-black;
+
+    #{$component}-links {
+      border-color: #3f3f3f;
+    }
+
+    #{$component}-link {
+      &:not(:last-child) {
+        border-color: #3f3f3f;
+      }
+    }
+
+    #{$component}-linkIcon {
+      path {
+        stroke: $c-gray;
+      }
+    }
+
+    #{$component}-link,
+    #{$component}-social {
+      color: $c-white;
+    }
+  }
+
   &-wrapper {
     flex: 1;
     display: flex;

@@ -1,7 +1,9 @@
 import React, {useContext, useEffect} from 'react';
-import ThemeContext from '../../context/ThemeContext';
+
 import Icon from '../../components/Icon';
 import CircleButton from '../../components/CircleButton';
+
+import ThemeContext from '../../context/ThemeContext';
 import './index.scss';
 
 export default function NotFoundPage(): JSX.Element {
