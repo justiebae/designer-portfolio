@@ -9,19 +9,27 @@
   display: flex;
   
   &--current-0 {
-    padding-bottom: 0 !important;
+    @include mobile {
+      padding-bottom: 0 !important;
+    }
   }
   
   &--current-1 {
-    padding-bottom: scale(200) !important;
+    @include mobile {
+      padding-bottom: scale(200) !important;
+    }
   }
   
   &--current-2 {
-    padding-bottom: scale(200) !important;
+    @include mobile {
+      padding-bottom: scale(200) !important;
+    }
   }
   
   &--current-3 {
-    padding-bottom: scale(165) !important;
+    @include mobile {
+      padding-bottom: scale(165) !important;
+    }
   }
 
   &-wrapper {

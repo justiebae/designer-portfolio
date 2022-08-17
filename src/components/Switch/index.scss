@@ -11,6 +11,13 @@
   border-radius: scale(100);
   background-color: $c-white;
 
+  @include mobile {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: unset;
+  }
+
   &-label {
     font-family: $ff-m;
     font-size: scale(16);

@@ -10,4 +10,5 @@ export const links = {
   ]
 };
 
-export const telegram = 'https://t.me/silvermirage'
+export const telegram = 'https://t.me/silvermirage';
+export const mail = 'alisasidorenkova51@gmail.com';

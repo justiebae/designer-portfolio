@@ -1,0 +1,63 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.ProjectFooter {
+  $component: &;
+
+  &-link {
+    display: flex;
+    align-items: center;
+    padding: {
+      top: scale(363);
+      bottom: scale(363);
+    };
+
+    @include desktop {
+      padding: {
+        top: scale(250);
+        bottom: scale(250);
+      };
+    }
+
+    @include mobile {
+      padding: {
+        top: scale(100);
+        bottom: scale(100);
+      };
+    }
+
+    @include hover {
+      &:hover {
+        #{$component}-icon {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  &-title {
+    font-family: $ff-Mak;
+    font-size: scale(100);
+    color: $c-black;
+    margin-right: scale(156);
+
+    @include desktop {
+      margin-right: scale(100);
+    }
+
+    @include mobile {
+      margin-right: scale(20);
+      font-size: scale(40);
+    }
+  }
+
+  &-icon {
+    width: scale(127);
+    transform: rotate(-90deg);
+    transition: transform ease $d-hover;
+
+    @include mobile {
+      width: scale(50);
+    }
+  }
+}

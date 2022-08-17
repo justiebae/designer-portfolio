@@ -18,6 +18,30 @@
 
   &-cover {
     margin-right: scale(50);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include mobile {
+      margin-bottom: scale(5);
+    }
+  }
+
+  &-arrow {
+    min-width: scale(19);
+    max-width: scale(19);
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &-title {
@@ -27,6 +51,19 @@
 
     @include desktop {
       font-size: scale(40);
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &-year {
+    display: none;
+    margin-bottom: scale(10);
+
+    @include mobile {
+      display: block;
     }
   }
 
@@ -44,5 +81,9 @@
     font-family: $ff-m;
     font-size: scale(18);
     margin-top: scale(30);
+
+    @include mobile {
+      display: none;
+    }
   }
 }

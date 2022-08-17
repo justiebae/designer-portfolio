@@ -2,7 +2,7 @@ type Bubble = {
   name: string,
   size?: string,
   icon?: string
-}
+};
 
 const bubbles: Array<Bubble> = [
   {

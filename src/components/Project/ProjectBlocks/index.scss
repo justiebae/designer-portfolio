@@ -9,6 +9,10 @@
   &-description {
     max-width: scale(800);
     font-size: scale(18);
+
+    @include mobile {
+      font-size: scale(14);
+    }
   }
 
   &-items {
@@ -18,10 +22,18 @@
 
     &--two-per-row {
       grid-template-columns: repeat(2, 1fr);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
     }
 
     &--three-per-row {
       grid-template-columns: repeat(3, 1fr);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
     }
 
     &--centered {
@@ -37,6 +49,13 @@
       padding-bottom: scale(18);
       border-bottom: 1px solid $c-black;
       margin-bottom: scale(50);
+
+      @include mobile {
+        flex-direction: column;
+        padding-bottom: scale(20);
+        margin-bottom: scale(30);
+        align-items: flex-start;
+      }
     }
 
     &Title {
@@ -47,12 +66,23 @@
       &:not(:last-child) {
         margin-right: scale(100);
         max-width: scale(280);
+
+        @include mobile {
+          margin: {
+            right: 0;
+            bottom: scale(20);
+          };
+        }
       }
     }
 
     &Description {
       font-size: scale(16);
       max-width: scale(700);
+
+      @include mobile {
+        font-size: scale(14);
+      }
     }
 
     &Image {

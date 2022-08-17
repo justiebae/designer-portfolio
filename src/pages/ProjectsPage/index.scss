@@ -2,11 +2,19 @@
 @import '../../styles/common/mixins.scss';
 
 .ProjectsPage {
+  $component: &;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   margin-top: auto;
+
+  @include mobile {
+    margin-top: 0;
+    justify-content: flex-start;
+    padding-bottom: 0 !important;
+  }
 
   &-slider {
     .swiper {
@@ -36,5 +44,56 @@
     right: 0;
     font-family: $ff-m;
     font-size: scale(16);
+  }
+
+  &-card {
+    @include mobile {
+      padding: scale(20);
+    }
+
+    &:first-child {
+      @include mobile {
+        padding-top: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      @include mobile {
+        border-bottom: 1px solid $c-black;
+      }
+    }
+  }
+
+  &-more {
+    margin-top: scale(30);
+    padding: {
+      left: scale(20);
+      right: scale(20);
+    }
+  }
+}
+
+.ProjectMore {
+  padding: scale(20) scale(40);
+  border: 1px solid $c-black;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-icon {
+    width: scale(120);
+    margin-bottom: scale(20);
+  }
+
+  &-title {
+    font-family: $ff-Mak-bold;
+    font-size: scale(25);
+    margin-bottom: scale(10);
+    text-align: center;
+  }
+
+  &-description {
+    text-align: center;
   }
 }

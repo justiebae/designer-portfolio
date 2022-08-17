@@ -25,6 +25,8 @@ import OutlinedStar from './icons/OutlinedStar';
 import MailIcon from './icons/MailIcon';
 import ArrowIcon from './icons/ArrowIcon';
 import HandIcon from './icons/HandIcon';
+import PenIcon from './icons/PenIcon';
+import ThinArrowIcon from './icons/ThinArrowIcon';
 
 interface IIconProps {
   name: string
@@ -82,6 +84,10 @@ export default function Icon({ name, ...props }: IIconProps): JSX.Element {
       return <HandIcon />
     case 'arrowIcon':
       return <ArrowIcon />
+    case 'penIcon':
+      return <PenIcon />
+    case 'thinArrow':
+      return <ThinArrowIcon />
 
     default:
       return <></>

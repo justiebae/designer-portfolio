@@ -9,6 +9,13 @@
   padding-bottom: scale(50);
   position: relative;
   overflow: hidden;
+  background: center / cover no-repeat url('../../assets/icons/space-map.svg'), 
+    center / 98% no-repeat url('../../assets/images/dots.svg');
+
+  @include mobile {
+    background: center / cover no-repeat url('../../assets/icons/space-map.svg'), 
+      center / 150% no-repeat url('../../assets/images/dots.svg');
+  }
 
   &-title {
     margin: scale(120) 0 scale(50);
@@ -16,6 +23,16 @@
 
     @include desktop {
       margin: scale(70) 0 scale(30);
+    }
+
+    @include mobile {
+      margin: scale(60) 0 scale(30);
+    }
+
+    svg {
+      @include mobile {
+        width: scale(250);
+      }
     }
   }
 
@@ -26,6 +43,10 @@
     line-height: 1.7;
     position: relative;
     z-index: 1;
+
+    @include mobile {
+      margin-bottom: scale(50);
+    }
   }
 
   &-link {
@@ -33,11 +54,162 @@
     z-index: 1;
   }
 
-  &-map {
+  &-star {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    width: scale(18);
+    height: scale(18);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--white {
+      path {
+        fill: $c-white;
+      }
+    }
+
+    &--brown {
+      path {
+        fill: $c-brown;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--first {
+      top: scale(252);
+      left: scale(115);
+
+      @include mobile {
+        top: scale(86);
+        left: scale(43);
+      }
+    }
+
+    &--second {
+      top: scale(98);
+      right: scale(544);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--third {
+      top: scale(556);
+      left: scale(557);
+
+      @include mobile {
+        top: unset;
+        left: unset;
+        bottom: scale(49);
+        right: scale(50);
+      }
+    }
+
+    &--fourth {
+      bottom: scale(206);
+      left: scale(243);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--fifth {
+      bottom: scale(69);
+      left: scale(367);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--sixth {
+      top: scale(276);
+      right: scale(395);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--seventh {
+      bottom: scale(315);
+      right: scale(208);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--eighth {
+      bottom: scale(72);
+      right: scale(62);
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &-multiStar {
+    width: scale(72);
+    position: absolute;
+
+    @include desktop {
+      width: scale(50);
+    }
+
+    @include mobile {
+      width: scale(50);
+    }
+
+    &--first {
+      top: scale(353);
+      left: scale(355);
+
+      @include desktop {
+        top: scale(300);
+        left: scale(300);
+      }
+
+      @include mobile {
+        top: unset;
+        bottom: scale(45);
+        left: scale(15);
+      }
+    }
+
+    &--second {
+      top: scale(330);
+      right: scale(62);
+
+      @include desktop {
+        right: scale(60);
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--third {
+      bottom: scale(130);
+      right: scale(591);
+
+      @include desktop {
+        bottom: scale(100);
+        right: scale(470);
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
   }
 }

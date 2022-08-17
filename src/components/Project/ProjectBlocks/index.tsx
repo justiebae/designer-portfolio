@@ -36,10 +36,16 @@ export default function ProjectBlocks({ title, description, centered, blocks }: 
         {blocks.map((block) => (
           <div className="ProjectBlocks-item" key={block.id}>
             <div className="ProjectBlocks-itemHead">
-              <div className="ProjectBlocks-itemTitle">{block.title}</div>
-              <div className="ProjectBlocks-itemDescription">
-                {block.description}
-              </div>
+              {
+                block.title && 
+                <div className="ProjectBlocks-itemTitle">{block.title}</div>
+              }
+              {
+                block.description && 
+                <div className="ProjectBlocks-itemDescription">
+                  {block.description}
+                </div>
+              }
             </div>
             <div className="ProjectBlocks-itemBody">
               <img src={block.image} alt="" className='ProjectBlocks-itemImage' />

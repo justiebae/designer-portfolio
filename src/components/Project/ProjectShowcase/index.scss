@@ -12,6 +12,10 @@
     @include desktop {
       height: scale(750);
     }
+
+    @include mobile {
+      height: scale(258);
+    }
   }
 
   &-image {
@@ -26,5 +30,11 @@
     bottom: scale(50);
     left: 0;
     right: 0;
+
+    @include mobile {
+      position: static;
+      justify-content: center;
+      margin-top: scale(20);
+    }
   }
 }

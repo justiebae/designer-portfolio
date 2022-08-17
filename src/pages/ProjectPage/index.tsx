@@ -4,10 +4,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ProjectBanner from '../../components/ProjectBanner';
 import ProjectShowcase from '../../components/Project/ProjectShowcase';
 import ProjectInfo from '../../components/Project/ProjectInfo';
-import Status from '../../components/Status';
 import ProjectPages from '../../components/Project/ProjectPages';
 import ProjectUserflow from '../../components/Project/ProjectUserflow';
 import ProjectBlocks from '../../components/Project/ProjectBlocks';
+import ProjectFooter from '../../components/Project/ProjectFooter';
+import Status from '../../components/Status';
 
 import Projects from '../../api/projects';
 import './index.scss';
@@ -35,6 +36,7 @@ export default function ProjectPage(): JSX.Element {
         </div>
         <div className="ProjectHero-info">
           <div className="ProjectHero-name">{data.title}</div>
+          <div className="ProjectHero-year">{data.year}</div>
           <div className="ProjectHero-status">
             <Status />
           </div>
@@ -90,6 +92,8 @@ export default function ProjectPage(): JSX.Element {
           />
         ))
       }
+
+      <ProjectFooter />
     </div>
   )
 }

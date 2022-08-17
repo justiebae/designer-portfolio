@@ -25,6 +25,12 @@
     border-radius: scale(150);
   }
 
+  @include mobile {
+    min-width: scale(320);
+    max-width: scale(320);
+    height: scale(320);
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -87,6 +93,10 @@
   &-curves {
     width: scale(178);
     height: scale(22);
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &-head {
@@ -122,6 +132,10 @@
     @include desktop {
       font-size: scale(20);
       margin-bottom: scale(20);
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 }

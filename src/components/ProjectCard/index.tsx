@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import ProjectBanner from '../ProjectBanner';
+import Icon from '../Icon';
 
 import './index.scss';
 
@@ -29,7 +30,13 @@ export default function ProjectCard(
           <ProjectBanner cover={cover} year={year} transparent={transparent} />
         </div>
         <div className="ProjectCard-content">
-          <div className="ProjectCard-title">{title}</div>
+          <div className="ProjectCard-head">
+            <div className="ProjectCard-title">{title}</div>
+            <div className="ProjectCard-arrow">
+              <Icon name="arrowIcon" />
+            </div>
+          </div>
+          <div className="ProjectCard-year">{year}</div>
           <div className="ProjectCard-description">{desription}</div>
           {role && <div className="ProjectCard-role">{role}</div>}
         </div>

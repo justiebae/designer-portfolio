@@ -2,6 +2,8 @@
 @import '../../styles/common/mixins.scss';
 
 .ContactsPage {
+  $component: &;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +19,10 @@
     @include desktop {
       margin-top: auto;
     }
+
+    @include mobile {
+      margin-top: auto;
+    }
   }
 
   &-subtitle {
@@ -25,45 +31,82 @@
     @include desktop {
       margin-bottom: scale(30);
     }
+
+    @include mobile {
+      text-align: center;
+      margin-bottom: scale(30);
+      max-width: scale(230);
+    }
   }
 
   &-heading {
     position: relative;
     margin-bottom: scale(30);
+
+    @include mobile {
+      margin-bottom: scale(20);
+    }
   }
 
   &-stars {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: scale(60);
 
     &--left {
       bottom: scale(-30);
       left: scale(-70);
       align-items: flex-start;
+
+      @include mobile {
+        left: scale(0);
+        bottom: scale(-20);
+      }
+
+      #{$component}-star--filled {
+        display: none;
+      }
     }
 
     &--right {
       top: scale(-30);
       right: scale(-70);
       align-items: flex-end;
+
+      @include mobile {
+        right: scale(0);
+        top: scale(-40);
+      }
     }
   }
 
   &-star {
     &:first-child {
       margin-bottom: scale(16);
+
+      @include mobile {
+        margin-bottom: scale(8);
+      }
     }
 
     &--outlined {
       width: scale(43);
       height: scale(43);
+
+      @include mobile {
+        width: scale(24);
+        height: scale(24);
+      }
     }
 
     &--filled {
       width: scale(20);
       height: scale(20);
+
+      @include mobile {
+        width: scale(11);
+        height: scale(11);
+      }
     }
   }
 
@@ -78,11 +121,19 @@
       bottom: scale(24);
       height: scale(2);
       background-color: $c-black;
+
+      @include mobile {
+        content: none;
+      }
     }
 
     span {
       background-color: $c-gray;
       position: relative;
+
+      @include mobile {
+        background-color: none;
+      }
     }
   }
 
@@ -92,6 +143,7 @@
     font-family: $ff-m;
     text-transform: uppercase;
     color: $c-black;
+    font-size: scale(16);
 
     svg {
       margin-left: scale(5);
@@ -110,6 +162,10 @@
     color: $c-black;
     font-family: $ff-m;
     font-size: scale(18);
+
+    @include mobile {
+      font-size: scale(14);
+    } 
 
     &Icon {
       margin-right: scale(10);

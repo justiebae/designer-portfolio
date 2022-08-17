@@ -7,7 +7,7 @@ import ThemeContext from '../../context/ThemeContext';
 import './index.scss';
 
 export default function NotFoundPage(): JSX.Element {
-  const { setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     setTheme('black');
@@ -18,7 +18,7 @@ export default function NotFoundPage(): JSX.Element {
   }, []);
 
   return (
-    <div className="NotFoundPage Container Page">
+    <div className="NotFoundPage Page">
       <div className="NotFoundPage-title">
         <Icon name="notFound" />
       </div>
@@ -28,13 +28,47 @@ export default function NotFoundPage(): JSX.Element {
         такой страницы не существует, вернитесь на главную :)
       </div>
       <div className="NotFoundPage-link">
-        <CircleButton theme="white" path="/">
+        <CircleButton theme={theme} path="/">
           вернуться 
           <br />
           на главную
         </CircleButton>
       </div>
-      <Icon name="spaceMap" />
+      <div className="NotFoundPage-stars">
+        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--first">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--second">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--third">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--fourth">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--fifth">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--sixth">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--seventh">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--eighth">
+          <Icon name="angleStar" />
+        </div>
+        <div className="NotFoundPage-multiStar NotFoundPage-multiStar--first">
+          <Icon name="multiStar" />
+        </div>
+        <div className="NotFoundPage-multiStar NotFoundPage-multiStar--second">
+          <Icon name="multiStar" />
+        </div>
+        <div className="NotFoundPage-multiStar NotFoundPage-multiStar--third">
+          <Icon name="multiStar" />
+        </div>
+      </div>
     </div>
   )
 }
