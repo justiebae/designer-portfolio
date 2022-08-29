@@ -1,17 +1,81 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Elastic, gsap } from 'gsap';
+import anime from 'animejs/lib/anime.es.js';
 
 import CircleButton from '../../components/CircleButton';
 import Icon from '../../components/Icon';
 
 import './index.scss';
 
+
 export default function HomePage(): JSX.Element {
+  const el = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const q = gsap.utils.selector(el);
+
+  useEffect(() => {
+    gsap.from(q('.HomePage-title'), 1.5, {
+      y: 500,
+      ease: 'power4.out',
+      delay: 0.6,
+      skewY: 20,
+      stagger: {
+        amount: 0.4
+      }
+    });
+
+    gsap.from(q('.HomePage-desriptionText'), 1, {
+      y: 150,
+      ease: 'power4.out',
+      delay: 1.2,
+      skewY: 20,
+      stagger: {
+        amount: 0.4
+      }
+    });
+
+    gsap.from(q('.HomePage-footer'), 1, {
+      opacity: 0,
+      y: 60,
+      ease: 'power4.out',
+      delay: 2
+    });
+
+    gsap.from(q('.CircleButton'), 1.5, {
+      delay: 2,
+      scale: 0,
+      ease: Elastic.easeOut
+    });
+
+    anime({
+      targets: 'path',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutCubic',
+      duration: 2000,
+      autoplay: true,
+      opacity: [0, 1],
+      delay: 1000
+    });
+  }, []);
+
   return (
-    <div className="HomePage Container Page">
+    <div className="HomePage Container Page" ref={el}>
       <div className="HomePage-body">
-        <div className="HomePage-title Title">UI/UX Designer</div>
+        <div className="HomePage-row">
+          <div className="HomePage-title Title">
+            UI/UX Designer
+          </div>
+        </div>
         <div className="HomePage-description">
-          Анализирую, проектирую и графически прорабатываю пользовательские интерфейсы различной сложности
+          <div className="HomePage-row">
+            <div className="HomePage-desriptionText">
+              Анализирую, проектирую и графически прорабатываю пользовательские
+            </div>
+          </div>
+          <div className="HomePage-row">
+            <div className="HomePage-desriptionText">
+              интерфейсы различной сложности
+            </div>
+          </div>
         </div>
         <div className="HomePage-signature">
           <Icon name="signature" />   

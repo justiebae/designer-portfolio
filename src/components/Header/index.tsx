@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
+import { gsap } from 'gsap';
 
 import Icon from '../Icon/index';
 import MobileNavigation from '../MobileNavigation';
@@ -34,6 +35,13 @@ export default function Header(): JSX.Element {
   }, []);
 
   useEffect(() => {
+    gsap.from(headerRef.current, 1.2, {
+      opacity: 0,
+      y: 60,
+      ease: 'power4.out',
+      delay: 1.8
+    });
+    
     setMobileMenuVisible(false);
   }, [location]);
 
