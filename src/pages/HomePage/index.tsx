@@ -1,16 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { Elastic, gsap } from 'gsap';
+import React, { useEffect } from 'react';
+import { gsap, Elastic } from 'gsap';
 import anime from 'animejs/lib/anime.es.js';
 
 import CircleButton from '../../components/CircleButton';
 import Icon from '../../components/Icon';
 
+import useGSAPSelector from '../../hooks/useGSAPSelector';
 import './index.scss';
 
-
 export default function HomePage(): JSX.Element {
-  const el = useRef() as React.MutableRefObject<HTMLDivElement>;
-  const q = gsap.utils.selector(el);
+  const { q, el } = useGSAPSelector();
 
   useEffect(() => {
     gsap.from(q('.HomePage-title'), 1.5, {
@@ -40,8 +39,8 @@ export default function HomePage(): JSX.Element {
       delay: 2
     });
 
-    gsap.from(q('.CircleButton'), 1.5, {
-      delay: 2,
+    gsap.from(q('.CircleButton'), 1.7, {
+      delay: 2.8,
       scale: 0,
       ease: Elastic.easeOut
     });

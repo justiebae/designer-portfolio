@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, useContext } from 'react';
 import classNames from 'classnames';
+import { gsap, Elastic } from 'gsap';
 
 import RoundedImage from '../../components/RoundedPicture';
 import Background from '../../components/Background';
@@ -8,6 +9,7 @@ import Icon from '../../components/Icon';
 
 import ThemeContext from '../../context/ThemeContext';
 import useScreenWidth from '../../hooks/useScreenWidth';
+import useGSAPSelector from '../../hooks/useGSAPSelector';
 import about from '../../data/about';
 import './index.scss';
 
@@ -18,7 +20,65 @@ export default function AboutPage(): JSX.Element {
   const ThirdHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const headingRefs = [FirstHeadingRef, SecondHeadingRef, ThirdHeadingRef];
   const { theme, setTheme } = useContext(ThemeContext);
+  
   const screenWidth = useScreenWidth();
+  const { q, el } = useGSAPSelector();
+
+  useEffect(() => {
+    gsap.from(q('.AboutPage-title'), 1.5, {
+      y: 500,
+      ease: 'power4.out',
+      delay: 0.6,
+      skewY: 20,
+      stagger: {
+        amount: 0.4
+      }
+    });
+
+    gsap.from(q('.AboutPage-text'), 1.5, {
+      y: 200,
+      ease: 'power4.out',
+      delay: 1.2,
+      skewY: 10,
+      stagger: {
+        amount: 0.8
+      }
+    });
+
+    gsap.to(q('.AboutPage-pictureCover'), 1.2, {
+      height: 0,
+      ease: 'power4.out',
+      delay: 1,
+      stagger: {
+        amount: 0.8
+      }
+    });
+
+    gsap.from(q('.Hint'), 1.3, {
+      y: 150,
+      ease: 'power4.out',
+      delay: 0.8,
+      skewY: 10,
+      stagger: {
+        amount: 0.8
+      }
+    });
+
+    gsap.from(q('.RoundedPicture-star'), 1.7, {
+      delay: 1.2,
+      scale: 0,
+      ease: Elastic.easeOut,
+      stagger: {
+        amount: 0.8
+      }
+    });
+
+    gsap.from(q('.CircleButton'), 1.7, {
+      delay: 1.8,
+      scale: 0,
+      ease: Elastic.easeOut
+    });
+  }, [])
 
   useEffect(() => {
     if (currentId === 2) {
@@ -91,6 +151,7 @@ export default function AboutPage(): JSX.Element {
       <div className={classes}>
         {about[currentId]['images']?.map(({id, path, stars}) =>
           <div className='AboutPage-picture' key={id}>
+            <div className="AboutPage-pictureCover"></div>
             <RoundedImage path={path} stars={stars} />
           </div>
         )}
@@ -138,27 +199,31 @@ export default function AboutPage(): JSX.Element {
   }
 
   return (
-    <div className={`AboutPage AboutPage--current-${currentId} Page`}>
+    <div className={`AboutPage AboutPage--current-${currentId} Page`} ref={el}>
       <div className="AboutPage-wrapper Container">
         <div className="AboutPage-head">
           <div className="AboutPage-row">
-            <div
-              className="AboutPage-title AboutPage-title--first Title-second"
-              ref={FirstHeadingRef}
-              data-id="1"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Дизайн,
+            <div className="AboutPage-hidden">
+              <div
+                className="AboutPage-title AboutPage-title--first Title-second"
+                ref={FirstHeadingRef}
+                data-id="1"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                Дизайн,
+              </div>
             </div>
             <div className="AboutPage-pictures">
               {renderPictures()}
             </div>
-            <div className="AboutPage-hint">
-              {renderHint()}
+            <div className="AboutPage-hidden">
+              <div className="AboutPage-hint">
+                {renderHint()}
+              </div>
             </div>
           </div>
-          <div className="AboutPage-row">
+          <div className="AboutPage-row AboutPage-hidden">
             <span
               className="AboutPage-title AboutPage-title--second AboutPage-title--black Title-second"
               data-id="2"
@@ -180,11 +245,13 @@ export default function AboutPage(): JSX.Element {
           </div>
         </div>
         <div className="AboutPage-body">
-          <div className="AboutPage-mobileHint">
+          <div className="AboutPage-mobileHint AboutPage-hidden">
             {renderHint()}
           </div>
-          <div className="AboutPage-text">
-            {renderText()}
+          <div className="AboutPage-hidden">
+            <div className="AboutPage-text">
+              {renderText()}
+            </div>
           </div>
           <div className="AboutPage-link">
             <CircleButton path="/projects" theme={theme}>Посмотреть портфолио</CircleButton>
