@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
@@ -7,17 +8,16 @@ import { gsap } from 'gsap';
 import Icon from '../Icon/index';
 import MobileNavigation from '../MobileNavigation';
 
-import ThemeContext from '../../context/ThemeContext';
 import { links, telegram } from '../../data/links';
 import './index.scss';
 
 export default function Header(): JSX.Element {
-  const { theme } = useContext(ThemeContext);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(true);
   const headerRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const location = useLocation();
+  const theme = useSelector((state: any) => state.theme.theme);
 
   useEffect(() => {
     const cb = () => {

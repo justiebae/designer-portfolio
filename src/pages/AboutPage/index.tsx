@@ -1,4 +1,6 @@
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTheme } from '../../store/slices/themeSlice';
 import classNames from 'classnames';
 import { gsap, Elastic } from 'gsap';
 
@@ -7,7 +9,6 @@ import Background from '../../components/Background';
 import CircleButton from '../../components/CircleButton';
 import Icon from '../../components/Icon';
 
-import ThemeContext from '../../context/ThemeContext';
 import useScreenWidth from '../../hooks/useScreenWidth';
 import useGSAPSelector from '../../hooks/useGSAPSelector';
 import about from '../../data/about';
@@ -19,7 +20,9 @@ export default function AboutPage(): JSX.Element {
   const SecondHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const ThirdHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const headingRefs = [FirstHeadingRef, SecondHeadingRef, ThirdHeadingRef];
-  const { theme, setTheme } = useContext(ThemeContext);
+  
+  const theme = useSelector((state: any) => state.theme.theme);
+  const dispatch = useDispatch();
   
   const screenWidth = useScreenWidth();
   const { q, el } = useGSAPSelector();
@@ -82,11 +85,11 @@ export default function AboutPage(): JSX.Element {
 
   useEffect(() => {
     if (currentId === 2) {
-      setTheme('black')
+      dispatch(setTheme({ theme: 'black' }))
     }
 
     return () => {
-      setTheme('default')
+      dispatch(setTheme({ theme: 'default' }))
     }
   }, [currentId])
 

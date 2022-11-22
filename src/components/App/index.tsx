@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import BaseLayout from '../../layouts/BaseLayout';
 import HomePage from '../../pages/HomePage';
@@ -8,34 +9,27 @@ import ContactsPage from '../../pages/ContactsPage';
 import ProjectsPage from '../../pages/ProjectsPage';
 import ProjectPage from '../../pages/ProjectPage';
 import NotFoundPage from '../../pages/NotFoundPage';
-import ThemeContext from '../../context/ThemeContext';
 
 import './index.scss';
 
 function App(): JSX.Element {
-  const [theme, setTheme] = useState('default');
-  const value = useMemo(
-    () => ({ theme, setTheme }), 
-    [theme]
-  );
+  const theme = useSelector((state: any) => state.theme.theme);
 
   return (
-    <ThemeContext.Provider value={value}>
-      <div className={`App App--${theme}`}>
-        <Routes>
-          <Route path="/" element={<BaseLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="contacts" element={<ContactsPage />} />
-            <Route path="projects">
-              <Route index element={<ProjectsPage />} />
-              <Route path=":slug" element={<ProjectPage />} />
-            </Route>
-            <Route path="*" element={<NotFoundPage />} />
+    <div className={`App App--${theme}`}>
+      <Routes>
+        <Route path="/" element={<BaseLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="projects">
+            <Route index element={<ProjectsPage />} />
+            <Route path=":slug" element={<ProjectPage />} />
           </Route>
-        </Routes>
-      </div>
-    </ThemeContext.Provider>
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
