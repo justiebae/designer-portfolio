@@ -76,10 +76,10 @@ export default function AboutPage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.circle-button'), 1.7, {
+    gsap.from(q('.circle-button'), 1.8, {
       delay: 1.8,
       scale: 0,
-      ease: Elastic.easeOut
+      ease: Elastic.easeOut.config(0.3, 0.2),
     });
   }, [])
 

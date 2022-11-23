@@ -55,10 +55,10 @@ export default function ProjectsPage(): JSX.Element {
 
   if (screenWidth < 768) {
     return (
-      <div className='ProjectsPage Page'>
-        <div className="ProjectsPage-cards">
+      <div className='project-page page'>
+        <div className="project-page__cards">
           {projects.map(({id, title, description, year, role, path, cover}) => 
-            <div className='ProjectsPage-card' key={id}>
+            <div className='project-pagecard' key={id}>
               <ProjectCard
                 title={title}
                 desription={description}
@@ -70,13 +70,13 @@ export default function ProjectsPage(): JSX.Element {
             </div>
           )}
         </div>
-        <div className="ProjectsPage-more">
-          <div className="ProjectMore">
-            <div className="ProjectMore-icon">
+        <div className="project-pagemore">
+          <div className="project-more">
+            <div className="project-more__icon">
               <Icon name="penIcon" />
             </div>
-            <div className="ProjectMore-title">Дальше больше</div>
-            <div className="ProjectMore-description">В скором времени тут появятся новые проекты</div>
+            <div className="project-more__title">Дальше больше</div>
+            <div className="project-more__description">В скором времени тут появятся новые проекты</div>
           </div>
         </div>
       </div>
@@ -84,8 +84,8 @@ export default function ProjectsPage(): JSX.Element {
   }
 
   return (
-    <div className="ProjectsPage Container Page">
-      <div className="ProjectsPage-slider">
+    <div className="projects-page container page">
+      <div className="projects-page__slider">
         <Swiper
           spaceBetween={100}
           slidesPerView={2.2}
@@ -95,7 +95,7 @@ export default function ProjectsPage(): JSX.Element {
           modules={[Scrollbar]}
         >
           {renderProjects()}
-          <div className="ProjectsPage-amount">
+          <div className="projects-page__amount">
             {projects.length}
             &ensp;
             {formattedWord(['проект', 'проекта', 'проектов'], projects.length)}

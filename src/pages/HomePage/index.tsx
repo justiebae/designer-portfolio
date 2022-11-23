@@ -12,7 +12,7 @@ export default function HomePage(): JSX.Element {
   const { q, el } = useGSAPSelector();
 
   useEffect(() => {
-    gsap.from(q('.HomePage-title'), 1.5, {
+    gsap.from(q('.home-page__title'), 1.5, {
       y: 500,
       ease: 'power4.out',
       delay: 0.6,
@@ -22,7 +22,7 @@ export default function HomePage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.HomePage-desriptionText'), 1, {
+    gsap.from(q('.home-page__desription-text'), 1, {
       y: 150,
       ease: 'power4.out',
       delay: 1.2,
@@ -32,17 +32,17 @@ export default function HomePage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.HomePage-footer'), 1, {
+    gsap.from(q('.home-page__footer'), 1, {
       opacity: 0,
       y: 60,
       ease: 'power4.out',
       delay: 2
     });
 
-    gsap.from(q('.CircleButton'), 1.7, {
-      delay: 2.8,
+    gsap.from(q('.circle-button'), 1.8, {
+      delay: 2.2,
       scale: 0,
-      ease: Elastic.easeOut
+      ease: Elastic.easeOut.config(0.3, 0.2),
     });
 
     anime({

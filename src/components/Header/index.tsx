@@ -20,6 +20,13 @@ export default function Header(): JSX.Element {
   const theme = useSelector(getTheme);
 
   useEffect(() => {
+    gsap.from(headerRef.current, 1.2, {
+      opacity: 0,
+      y: 60,
+      ease: 'power4.out',
+      delay: 1.8
+    });
+    
     const cb = () => {
       const positionFromTop = headerRef.current.ownerDocument.defaultView?.pageYOffset || 0;
 
@@ -35,12 +42,6 @@ export default function Header(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    gsap.from(headerRef.current, 1.2, {
-      opacity: 0,
-      y: 60,
-      ease: 'power4.out',
-      delay: 1.8
-    });
     
     setMobileMenuVisible(false);
   }, [location]);

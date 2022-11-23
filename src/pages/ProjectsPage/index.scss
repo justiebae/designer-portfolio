@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.ProjectsPage {
+.projects-page {
   $component: &;
 
   display: flex;
@@ -16,7 +16,7 @@
     padding-bottom: 0 !important;
   }
 
-  &-slider {
+  &__slider {
     .swiper {
       width: 100%;
       overflow: visible;
@@ -38,7 +38,7 @@
     }
   }
 
-  &-amount {
+  &__amount {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -46,7 +46,7 @@
     font-size: scale(16);
   }
 
-  &-card {
+  &__card {
     @include mobile {
       padding: scale(20);
     }
@@ -64,7 +64,7 @@
     }
   }
 
-  &-more {
+  &__more {
     margin-top: scale(30);
     padding: {
       left: scale(20);
@@ -73,7 +73,7 @@
   }
 }
 
-.ProjectMore {
+.project-more {
   padding: scale(20) scale(40);
   border: 1px solid $c-black;
   border-bottom: none;
@@ -81,19 +81,19 @@
   flex-direction: column;
   align-items: center;
 
-  &-icon {
+  &__icon {
     width: scale(120);
     margin-bottom: scale(20);
   }
 
-  &-title {
+  &__title {
     font-family: $ff-Mak-bold;
     font-size: scale(25);
     margin-bottom: scale(10);
     text-align: center;
   }
 
-  &-description {
+  &__description {
     text-align: center;
   }
 }
