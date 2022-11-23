@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { getTheme } from '../../store/slices/themeSlice'; 
 
 import BaseLayout from '../../layouts/BaseLayout';
 import HomePage from '../../pages/HomePage';
@@ -13,7 +14,7 @@ import NotFoundPage from '../../pages/NotFoundPage';
 import './index.scss';
 
 function App(): JSX.Element {
-  const theme = useSelector((state: any) => state.theme.theme);
+  const theme = useSelector(getTheme);
 
   return (
     <div className={`App App--${theme}`}>

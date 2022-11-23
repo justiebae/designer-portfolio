@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from '../../store/slices/themeSlice';
+import { getTheme, setTheme } from '../../store/slices/themeSlice';
 
 import Icon from '../../components/Icon';
 import CircleButton from '../../components/CircleButton';
@@ -8,7 +8,7 @@ import CircleButton from '../../components/CircleButton';
 import './index.scss';
 
 export default function NotFoundPage(): JSX.Element {
-  const theme = useSelector((state: any) => state.theme.theme);
+  const theme = useSelector(getTheme);
   const dispatch = useDispatch();
   
   useEffect(() => {

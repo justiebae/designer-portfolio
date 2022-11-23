@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from '../../store/slices/themeSlice';
+import { getTheme, setTheme } from '../../store/slices/themeSlice';
 import classNames from 'classnames';
 import { gsap, Elastic } from 'gsap';
 
@@ -21,7 +21,7 @@ export default function AboutPage(): JSX.Element {
   const ThirdHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const headingRefs = [FirstHeadingRef, SecondHeadingRef, ThirdHeadingRef];
   
-  const theme = useSelector((state: any) => state.theme.theme);
+  const theme = useSelector(getTheme);
   const dispatch = useDispatch();
   
   const screenWidth = useScreenWidth();

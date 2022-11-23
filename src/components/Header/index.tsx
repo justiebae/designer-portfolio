@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { getTheme } from '../../store/slices/themeSlice'; 
+import { NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { gsap } from 'gsap';
 
@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
   const headerRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const location = useLocation();
-  const theme = useSelector((state: any) => state.theme.theme);
+  const theme = useSelector(getTheme);
 
   useEffect(() => {
     const cb = () => {
