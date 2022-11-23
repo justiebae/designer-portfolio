@@ -1,8 +1,8 @@
-.SocialLink {
+.social-link {
   display: flex;
   align-items: center;
 
-  &-text {
+  &__text {
     font-size: scale(14);
     color: $c-black;
     line-height: 1.5;
@@ -10,7 +10,7 @@
     margin-right: scale(20);
   }
 
-  &-icon {
+  &__icon {
     width: scale(50);
     height: scale(50);
     border-radius: 50%;

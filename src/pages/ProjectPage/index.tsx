@@ -29,19 +29,19 @@ export default function ProjectPage(): JSX.Element {
   }, [])
   
   return (
-    <div className="ProjectPage Page">
-      <div className="ProjectHero ProjectPage-section Container">
-        <div className="ProjectHero-banner">
+    <div className="project-page page">
+      <div className="project-hero project-page__section container">
+        <div className="project-hero__banner">
           <ProjectBanner cover={data.cover} year={data.year} />
         </div>
-        <div className="ProjectHero-info">
-          <div className="ProjectHero-name">{data.title}</div>
-          <div className="ProjectHero-year">{data.year}</div>
-          <div className="ProjectHero-status">
+        <div className="project-hero__info">
+          <div className="project-hero__name">{data.title}</div>
+          <div className="project-hero__year">{data.year}</div>
+          <div className="project-hero__status">
             <Status />
           </div>
-          <div className="ProjectHero-description">{data.description}</div>
-          <div className="ProjectHero-role ">{data.role}</div>
+          <div className="project-hero__description">{data.description}</div>
+          <div className="project-hero__role ">{data.role}</div>
         </div>
       </div>
 

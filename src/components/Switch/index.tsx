@@ -20,25 +20,25 @@ export default function Switch({
     onChange(value)
   }
 
-  const leftLabelClasses = classNames('Switch-label Switch-label--left', {
+  const leftLabelClasses = classNames('switch__label switch__label--left', {
     'active': state === false
   });
 
-  const rightLabelClasses = classNames('Switch-label Switch-label--right', {
+  const rightLabelClasses = classNames('switch__label switch__label--right', {
     'active': state === true
   });
 
-  const elementClasses = classNames('Switch-element', { 'active': state });
+  const elementClasses = classNames('switch__element', { 'active': state });
 
   return (
-    <div className="Switch">
+    <div className="switch">
       <div className={leftLabelClasses} onClick={() => click(false)} >
         {leftValue}
       </div>
       <label className={elementClasses} >
         <input 
           type="checkbox" 
-          className="Switch-input" 
+          className="switch__input" 
           checked={state} 
           onChange={() => click(!state)} 
         />

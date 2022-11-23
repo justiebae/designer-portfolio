@@ -1,20 +1,20 @@
 @import '../../../styles/common/constants';
 @import '../../../styles/common/mixins';
 
-.ProjectUserflow {
-  &-title {
+.project-userflow {
+  &__title {
     margin-bottom: scale(20);
   }
 
-  &-description {
+  &__description {
     font-size: scale(18);
   }
 
-  &-info {
+  &__info {
     margin-bottom: scale(100);
   }
 
-  &-image {
+  &__image {
     width: 100%;
 
     img {

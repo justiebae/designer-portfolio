@@ -1,7 +1,7 @@
 @import '../../styles/common/constants';
 @import '../../styles/common/mixins';
 
-.Switch {
+.switch {
   $component: &;
 
   display: flex;
@@ -18,7 +18,7 @@
     background-color: unset;
   }
 
-  &-label {
+  &__label {
     font-family: $ff-m;
     font-size: scale(16);
     color: #949494;
@@ -29,13 +29,13 @@
     }
   }
 
-  &-input {
+  &__input {
     width: 0;
     height: 0;
     opacity: 0;
   }
 
-  &-element {
+  &__element {
     position: relative;
     width: scale(43);
     height: scale(24);

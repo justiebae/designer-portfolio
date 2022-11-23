@@ -19,54 +19,54 @@ export default function NotFoundPage(): JSX.Element {
   }, []);
 
   return (
-    <div className="NotFoundPage Page">
-      <div className="NotFoundPage-title">
+    <div className="not-found-page page">
+      <div className="not-found-page__title">
         <Icon name="notFound" />
       </div>
-      <div className="NotFoundPage-message">
+      <div className="not-found-page__message">
         Совсем пусто, ничего нет...
         <br />
         такой страницы не существует, вернитесь на главную :)
       </div>
-      <div className="NotFoundPage-link">
+      <div className="not-found-page__link">
         <CircleButton theme={theme} path="/">
           вернуться 
           <br />
           на главную
         </CircleButton>
       </div>
-      <div className="NotFoundPage-stars">
-        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--first">
+      <div className="not-found-page__stars">
+        <div className="not-found-page__star not-found-page__star--white not-found-page__star--first">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--second">
+        <div className="not-found-page__star not-found-page__star--brown not-found-page__star--second">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--third">
+        <div className="not-found-page__star not-found-page__star--white not-found-page__star--third">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--fourth">
+        <div className="not-found-page__star not-found-page__star--white not-found-page__star--fourth">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--fifth">
+        <div className="not-found-page__star not-found-page__star--brown not-found-page__star--fifth">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--sixth">
+        <div className="not-found-page__star not-found-page__star--brown not-found-page__star--sixth">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--white NotFoundPage-star--seventh">
+        <div className="not-found-page__star not-found-page__star--white not-found-page__star--seventh">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-star NotFoundPage-star--brown NotFoundPage-star--eighth">
+        <div className="not-found-page__star not-found-page__star--brown not-found-page__star--eighth">
           <Icon name="angleStar" />
         </div>
-        <div className="NotFoundPage-multiStar NotFoundPage-multiStar--first">
+        <div className="not-found-page__multi-star not-found-page__multi-star--first">
           <Icon name="multiStar" />
         </div>
-        <div className="NotFoundPage-multiStar NotFoundPage-multiStar--second">
+        <div className="not-found-page__multi-star not-found-page__multi-star--second">
           <Icon name="multiStar" />
         </div>
-        <div className="NotFoundPage-multiStar NotFoundPage-multiStar--third">
+        <div className="not-found-page__multi-star not-found-page__multi-star--third">
           <Icon name="multiStar" />
         </div>
       </div>

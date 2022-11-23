@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.NotFoundPage {
+.not-found-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@
       center / 150% no-repeat url('../../assets/images/dots.svg');
   }
 
-  &-title {
+  &__title {
     margin: scale(120) 0 scale(50);
     position: relative;
 
@@ -36,7 +36,7 @@
     }
   }
 
-  &-message {
+  &__message {
     color: $c-gray;
     text-align: center;
     margin-bottom: scale(100);
@@ -49,12 +49,12 @@
     }
   }
 
-  &-link {
+  &__link {
     position: relative;
     z-index: 1;
   }
 
-  &-star {
+  &__star {
     position: absolute;
     width: scale(18);
     height: scale(18);
@@ -157,7 +157,7 @@
     }
   }
 
-  &-multiStar {
+  &__multi-star {
     width: scale(72);
     position: absolute;
 

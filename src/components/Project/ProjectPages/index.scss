@@ -1,10 +1,10 @@
 @import '../../../styles/common/constants';
 @import '../../../styles/common/mixins';
 
-.ProjectPages {
+.project-pages {
   background-color: $c-black;
 
-  &-wrapper {
+  &__wrapper {
     display: flex;
     justify-content: space-between;
 
@@ -15,7 +15,7 @@
     }
   }
 
-  &-info {
+  &__info {
     padding: scale(60) 0 scale(40);
 
     @include mobile {
@@ -24,7 +24,7 @@
     }
   }
 
-  &-title {
+  &__title {
     color: $c-white;
     font-family: $ff-Mak-light;
     font-size: scale(150);
@@ -36,7 +36,7 @@
     }
   }
 
-  &-description {
+  &__description {
     color: $c-white;
     font-size: scale(18);
     margin-bottom: scale(30);
@@ -48,7 +48,7 @@
     }
   }
 
-  &-image {
+  &__image {
     display: flex;
 
     img {

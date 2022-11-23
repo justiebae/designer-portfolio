@@ -21,24 +21,24 @@ export default function ProjectCard(
   { path, cover, year, title, desription, role, transparent  }: IProductCardProps
 ): JSX.Element {
 
-  const cardClasses = classNames('ProjectCard', { 'ProjectCard--transparent': transparent })
+  const cardClasses = classNames('project-card', { 'project-card--transparent': transparent })
 
   const renderContent = () => {
     return (
       <>
-        <div className="ProjectCard-cover">
+        <div className="project-card__cover">
           <ProjectBanner cover={cover} year={year} transparent={transparent} />
         </div>
-        <div className="ProjectCard-content">
-          <div className="ProjectCard-head">
-            <div className="ProjectCard-title">{title}</div>
-            <div className="ProjectCard-arrow">
+        <div className="project-card__content">
+          <div className="project-card__head">
+            <div className="project-card__title">{title}</div>
+            <div className="project-card__arrow">
               <Icon name="arrowIcon" />
             </div>
           </div>
-          <div className="ProjectCard-year">{year}</div>
-          <div className="ProjectCard-description">{desription}</div>
-          {role && <div className="ProjectCard-role">{role}</div>}
+          <div className="project-card__year">{year}</div>
+          <div className="project-card__description">{desription}</div>
+          {role && <div className="project-card__role">{role}</div>}
         </div>
       </>
     )

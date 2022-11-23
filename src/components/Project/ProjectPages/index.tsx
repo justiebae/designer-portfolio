@@ -10,13 +10,13 @@ interface IProjectPages {
 
 export default function ProjectPages({ text, amount, image }: IProjectPages) {
   return (
-    <div className="ProjectPages ProjectPage-section">
-      <div className="ProjectPages-wrapper Container">
-        <div className="ProjectPages-info">
-          <div className="ProjectPages-description">{text}</div>
-          <div className="ProjectPages-title">{amount}</div>
+    <div className="project-pages project-page__section">
+      <div className="project-pages__wrapper container">
+        <div className="project-pages__info">
+          <div className="project-pages__description">{text}</div>
+          <div className="project-pages__title">{amount}</div>
         </div>
-        <div className="ProjectPages-image">
+        <div className="project-pages__image">
           <img src={image} alt="" />
         </div>
       </div>

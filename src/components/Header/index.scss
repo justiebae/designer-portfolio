@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.Header {
+.header {
   $component: &;
 
   position: fixed;
@@ -22,25 +22,25 @@
   }
 
   &--black {
-    #{$component}-logo,
-    #{$component}-text,
-    #{$component}-social {
+    #{$component}__logo,
+    #{$component}__text,
+    #{$component}__social {
       color: $c-gray;
     }
 
-    #{$component}-star {
+    #{$component}__star {
       path {
         fill: $c-gray;
       }
     }
 
-    #{$component}-icon {
+    #{$component}__icon {
       path {
         stroke: $c-gray;
       }
     }
 
-    #{$component}-buttonLine {
+    #{$component}__button-line {
       background-color: $c-white;
     }
   }
@@ -51,13 +51,13 @@
     padding: scale(20) 0;
     border-color: #DADADA;
 
-    &.Header--black {
+    &.header--black {
       background-color: rgba($c-black, 0.5);
       border-color: #3f3f3f;
     }
   }
 
-  &-container {
+  &__container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-gap: scale(10);
@@ -67,7 +67,7 @@
     }
   }
 
-  &-column {
+  &__column {
     display: flex;
     align-items: center;
 
@@ -80,14 +80,14 @@
     }
   }
 
-  &-navigation,
-  &-socials {
+  &__navigation,
+  &__socials {
     @include mobile {
       display: none;
     }
   }
 
-  &-logo {
+  &__logo {
     color: $c-black;
     font-family: $ff-b;
     text-transform: uppercase;
@@ -95,20 +95,20 @@
     font-size: scale(16);
   }
 
-  &-link {
+  &__link {
     display: flex;
     align-items: center;
     color: $c-black;
 
     &:last-child {
-      #{$component}-star {
+      #{$component}__star {
         display: none;
       }
     }
 
     @include hover {
       &:hover:not(.active) {
-        #{$component}-icon {
+        #{$component}__icon {
           opacity: 1;
 
           path {
@@ -119,13 +119,13 @@
     }
 
     &.active {
-      #{$component}-icon {
+      #{$component}__icon {
         opacity: 1;
       }
     }
   }
 
-  &-star {
+  &__star {
     display: flex;
     margin: 0 scale(20);
 
@@ -135,7 +135,7 @@
     }
   }
 
-  &-text {
+  &__text {
     font-family: $ff-m;
     color: $c-black;
     text-transform: uppercase;
@@ -143,7 +143,7 @@
     transition: color ease $d-hover;
   }
 
-  &-icon {
+  &__icon {
     position: absolute;
     left: scale(10);
     top: 50%;
@@ -162,7 +162,7 @@
     }
   }
 
-  &-social {
+  &__social {
     font-family: $ff-m;
     color: $c-black;
     position: relative;
@@ -178,7 +178,7 @@
 
     @include hover {
       &:hover {
-        #{$component}-icon {
+        #{$component}__icon {
           opacity: 1;
 
           path {
@@ -189,7 +189,7 @@
     }
   }
 
-  &-mobile {
+  &__mobile {
     display: none;
 
     @include mobile {
@@ -197,7 +197,7 @@
     }
   }
 
-  &-button {
+  &__button {
     width: scale(33);
     height: scale(33);
     display: flex;
@@ -207,7 +207,7 @@
     grid-gap: scale(5);
 
     &--active {
-      #{$component}-buttonLine {
+      #{$component}__button-line {
         &:first-child {
           transform: rotate(45deg) translate(scale(3), scale(3));
         }
@@ -217,13 +217,13 @@
         }
       }
     }
-
-    &Line {
-      width: 100%;
-      height: scale(2);
-      background-color: $c-black;
-      transition: transform ease $d-hover;
-    }
+  }
+  
+  &__button-line {
+    width: 100%;
+    height: scale(2);
+    background-color: $c-black;
+    transition: transform ease $d-hover;
   }
 }
 

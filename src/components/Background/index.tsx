@@ -18,9 +18,9 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
           (
             <div 
               className={[
-                'Background-circle', 
-                size && `Background-circle--${size}`, 
-                `Background-circle--${name}`
+                'background__circle', 
+                size && `background__circle--${size}`, 
+                `background__circle--${name}`
               ].join(' ')}
               key={name}
             >
@@ -35,52 +35,52 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
   const renderSpace = () => {
     return (
       <>
-        <div className="Background-spaceMap">
+        <div className="background__space-map">
           <Icon name="spaceMap" />
         </div>
-        <div className="Background-multiStar">
+        <div className="background__multi-star">
           <Icon name="multiStar" />
         </div>
-        <div className="Background-moon">
+        <div className="background__moon">
           <Icon name="moon" />
         </div>
-        <div className="Background-saturn">
+        <div className="background__saturn">
           <Icon name="saturn" />
         </div>
-        <div className="Background-neptun">
+        <div className="background__neptun">
           <Icon name="neptun" />
         </div>
-        <div className="Background-filledStar Background-filledStar--first">
+        <div className="background__filled-star background__filledStar--first">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--second Background-filledStar--white">
+        <div className="background__filled-star background__filled-star--second background__filled-star--white">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--third">
+        <div className="background__filled-star background__filled-star--third">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--fourth Background-filledStar--white">
+        <div className="background__filled-star background__filled-star--fourth background__filled-star--white">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--fifth Background-filledStar--white">
+        <div className="background__filled-star background__filled-star--fifth background__filled-star--white">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--sixth">
+        <div className="background__filled-star background__filled-star--sixth">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--seventh Background-filledStar--white">
+        <div className="background__filled-star background__filled-star--seventh background__filled-star--white">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--eihgth">
+        <div className="background__filled-star background__filled-star--eihgth">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--ninth Background-filledStar--white">
+        <div className="background__filled-star background__filled-star--ninth background__filled-star--white">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-filledStar Background-filledStar--tenth">
+        <div className="background__filled-star background__filled-star--tenth">
           <Icon name="angleStar" />
         </div>
-        <div className="Background-stars">
+        <div className="background__stars">
           <img src={backgroundImg} alt="" />
         </div>
       </>
@@ -90,13 +90,13 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
   const renderDevices = () => {
     return (
       <>
-        <div className="Background-device Background-keyboard">
+        <div className="background__device background__keyboard">
           <Icon name="keyboard" />
         </div>
-        <div className="Background-device Background-headphones">
+        <div className="background__device background__headphones">
           <Icon name="headphones" />
         </div>
-        <div className="Background-device Background-mouse">
+        <div className="background__device background__mouse">
           <Icon name="mouse" />
         </div>
       </>
@@ -117,7 +117,7 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
   }
 
   return (
-    <div className="Background">
+    <div className="background">
         {render()}
     </div>
   )

@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.ContactsPage {
+.contacts-page {
   $component: &;
 
   display: flex;
@@ -10,7 +10,7 @@
   flex: 1;
   padding-bottom: scale(50);
 
-  &-body {
+  &__body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@
     }
   }
 
-  &-subtitle {
+  &__subtitle {
     margin-bottom: scale(50);
 
     @include desktop {
@@ -39,7 +39,7 @@
     }
   }
 
-  &-heading {
+  &__heading {
     position: relative;
     margin-bottom: scale(30);
 
@@ -48,7 +48,7 @@
     }
   }
 
-  &-stars {
+  &__stars {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
         bottom: scale(-20);
       }
 
-      #{$component}-star--filled {
+      #{$component}__star--filled {
         display: none;
       }
     }
@@ -80,7 +80,7 @@
     }
   }
 
-  &-star {
+  &__star {
     &:first-child {
       margin-bottom: scale(16);
 
@@ -110,7 +110,7 @@
     }
   }
 
-  &-title {
+  &__title {
     position: relative;
 
     &:before {
@@ -137,7 +137,7 @@
     }
   }
 
-  &-link {
+  &__link {
     display: flex;
     align-items: center;
     font-family: $ff-m;
@@ -152,11 +152,11 @@
     }
   }
 
-  &-footer {
+  &__footer {
     margin-top: auto;
   }
 
-  &-mail {
+  &__mail {
     display: flex;
     align-items: center;
     color: $c-black;
@@ -166,14 +166,14 @@
     @include mobile {
       font-size: scale(14);
     } 
+  }
 
-    &Icon {
-      margin-right: scale(10);
-      display: flex;
-  
-      svg {
-        width: scale(24);
-      }
+  &__mail-icon {
+    margin-right: scale(10);
+    display: flex;
+
+    svg {
+      width: scale(24);
     }
   }
 }

@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.CircleButton {
+.circle-button {
   $component: &;
 
   width: scale(225);
@@ -51,12 +51,12 @@
       border-color: $c-black;
     }
 
-    #{$component}-text {
+    #{$component}__text {
       color: $c-black;
     }
   }
 
-  &-text {
+  &__text {
     color: $c-white;
     font-family: $ff-b;
     font-size: scale(18);

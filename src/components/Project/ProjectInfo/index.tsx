@@ -11,17 +11,17 @@ interface IProjectInfo {
 
 export default function ProjectInfo({ goals, tasks }: IProjectInfo) {
   return (
-    <div className="ProjectInfo ProjectPage-section Container">
-      <div className="ProjectInfo-section">
-        <div className="ProjectInfo-title ProjectPage-title">Цели</div>
-        <div className="ProjectInfo-description">{goals}</div>
+    <div className="project-info project-info__section container">
+      <div className="project-info__section">
+        <div className="project-info__title project-page__title">Цели</div>
+        <div className="project-info__description">{goals}</div>
       </div>
-      <div className="ProjectInfo-section">
-        <div className="ProjectInfo-title ProjectPage-title">Задачи</div>
-        <ul className="ProjectInfo-list">
+      <div className="project-info__section">
+        <div className="project-info__title project-page__title">Задачи</div>
+        <ul className="project-info__list">
           {
             tasks.map((task, index) => (
-              <li className='ProjectInfo-listItem' key={index}>
+              <li className='project-info__list-item' key={index}>
                 <Icon name="outlinedStar" /> {task}
               </li>
             ))

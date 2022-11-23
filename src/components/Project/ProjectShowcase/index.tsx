@@ -22,11 +22,11 @@ export default function ProjectShowcase(
 
   if (variant === 'full')
     return (
-      <div className="ProjectShowcase ProjectPage-section">
-        <div className="ProjectShowcase-banner">
-          <img src={currentImage} alt="" className="ProjectShowcase-image" />
+      <div className="project-showcase project-page__section">
+        <div className="project-showcase__banner">
+          <img src={currentImage} alt="" className="project-showcase__image" />
         </div>
-        <div className="ProjectShowcase-switch Container">
+        <div className="project-showcase__switch container">
           <Switch 
             leftValue="Дизайн"
             rightValue="Прототип"
@@ -38,10 +38,10 @@ export default function ProjectShowcase(
     )
 
   return (
-    <div className="ProjectShowcase ProjectPage-section Container">
-      <div className="ProjectPage-heading">
-        <div className="ProjectPage-headingText">Главная страница</div>
-        <div className="ProjectPage-headingAside">
+    <div className="project-showcase project-page__section container">
+      <div className="project-page__heading">
+        <div className="project-page__heading-text">Главная страница</div>
+        <div className="project-page__heading-aside">
           <Switch 
             leftValue="Дизайн"
             rightValue="Прототип"
@@ -50,8 +50,8 @@ export default function ProjectShowcase(
           />
         </div>
       </div>
-      <div className="ProjectShowcase-banner">
-        <img src={currentImage} alt="" className="ProjectShowcase-image" />
+      <div className="project-showcase__banner">
+        <img src={currentImage} alt="" className="project-showcase__image" />
       </div>
     </div>
   )

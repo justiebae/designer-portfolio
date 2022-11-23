@@ -12,32 +12,32 @@ interface IBanner {
 }
 
 export default function ProjectBanner({ cover, year, transparent }: IBanner) {
-  const bannerClasses = classNames('ProjectBanner', { 'ProjectBanner--transparent': transparent });
+  const bannerClasses = classNames('project-banner', { 'project-banner--transparent': transparent });
 
   return (
     <div className={bannerClasses}>
-      <div className="ProjectBanner-head">
-        <div className="ProjectBanner-icons">
-          <div className="ProjectBanner-star">
+      <div className="project-banner__head">
+        <div className="project-banner__icons">
+          <div className="project-banner__star">
               <Icon name="filledStar" />
           </div>
-          <div className="ProjectBanner-curves">
+          <div className="project-banner__curves">
             <Icon name="curves" />
           </div>
         </div>
       </div>
-      <div className="ProjectBanner-bottom">
-        {year && <div className="ProjectBanner-year">{year}</div>}
-        <div className="ProjectBanner-icons">
-          <div className="ProjectBanner-star">
+      <div className="project-banner__bottom">
+        {year && <div className="project-banner__year">{year}</div>}
+        <div className="project-banner__icons">
+          <div className="project-banner__star">
               <Icon name="filledStar" />
           </div>
-          <div className="ProjectBanner-curves">
+          <div className="project-banner__curves">
             <Icon name="curves" />
           </div>
         </div>
       </div>
-      <img className="ProjectBanner-image" src={cover} alt="" />
+      <img className="project-banner__image" src={cover} alt="" />
     </div>
   )
 }

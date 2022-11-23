@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.RoundedPicture {
+.rounded-picture {
   display: flex;
   position: relative;
 
@@ -9,7 +9,7 @@
     justify-content: center;
   }
 
-  &-image {
+  &__image {
     width: scale(188);
     height: scale(220);
     overflow: hidden;
@@ -28,7 +28,7 @@
     }
   }
 
-  &-stars {
+  &__stars {
     position: absolute;
     top: scale(5);
     right: scale(-40);
@@ -48,7 +48,7 @@
     }
   }
 
-  &-star {
+  &__star {
     display: flex;
 
     &--outlined {

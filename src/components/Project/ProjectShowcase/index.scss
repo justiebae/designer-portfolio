@@ -1,10 +1,10 @@
 @import '../../../styles/common/constants';
 @import '../../../styles/common/mixins';
 
-.ProjectShowcase {
+.project-showcase {
   position: relative;
 
-  &-banner {
+  &__banner {
     position: relative;
     width: 100%;
     height: scale(840);
@@ -18,13 +18,13 @@
     }
   }
 
-  &-image {
+  &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &-switch {
+  &__switch {
     display: flex;
     position: absolute;
     bottom: scale(50);

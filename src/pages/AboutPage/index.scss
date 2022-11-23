@@ -1,7 +1,7 @@
 @import '../../styles//common/constants.scss';
 @import '../../styles//common/mixins.scss';
 
-.AboutPage {
+.about-page {
   $component: &;
 
   position: relative;
@@ -32,12 +32,12 @@
     }
   }
 
-  &-wrapper {
+  &__wrapper {
     display: flex;
     flex-direction: column;
   }
 
-  &-head {
+  &__head {
     margin: scale(70) 0 scale(30);
     position: relative;
     z-index: 1;
@@ -51,11 +51,11 @@
     }
   }
 
-  &-hidden {
+  &__hidden {
     overflow: hidden;
   }
 
-  &-row {
+  &__row {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
@@ -73,7 +73,7 @@
     }
   }
 
-  &-title {
+  &__title {
     transition: color ease $d-hover;
     cursor: pointer;
 
@@ -88,7 +88,7 @@
     }
   }
 
-  &-pictures {
+  &__pictures {
     margin: 0 scale(105) scale(10) scale(50);
 
     @include desktop {
@@ -100,7 +100,7 @@
     }
   }
 
-  &-picturesWrapper {
+  &__pictures-wrapper {
     display: flex;
     align-items: flex-end;
 
@@ -111,7 +111,7 @@
       }
     }
 
-    &:not(.AboutPage-picturesWrapper--single) {
+    &:not(.about-page__pictures-wrapper--single) {
       @include mobile {
         width: 100vw;
         margin-left: -50vw;
@@ -128,7 +128,7 @@
     }
   }
 
-  &-mobilePictures {
+  &__mobile-pictures {
     display: none;
 
     &:not(:empty) {
@@ -139,7 +139,7 @@
     }
   }
 
-  &-picture {
+  &__picture {
     position: relative;
 
     &:not(:last-child) {
@@ -160,7 +160,7 @@
     }
   }
 
-  &-pictureCover {
+  &__picture-cover {
     position: absolute;
     left: 0;
     right: 0;
@@ -170,13 +170,13 @@
     z-index: 2;
   }
 
-  &-hint {
+  &__hint {
     @include mobile {
       display: none !important;
     }
   }
 
-  &-mobileHint {
+  &__mobile-hint {
     display: none;
 
     @include mobile {
@@ -186,7 +186,7 @@
     }
   }
 
-  &-body {
+  &__body {
     position: relative;
     z-index: 1;
     flex: 1;
@@ -194,7 +194,7 @@
     flex-direction: column;
   }
 
-  &-text {
+  &__text {
     max-width: scale(699);
     margin-left: scale(160);
 
@@ -212,7 +212,7 @@
     }
   }
 
-  &-paragraph {
+  &__paragraph {
     line-height: 1.5;
 
     @include desktop {
@@ -224,7 +224,7 @@
     }
   }
 
-  &-link {
+  &__link {
     position: absolute;
     top: 0;
     right: 0;

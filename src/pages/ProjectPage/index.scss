@@ -1,10 +1,10 @@
 @import '../../styles/common/constants';
 @import '../../styles/common/mixins';
 
-.ProjectPage {
+.project-page {
   padding-bottom: 0 !important;
   
-  &-section {
+  &__section {
     margin-bottom: scale(200);
 
     @include desktop {
@@ -16,7 +16,7 @@
     }
   }
 
-  &-title {
+  &__title {
     font-family: $ff-Mak;
     font-size: scale(100);
 
@@ -26,7 +26,7 @@
   }
 }
 
-.ProjectHero {
+.project-hero {
   display: flex;
   align-items: center;
   position: relative;
@@ -37,7 +37,7 @@
     flex-direction: column;
   }
 
-  &-banner {
+  &__banner {
     margin-right: scale(150);
 
     @include desktop {
@@ -52,7 +52,7 @@
     }
   }
 
-  &-info {
+  &__info {
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -60,7 +60,7 @@
     }
   }
 
-  &-name {
+  &__name {
     font-family: $ff-Mak-light;
     font-size: scale(150);
     line-height: 1.1;
@@ -77,7 +77,7 @@
     }
   }
 
-  &-year {
+  &__year {
     display: none;
     margin-bottom: scale(20);
 
@@ -86,7 +86,7 @@
     }
   }
 
-  &-status {
+  &__status {
     margin-bottom: scale(100);
 
     @include desktop {
@@ -98,7 +98,7 @@
     }
   }
 
-  &-description {
+  &__description {
     max-width: scale(600);
     margin-bottom: scale(20);
 
@@ -108,7 +108,7 @@
     }
   }
 
-  &-role {
+  &__role {
     font-family: $ff-m;
     font-size: scale(18);
 
@@ -117,16 +117,16 @@
     }
   }
 
-  &-heading {
+  &__heading {
     display: flex;
     align-items: center;
     padding-bottom: scale(20);
     border-bottom: 1px solid $c-black;
+  }
 
-    &Text {
-      text-transform: uppercase;
-      font-size: scale(16);
-    }
+  &__heading-text {
+    text-transform: uppercase;
+    font-size: scale(16);
   }
 }
 

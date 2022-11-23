@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.Background {
+.background {
   position: absolute;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   bottom: 0;
   pointer-events: none;
 
-  &-circle {
+  &__circle {
     border: 1px solid $c-black;
     border-radius: 50%;
     display: flex;
@@ -263,7 +263,7 @@
     }
   }
 
-  &-device {
+  &__device {
     position: absolute;
 
     svg {
@@ -271,7 +271,7 @@
     }
   }
 
-  &-keyboard {
+  &__keyboard {
     bottom: scale(70);
     left: scale(-30);
     width: scale(270);
@@ -291,7 +291,7 @@
     }
   }
 
-  &-headphones {
+  &__headphones {
     width: scale(268);
     right: scale(522);
     bottom: scale(-20);
@@ -311,7 +311,7 @@
     }
   }
 
-  &-mouse {
+  &__mouse {
     width: scale(262);
     top: scale(237);
     right: scale(-5);
@@ -326,7 +326,7 @@
     }
   }
 
-  &-spaceMap {
+  &__space-map {
     position: absolute;
     top: 0;
     left: 0;
@@ -341,7 +341,7 @@
     }
   }
 
-  &-multiStar {
+  &__multi-star {
     position: absolute;
     left: scale(90);
     bottom: scale(314);
@@ -368,7 +368,7 @@
     }
   }
 
-  &-moon {
+  &__moon {
     position: absolute;
     top: scale(142);
     left: scale(356);
@@ -393,7 +393,7 @@
     }
   }
 
-  &-saturn {
+  &__saturn {
     position: absolute;
     top: scale(147);
     right: scale(567);
@@ -425,7 +425,7 @@
     }
   }
 
-  &-neptun {
+  &__neptun {
     position: absolute;
     bottom: scale(125);
     left: scale(127);
@@ -456,7 +456,7 @@
     }
   }
 
-  &-stars {
+  &__stars {
     width: 100%;
     height: 100%;
     padding: scale(20);
@@ -477,7 +477,7 @@
     }
   }
 
-  &-filledStar {
+  &__filled-star {
     position: absolute;
     display: flex;
 

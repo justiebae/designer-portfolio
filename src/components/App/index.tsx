@@ -17,7 +17,7 @@ function App(): JSX.Element {
   const theme = useSelector(getTheme);
 
   return (
-    <div className={`App App--${theme}`}>
+    <div className={`app app--${theme}`}>
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route index element={<HomePage />} />

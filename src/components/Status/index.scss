@@ -1,17 +1,17 @@
 @import '../../styles/common/constants';
 @import '../../styles/common/mixins';
 
-.Status {
+.status {
   display: flex;
   align-items: center;
 
-  &-icon {
+  &__icon {
     width: scale(15);
     height: scale(15);
     margin-right: scale(10);
   }
 
-  &-text {
+  &__text {
     font-size: scale(16);
   }
 }

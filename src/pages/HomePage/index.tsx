@@ -57,41 +57,41 @@ export default function HomePage(): JSX.Element {
   }, []);
 
   return (
-    <div className="HomePage Container Page" ref={el}>
-      <div className="HomePage-body">
-        <div className="HomePage-row">
-          <div className="HomePage-title Title">
+    <div className="home-page container page" ref={el}>
+      <div className="home-page__body">
+        <div className="home-page__row">
+          <div className="home-page__title title">
             UI/UX Designer
           </div>
         </div>
-        <div className="HomePage-description">
-          <div className="HomePage-row">
-            <div className="HomePage-desriptionText">
+        <div className="home-page__description">
+          <div className="home-page__row">
+            <div className="home-page__desription-text">
               Анализирую, проектирую и графически прорабатываю пользовательские
             </div>
           </div>
-          <div className="HomePage-row">
-            <div className="HomePage-desriptionText">
+          <div className="home-page__row">
+            <div className="home-page__desription-text">
               интерфейсы различной сложности
             </div>
           </div>
         </div>
-        <div className="HomePage-signature">
+        <div className="home-page__signature">
           <Icon name="signature" />   
         </div>
-        <div className="HomePage-button">
+        <div className="home-page__button">
           <CircleButton path="/projects">
             Посмотреть портфолио
           </CircleButton>
         </div>
       </div>
-      <div className="HomePage-footer">
-        <div className="HomePage-currentPlace">
+      <div className="home-page__footer">
+        <div className="home-page__current-place">
           На данный момент UI/UX Designer в&nbsp;digital-agency Webest
         </div>
-        <a href="/" rel="noreferrer" target="_blank" className="HomePage-contact SocialLink">
-          <div className="SocialLink-text">Для связи со мной</div>
-          <div className="SocialLink-icon">
+        <a href="/" rel="noreferrer" target="_blank" className="home-page__contact social-link">
+          <div className="social-link__text">Для связи со мной</div>
+          <div className="social-link__icon">
             <Icon name="telegram" />
           </div>
         </a>

@@ -1,7 +1,7 @@
 @import '../../styles/common/constants.scss';
 @import '../../styles/common/mixins.scss';
 
-.ProjectCard {
+.project-card {
   $component: &;
 
   display: flex;
@@ -9,14 +9,14 @@
   color: $c-black;
 
   @include hover {
-    &:hover:not(.ProjectCard--transparent) {
-      .ProjectBanner {
+    &:hover:not(.project-card--transparent) {
+      .project-banner {
         background-color: $c-yellow;
       }
     }
   }
 
-  &-cover {
+  &__cover {
     margin-right: scale(50);
 
     @include mobile {
@@ -24,7 +24,7 @@
     }
   }
 
-  &-head {
+  &__head {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -34,7 +34,7 @@
     }
   }
 
-  &-arrow {
+  &__arrow {
     min-width: scale(19);
     max-width: scale(19);
     display: none;
@@ -44,7 +44,7 @@
     }
   }
 
-  &-title {
+  &__title {
     font-family: $ff-Mak-bold;
     font-size: scale(50);
     margin-bottom: scale(10);
@@ -58,7 +58,7 @@
     }
   }
 
-  &-year {
+  &__year {
     display: none;
     margin-bottom: scale(10);
 
@@ -67,7 +67,7 @@
     }
   }
 
-  &-description {
+  &__description {
     font-family: $ff;
     font-size: scale(16);
     line-height: 1.5;
@@ -77,7 +77,7 @@
     }
   }
 
-  &-role {
+  &__role {
     font-family: $ff-m;
     font-size: scale(18);
     margin-top: scale(30);

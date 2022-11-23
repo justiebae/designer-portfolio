@@ -1,12 +1,12 @@
 @import '../../../styles/common/constants';
 @import '../../../styles/common/mixins';
 
-.ProjectBlocks {
-  &-info {
+.project-blocks {
+  &__info {
     margin-bottom: scale(50);
   }
 
-  &-description {
+  &__description {
     max-width: scale(800);
     font-size: scale(18);
 
@@ -15,7 +15,7 @@
     }
   }
 
-  &-items {
+  &__items {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: scale(100);
@@ -42,51 +42,49 @@
     }
   }
 
-  &-item {
-    &Head {
-      display: flex;
-      align-items: center;
-      padding-bottom: scale(18);
-      border-bottom: 1px solid $c-black;
-      margin-bottom: scale(50);
+  &__item-head {
+    display: flex;
+    align-items: center;
+    padding-bottom: scale(18);
+    border-bottom: 1px solid $c-black;
+    margin-bottom: scale(50);
+
+    @include mobile {
+      flex-direction: column;
+      padding-bottom: scale(20);
+      margin-bottom: scale(30);
+      align-items: flex-start;
+    }
+  }
+
+  &__item-title {
+    font-family: $ff-m;
+    font-size: scale(16);
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: scale(100);
+      max-width: scale(280);
 
       @include mobile {
-        flex-direction: column;
-        padding-bottom: scale(20);
-        margin-bottom: scale(30);
-        align-items: flex-start;
+        margin: {
+          right: 0;
+          bottom: scale(20);
+        };
       }
     }
+  }
 
-    &Title {
-      font-family: $ff-m;
-      font-size: scale(16);
-      text-transform: uppercase;
+  &__item-description {
+    font-size: scale(16);
+    max-width: scale(700);
 
-      &:not(:last-child) {
-        margin-right: scale(100);
-        max-width: scale(280);
-
-        @include mobile {
-          margin: {
-            right: 0;
-            bottom: scale(20);
-          };
-        }
-      }
+    @include mobile {
+      font-size: scale(14);
     }
+  }
 
-    &Description {
-      font-size: scale(16);
-      max-width: scale(700);
-
-      @include mobile {
-        font-size: scale(14);
-      }
-    }
-
-    &Image {
-      max-width: 100%;
-    }
+  &__item-image {
+    max-width: 100%;
   }
 }

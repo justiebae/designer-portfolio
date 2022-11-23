@@ -10,13 +10,13 @@ interface ICircleButtonProps {
 }
 
 export default function CircleButton({ theme, path, children }: ICircleButtonProps): JSX.Element {
-  const classes = theme ? `CircleButton CircleButton--${theme}` : 'CircleButton'
+  const classes = theme ? `circle-button circle-button--${theme}` : 'circle-button'
 
   if (path) {
     return (
       <Link to={path}>
         <div className={classes}>
-          <span className="CircleButton-text">
+          <span className="circle-button__text">
             {children}
           </span>
         </div>
@@ -26,7 +26,7 @@ export default function CircleButton({ theme, path, children }: ICircleButtonPro
 
   return (
     <button type="button" className={classes}>
-      <span className="CircleButton-text">
+      <span className="circle-button__text">
         {children}
       </span>
     </button>

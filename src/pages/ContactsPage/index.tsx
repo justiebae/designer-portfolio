@@ -7,40 +7,40 @@ import './index.scss';
 
 export default function ContactsPage(): JSX.Element {
   return (
-    <div className="ContactsPage Container Page">
-      <div className="ContactsPage-body">
-        <div className="ContactsPage-subtitle">Для связи со мной, пожалуйста, используйте</div>
-        <div className="ContactsPage-heading">
-          <div className="ContactsPage-stars ContactsPage-stars--left">
-            <div className="ContactsPage-star ContactsPage-star--filled">
+    <div className="contacts-page container page">
+      <div className="contacts-page__body">
+        <div className="contacts-page__subtitle">Для связи со мной, пожалуйста, используйте</div>
+        <div className="contacts-page__heading">
+          <div className="contacts-page__stars contacts-page__stars--left">
+            <div className="contacts-page__star contacts-page__star--filled">
               <Icon name="angleStar" />
             </div>
-            <div className="ContactsPage-star ContactsPage-star--outlined">
+            <div className="contacts-page__star contacts-page__star--outlined">
               <Icon name="outlinedStar" />
             </div>
           </div>
-          <div className="ContactsPage-stars ContactsPage-stars--right">
-            <div className="ContactsPage-star ContactsPage-star--outlined">
+          <div className="contacts-page__stars contacts-page__stars--right">
+            <div className="contacts-page__star contacts-page__star--outlined">
               <Icon name="outlinedStar" />
             </div>
-            <div className="ContactsPage-star ContactsPage-star--filled">
+            <div className="contacts-page__star contacts-page__star--filled">
               <Icon name="angleStar" />
             </div>
           </div>
-          <div className="ContactsPage-title Title-second">
+          <div className="contacts-page__title title-second">
             Tele
             <span>g</span>
             ram
           </div>
         </div>
-        <a href={telegram} rel="norefferer noreferrer" target="_blank" className="ContactsPage-link">
+        <a href={telegram} rel="norefferer noreferrer" target="_blank" className="contacts-page__link">
           перейти
           <Icon name="arrowIcon" />
         </a>
       </div>
-      <div className="ContactsPage-footer">
-        <a href={`mailto:${mail}`} className="ContactsPage-mail">
-          <span className="ContactsPage-mailIcon">
+      <div className="contacts-page__footer">
+        <a href={`mailto:${mail}`} className="contacts-page__mail">
+          <span className="contacts-page__mail-icon">
             <Icon name="mailIcon" />
           </span>
           {mail}

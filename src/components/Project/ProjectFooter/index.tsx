@@ -7,10 +7,10 @@ import './index.scss';
 
 export default function ProjectFooter() {
   return (
-    <div className="ProjectFooter">
-      <Link to="/projects" className="ProjectFooter-link Container">
-        <div className="ProjectFooter-title">Вернуться к&nbsp;проектам</div>
-        <div className="ProjectFooter-icon">
+    <div className="project-footer">
+      <Link to="/projects" className="project-footer__link container">
+        <div className="project-footer__title">Вернуться к&nbsp;проектам</div>
+        <div className="project-footer__icon">
           <Icon name="thinArrow" />
         </div>
       </Link>

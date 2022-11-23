@@ -28,7 +28,7 @@ export default function AboutPage(): JSX.Element {
   const { q, el } = useGSAPSelector();
 
   useEffect(() => {
-    gsap.from(q('.AboutPage-title'), 1.5, {
+    gsap.from(q('.about-page__title'), 1.5, {
       y: 500,
       ease: 'power4.out',
       delay: 0.6,
@@ -38,7 +38,7 @@ export default function AboutPage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.AboutPage-text'), 1.5, {
+    gsap.from(q('.about-page__text'), 1.5, {
       y: 200,
       ease: 'power4.out',
       delay: 1.2,
@@ -48,7 +48,7 @@ export default function AboutPage(): JSX.Element {
       }
     });
 
-    gsap.to(q('.AboutPage-pictureCover'), 1.2, {
+    gsap.to(q('.about-page__picture-cover'), 1.2, {
       height: 0,
       ease: 'power4.out',
       delay: 1,
@@ -57,7 +57,7 @@ export default function AboutPage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.Hint'), 1.3, {
+    gsap.from(q('.hint'), 1.3, {
       y: 150,
       ease: 'power4.out',
       delay: 0.8,
@@ -67,7 +67,7 @@ export default function AboutPage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.RoundedPicture-star'), 1.7, {
+    gsap.from(q('.rounded-picture__star'), 1.7, {
       delay: 1.2,
       scale: 0,
       ease: Elastic.easeOut,
@@ -76,7 +76,7 @@ export default function AboutPage(): JSX.Element {
       }
     });
 
-    gsap.from(q('.CircleButton'), 1.7, {
+    gsap.from(q('.circle-button'), 1.7, {
       delay: 1.8,
       scale: 0,
       ease: Elastic.easeOut
@@ -124,18 +124,18 @@ export default function AboutPage(): JSX.Element {
 
   const renderHint = (): JSX.Element | boolean => {
     return currentId === 0 && (
-      <div className="Hint">
-        <div className="Hint-icon">
+      <div className="hint">
+        <div className="hint__icon">
           <Icon name="handIcon" />
         </div>
-        <div className="Hint-message">Наведи на заголовок, чтобы узнать побольше</div>
+        <div className="hint__message">Наведи на заголовок, чтобы узнать побольше</div>
       </div>
     )
   }
 
   const renderPictures = (): JSX.Element | boolean => {
-    const classes = classNames('AboutPage-picturesWrapper', {
-      'AboutPage-picturesWrapper--single': about[currentId]['images']?.length === 1
+    const classes = classNames('about-page__pictures-wrapper', {
+      'about-page__pictures-wrapper--single': about[currentId]['images']?.length === 1
     });
 
     if (screenWidth <= 767 && !about[currentId]['images']) {
@@ -144,7 +144,7 @@ export default function AboutPage(): JSX.Element {
 
     if (!about[currentId]['images']) {
       return (
-        <div className="AboutPage-picture AboutPage-picture--hidden">
+        <div className="about-page__picture about-page__picture--hidden">
           <RoundedImage path={''} stars={false} />
         </div>
       )
@@ -153,8 +153,8 @@ export default function AboutPage(): JSX.Element {
     return (
       <div className={classes}>
         {about[currentId]['images']?.map(({id, path, stars}) =>
-          <div className='AboutPage-picture' key={id}>
-            <div className="AboutPage-pictureCover"></div>
+          <div className='about-page__picture' key={id}>
+            <div className="about-page__picture-cover"></div>
             <RoundedImage path={path} stars={stars} />
           </div>
         )}
@@ -167,7 +167,7 @@ export default function AboutPage(): JSX.Element {
       return (
         <>
           {about[currentId]['mobileParagraphs']?.map((paragraph, key) => 
-            <p className="AboutPage-paragraph" key={key}>{paragraph}</p>
+            <p className="about-page__paragraph" key={key}>{paragraph}</p>
           )}
         </>
       )
@@ -176,7 +176,7 @@ export default function AboutPage(): JSX.Element {
     return (
       <>
         {about[currentId]['paragraphs'].map((paragraph, key) => 
-          <p className="AboutPage-paragraph" key={key}>{paragraph}</p>
+          <p className="about-page__paragraph" key={key}>{paragraph}</p>
         )}
       </>
     )
@@ -202,13 +202,13 @@ export default function AboutPage(): JSX.Element {
   }
 
   return (
-    <div className={`AboutPage AboutPage--current-${currentId} Page`} ref={el}>
-      <div className="AboutPage-wrapper Container">
-        <div className="AboutPage-head">
-          <div className="AboutPage-row">
-            <div className="AboutPage-hidden">
+    <div className={`about-page about-page--current-${currentId} page`} ref={el}>
+      <div className="about-page__wrapper container">
+        <div className="about-page__head">
+          <div className="about-page__row">
+            <div className="about-page__hidden">
               <div
-                className="AboutPage-title AboutPage-title--first Title-second"
+                className="about-page__title about-page__title--first title-second"
                 ref={FirstHeadingRef}
                 data-id="1"
                 onMouseEnter={handleMouseEnter}
@@ -217,18 +217,18 @@ export default function AboutPage(): JSX.Element {
                 Дизайн,
               </div>
             </div>
-            <div className="AboutPage-pictures">
+            <div className="about-page__pictures">
               {renderPictures()}
             </div>
-            <div className="AboutPage-hidden">
-              <div className="AboutPage-hint">
+            <div className="about-page__hidden">
+              <div className="about-page__hint">
                 {renderHint()}
               </div>
             </div>
           </div>
-          <div className="AboutPage-row AboutPage-hidden">
+          <div className="about-page__row about-page__hidden">
             <span
-              className="AboutPage-title AboutPage-title--second AboutPage-title--black Title-second"
+              className="about-page__title about-page__title--second about-page__title--black title-second"
               data-id="2"
               ref={SecondHeadingRef}
               onMouseEnter={handleMouseEnter}
@@ -237,7 +237,7 @@ export default function AboutPage(): JSX.Element {
               Космос&ensp;
             </span>
             <span
-              className="AboutPage-title AboutPage-title--third Title-second"
+              className="about-page__title about-page__title--third title-second"
               data-id="3"
               ref={ThirdHeadingRef}
               onMouseEnter={handleMouseEnter}
@@ -247,19 +247,19 @@ export default function AboutPage(): JSX.Element {
             </span>
           </div>
         </div>
-        <div className="AboutPage-body">
-          <div className="AboutPage-mobileHint AboutPage-hidden">
+        <div className="about-page__body">
+          <div className="about-page__mobile-hint about-page__hidden">
             {renderHint()}
           </div>
-          <div className="AboutPage-hidden">
-            <div className="AboutPage-text">
+          <div className="about-page__hidden">
+            <div className="about-page__text">
               {renderText()}
             </div>
           </div>
-          <div className="AboutPage-link">
+          <div className="about-page__link">
             <CircleButton path="/projects" theme={theme}>Посмотреть портфолио</CircleButton>
           </div>
-          <div className="AboutPage-mobilePictures">
+          <div className="about-page__mobile-pictures">
             {renderPictures()}
           </div>
         </div>
