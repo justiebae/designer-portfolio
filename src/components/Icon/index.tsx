@@ -9,6 +9,7 @@ import PremierIcon from './icons/PrIcon';
 import TelegramIcon from './icons/TelegramIcon';
 import SignatureIcon from './icons/SignatureIcon';
 import SpaceMapIcon from './icons/SpaceMapIcon';
+import SpaceMapTwoIcon from './icons/SpaceMapTwoIcon';
 import FilledStarIcon from './icons/FilledStarIcon';
 import NotFoundIcon from './icons/NotFoundIcon';
 import CurveIcon from './icons/CurveIcon';
@@ -52,6 +53,8 @@ export default function Icon({ name, ...props }: IIconProps): JSX.Element {
       return <SignatureIcon />
     case 'spaceMap':
       return <SpaceMapIcon />
+    case 'spaceMapTwo':
+      return <SpaceMapTwoIcon />
     case 'filledStar':
       return <FilledStarIcon />
     case 'notFound':

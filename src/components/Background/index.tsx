@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { gsap, Elastic } from 'gsap';
 
 import Icon from '../Icon';
 
+import useGSAPSelector from '../../hooks/useGSAPSelector';
 import bubbles from '../../data/bubbles';
 import backgroundImg from '../../assets/images/dots.svg';
 import './index.scss';
@@ -11,6 +13,29 @@ interface IBackgroundProps {
 }
 
 export default function Background({ type }: IBackgroundProps): JSX.Element {
+  const { q, el } = useGSAPSelector();
+
+  useEffect(() => {
+    switch (type) {
+      case 'space':
+        animateSpace();
+    }
+  }, [type])
+
+  const animateSpace = () => {
+    gsap.from(q('.background__space-map g'), 120, {
+      rotation: 360,
+      transformOrigin: "50%",
+      ease: 'linear',
+      repeat: -1
+    });
+
+    gsap.from(q('.background__planets'), 2.2, {
+      rotation: 5,
+      ease: 'power4.out'
+    });
+  }
+
   const renderCircles = () => {
     return (
       <>
@@ -34,21 +59,20 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
 
   const renderSpace = () => {
     return (
-      <>
+      <div className="background__wrapper" ref={el}>
         <div className="background__space-map">
-          <Icon name="spaceMap" />
+          <Icon name="spaceMapTwo" />
         </div>
-        <div className="background__multi-star">
-          <Icon name="multiStar" />
-        </div>
-        <div className="background__moon">
-          <Icon name="moon" />
-        </div>
-        <div className="background__saturn">
-          <Icon name="saturn" />
-        </div>
-        <div className="background__neptun">
-          <Icon name="neptun" />
+        <div className="background__planets">
+          <div className="background__moon">
+            <Icon name="moon" />
+          </div>
+          <div className="background__saturn">
+            <Icon name="saturn" />
+          </div>
+          <div className="background__neptun">
+            <Icon name="neptun" />
+          </div>
         </div>
         <div className="background__filled-star background__filledStar--first">
           <Icon name="angleStar" />
@@ -83,7 +107,7 @@ export default function Background({ type }: IBackgroundProps): JSX.Element {
         <div className="background__stars">
           <img src={backgroundImg} alt="" />
         </div>
-      </>
+      </div>
     )
   }
 

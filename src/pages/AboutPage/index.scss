@@ -120,6 +120,7 @@
         padding: 0 scale(20);
         overflow-x: auto;
         scrollbar-width: none;
+        margin-top: scale(20);
   
         &::-webkit-scrollbar {
           display: none;
@@ -157,6 +158,12 @@
     &--hidden {
       opacity: 0;
       pointer-events: none;
+    }
+
+    &--changed {
+      #{$component}__picture-cover {
+        display: none;
+      }
     }
   }
 

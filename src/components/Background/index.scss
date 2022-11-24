@@ -326,6 +326,14 @@
     }
   }
 
+  &__planets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   &__space-map {
     position: absolute;
     top: 0;
@@ -338,6 +346,14 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+
+    g {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -496,6 +512,40 @@
     }
 
     &--white {
+      animation: 6s linear infinite alternate scaleUpStar;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: scale(10);
+        height: scale(10);
+        background-color: #fff;
+        border-radius: 50%;
+        filter: blur(scale(5));
+  
+        @include desktop {
+          width: scale(8);
+          height: scale(8);
+        }
+      }
+
+      &::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: 3s linear infinite alternate scaleUpGlow;
+      }
+
+      &:after {
+        width: scale(8);
+        height: scale(8);
+        top: 0;
+        left: 0;
+        animation: 5s linear infinite alternate slideAround;
+        transition: all ease .3s;
+      }
+
       path {
         fill: $c-white;
       }
@@ -518,6 +568,12 @@
     &--second {
       top: scale(176);
       left: scale(68);
+
+      &::before,
+      &::after,
+      path {
+        animation-delay: 0.3s;
+      }
 
       @include desktop {
         top: scale(158);
@@ -548,6 +604,12 @@
       top: scale(237);
       right: scale(350);
 
+      &::before,
+      &::after,
+      path {
+        animation-delay: 0.5s;
+      }
+
       @include desktop {
         top: scale(170);
         right: scale(255);
@@ -562,6 +624,12 @@
     &--fifth {
       top: scale(436);
       right: scale(68);
+
+      &::before,
+      &::after,
+      path {
+        animation-delay: 0.1s;
+      }
 
       @include desktop {
         top: scale(315);
@@ -592,6 +660,11 @@
     &--seventh {
       bottom: scale(73);
       left: scale(267);
+
+      &::before,
+      path {
+        animation-delay: 0.2s;
+      }
 
       @include desktop {
         bottom: scale(157);
@@ -626,9 +699,81 @@
       bottom: scale(90);
       right: scale(68);
 
+      &::before {
+        animation-delay: 0.4s;
+      }
+
       @include mobile {
         display: none;
       }
     }
+  }
+}
+
+@keyframes slideAround {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  33% {
+    top: scale(5);
+    left: scale(5);
+  }
+
+  66% {
+    top: 0;
+    left: scale(5);
+  }
+
+  100% {
+    top: scale(5);
+    left: 0;
+  }
+}
+
+@keyframes scaleUpGlow {
+  0% {
+    scale: 1
+  }
+
+  33% {
+    scale: 0.9
+  }
+
+  33% {
+    scale: 0.8
+  }
+
+  100% {
+    scale: 1.1
+  }
+}
+
+@keyframes scaleUpStar {
+  0% {
+    scale: 1
+  }
+
+  33% {
+    scale: 0.9
+  }
+
+  66% {
+    scale: 0.8
+  }
+
+  100% {
+    scale: 1.1
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
