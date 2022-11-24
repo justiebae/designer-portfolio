@@ -46,7 +46,7 @@ export default function HomePage(): JSX.Element {
     });
 
     anime({
-      targets: 'path',
+      targets: '.home-page__signature path',
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutCubic',
       duration: 2000,

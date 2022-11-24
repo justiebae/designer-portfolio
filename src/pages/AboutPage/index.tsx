@@ -16,6 +16,7 @@ import './index.scss';
 
 export default function AboutPage(): JSX.Element {
   const [currentId, setCurrentId] = useState(0);
+  const [hasHovered, setHasHovered] = useState(false);
   const FirstHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const SecondHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const ThirdHeadingRef = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -68,7 +69,7 @@ export default function AboutPage(): JSX.Element {
     });
 
     gsap.from(q('.rounded-picture__star'), 1.7, {
-      delay: 1.2,
+      delay: 2.2,
       scale: 0,
       ease: Elastic.easeOut,
       stagger: {
@@ -99,6 +100,7 @@ export default function AboutPage(): JSX.Element {
       return;
     }
 
+    setHasHovered(true);
     setCurrentId(Number(target.dataset['id']));
     setClassHeadings(target, 'disabled');
   }
@@ -134,9 +136,13 @@ export default function AboutPage(): JSX.Element {
   }
 
   const renderPictures = (): JSX.Element | boolean => {
-    const classes = classNames('about-page__pictures-wrapper', {
+    const wrapperClasses = classNames('about-page__pictures-wrapper', {
       'about-page__pictures-wrapper--single': about[currentId]['images']?.length === 1
     });
+
+    const pictureClasses = classNames('about-page__picture', {
+      'about-page__picture--changed': hasHovered
+    })
 
     if (screenWidth <= 767 && !about[currentId]['images']) {
       return false;
@@ -151,9 +157,9 @@ export default function AboutPage(): JSX.Element {
     }
 
     return (
-      <div className={classes}>
+      <div className={wrapperClasses}>
         {about[currentId]['images']?.map(({id, path, stars}) =>
-          <div className='about-page__picture' key={id}>
+          <div className={pictureClasses} key={id}>
             <div className="about-page__picture-cover"></div>
             <RoundedImage path={path} stars={stars} />
           </div>
