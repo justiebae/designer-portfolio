@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import { Scrollbar } from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { gsap } from 'gsap';
 
 import ProjectCard from '../../components/ProjectCard';
 import Icon from '../../components/Icon';
 
+import useGSAPSelector from '../../hooks/useGSAPSelector';
 import useScreenWidth from '../../hooks/useScreenWidth';
 import declineWords from '../../utils/declineWords';
 import Projects from '../../api/projects';
@@ -15,14 +16,34 @@ import './index.scss';
 export default function ProjectsPage(): JSX.Element {
   const [projects, setProjects] = useState([]);
   const screenWidth = useScreenWidth();
+  const { q, el } = useGSAPSelector();
 
   useEffect(() => {
     Projects.getProjects()
-      .then(data => setProjects(data))
-      .catch(error => alert(error))
-  }, [])
+      .then((data) => {
+        setProjects(data);
 
-  
+        gsap.from(q('.swiper-slide'), 1, {
+          delay: 0.5,
+          opacity: 0,
+          translateY: 100,
+          stagger: {
+            amount: 0.6
+          }
+        })
+
+        gsap.from(q('.swiper-scrollbar'), 0.2, {
+          delay: 1.2,
+          width: 0
+        })
+
+        gsap.from(q('.swiper-scrollbar-drag'), 0.4, {
+          delay: 1.5,
+          width: 0
+        })
+      })
+      .catch((error) => alert(error))
+  }, [])
 
   const renderProjects = () => {
     return (
@@ -82,15 +103,11 @@ export default function ProjectsPage(): JSX.Element {
   }
 
   return (
-    <div className="projects-page container page">
+    <div className="projects-page container page" ref={el}>
       <div className="projects-page__slider">
         <Swiper
           spaceBetween={100}
           slidesPerView={2.2}
-          scrollbar={{
-            hide: false,
-          }}
-          modules={[Scrollbar]}
         >
           {renderProjects()}
           <div className="projects-page__amount">
