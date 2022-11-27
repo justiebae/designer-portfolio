@@ -1,7 +1,7 @@
-import alisaPhoto from '../assets/images/photo-1.jpg';
-import cat1 from '../assets/images/cat-1.jpg';
-import cat2 from '../assets/images/cat-2.jpg';
-import cat3 from '../assets/images/cat-3.jpg';
+import alisaPhoto from '../../assets/images/photo-1.jpg';
+import cat1 from '../../assets/images/cat-1.jpg';
+import cat2 from '../../assets/images/cat-2.jpg';
+import cat3 from '../../assets/images/cat-3.jpg';
 
 const about = [
   {

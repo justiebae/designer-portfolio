@@ -5,13 +5,13 @@ import classNames from 'classnames';
 import { gsap, Elastic } from 'gsap';
 
 import RoundedImage from '../../components/RoundedPicture';
-import Background from '../../components/Background';
+import Background from '../../components/Backgrounds/CommonBackground';
 import CircleButton from '../../components/CircleButton';
 import Icon from '../../components/Icon';
 
 import useScreenWidth from '../../hooks/useScreenWidth';
 import useGSAPSelector from '../../hooks/useGSAPSelector';
-import about from '../../data/about';
+import about from '../../utils/data/about';
 import './index.scss';
 
 export default function AboutPage(): JSX.Element {

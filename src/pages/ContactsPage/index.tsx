@@ -2,7 +2,7 @@ import React from 'react';
 
 import Icon from '../../components/Icon';
 
-import { telegram, mail } from '../../data/links';
+import { telegram, mail } from '../../utils/data/links';
 import './index.scss';
 
 export default function ContactsPage(): JSX.Element {

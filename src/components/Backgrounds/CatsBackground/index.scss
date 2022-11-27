@@ -1,0 +1,73 @@
+@import '../../../styles/common/mixins.scss';
+
+.cats-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  &__device {
+    position: absolute;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &__keyboard {
+    bottom: scale(70);
+    left: scale(-30);
+    width: scale(270);
+
+    @include desktop {
+      width: scale(150);
+      bottom: scale(90);
+    }
+
+    @include mobile {
+      transform: scaleX(-1) rotate(-9deg);
+      width: scale(170);
+      right: scale(-60);
+      left: unset;
+      bottom: scale(-122);
+      z-index: 1;
+    }
+  }
+
+  &__headphones {
+    width: scale(268);
+    right: scale(522);
+    bottom: scale(-20);
+
+    @include desktop {
+      width: scale(190);
+      right: scale(350);
+      bottom: scale(-10);
+    }
+
+    @include mobile {
+      width: scale(250);
+      right: unset;
+      left: scale(36);
+      bottom: scale(-20);
+      z-index: 1;
+    }
+  }
+
+  &__mouse {
+    width: scale(262);
+    top: scale(237);
+    right: scale(-5);
+
+    @include desktop {
+      width: scale(140);
+      top: scale(150);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

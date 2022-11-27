@@ -6,6 +6,7 @@ import ProjectCard from '../../components/ProjectCard';
 import Icon from '../../components/Icon';
 
 import useScreenWidth from '../../hooks/useScreenWidth';
+import declineWords from '../../utils/declineWords';
 import Projects from '../../api/projects';
 import moreBg from '../../assets/images/more.svg';
 import 'swiper/css';
@@ -21,10 +22,7 @@ export default function ProjectsPage(): JSX.Element {
       .catch(error => alert(error))
   }, [])
 
-  const formattedWord = (forms: Array<String>, val: number) => {
-    const cases = [ 2, 0, 1, 1, 1, 2 ];
-    return forms[(val % 100 > 4 && val % 100 < 20) ? 2 : cases[(val % 10 < 5) ? val % 10 : 5]];
-  }
+  
 
   const renderProjects = () => {
     return (
@@ -98,7 +96,7 @@ export default function ProjectsPage(): JSX.Element {
           <div className="projects-page__amount">
             {projects.length}
             &ensp;
-            {formattedWord(['проект', 'проекта', 'проектов'], projects.length)}
+            {declineWords(['проект', 'проекта', 'проектов'], projects.length)}
           </div>
         </Swiper>
       </div>

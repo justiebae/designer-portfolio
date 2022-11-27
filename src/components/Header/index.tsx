@@ -8,7 +8,7 @@ import { gsap } from 'gsap';
 import Icon from '../Icon/index';
 import MobileNavigation from '../MobileNavigation';
 
-import { links, telegram } from '../../data/links';
+import { links, telegram } from '../../utils/data/links';
 import './index.scss';
 
 export default function Header(): JSX.Element {
