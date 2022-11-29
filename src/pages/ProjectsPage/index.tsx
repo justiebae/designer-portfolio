@@ -15,6 +15,7 @@ import './index.scss';
 
 export default function ProjectsPage(): JSX.Element {
   const [projects, setProjects] = useState([]);
+  const [slides, setSlides] = useState<any>([]);
   const screenWidth = useScreenWidth();
   const { q, el } = useGSAPSelector();
 
@@ -22,24 +23,24 @@ export default function ProjectsPage(): JSX.Element {
     Projects.getProjects()
       .then((data) => {
         setProjects(data);
+        setSlides([
+          ...data,
+          {
+            id: 23,
+            transparent: true,
+            cover: moreBg,
+            title: 'Дальше больше',
+            description: 'В скором времени тут появятся новые проекты',
+          }
+        ]);
 
         gsap.from(q('.swiper-slide'), 1, {
           delay: 0.5,
           opacity: 0,
-          translateY: 100,
+          translateY: 140,
           stagger: {
             amount: 0.6
           }
-        })
-
-        gsap.from(q('.swiper-scrollbar'), 0.2, {
-          delay: 1.2,
-          width: 0
-        })
-
-        gsap.from(q('.swiper-scrollbar-drag'), 0.4, {
-          delay: 1.5,
-          width: 0
         })
       })
       .catch((error) => alert(error))
@@ -48,39 +49,32 @@ export default function ProjectsPage(): JSX.Element {
   const renderProjects = () => {
     return (
       <>
-        {projects.map(({id, title, description, year, role, path, cover}) => 
+        {slides.map(({id, title, description, year, role, path, cover, transparent}: any) => 
           <SwiperSlide key={id}>
             <ProjectCard 
               title={title}
-              desription={description}
+              description={description}
               year={year}
               role={role}
               cover={cover}
               path={path}
+              transparent={transparent}
             />
           </SwiperSlide>
         )}
-        <SwiperSlide key={Date.now()}>
-            <ProjectCard
-              title="Дальше больше"
-              desription="В скором времени тут появятся новые проекты"
-              cover={moreBg}
-              transparent={true}
-            />
-          </SwiperSlide>
       </>
     )
   }
 
   if (screenWidth < 768) {
     return (
-      <div className='project-page page'>
-        <div className="project-page__cards">
-          {projects.map(({id, title, description, year, role, path, cover}) => 
-            <div className='project-pagecard' key={id}>
+      <div className='projects-page page'>
+        <div className="projects-page__cards">
+          {projects.map(({id, title, description, year, role, path, cover}: any) => 
+            <div className='projects-page__card' key={id}>
               <ProjectCard
                 title={title}
-                desription={description}
+                description={description}
                 year={year}
                 role={role}
                 cover={cover}
@@ -89,7 +83,7 @@ export default function ProjectsPage(): JSX.Element {
             </div>
           )}
         </div>
-        <div className="project-pagemore">
+        <div className="project-page__more">
           <div className="project-more">
             <div className="project-more__icon">
               <Icon name="penIcon" />
@@ -110,13 +104,13 @@ export default function ProjectsPage(): JSX.Element {
           slidesPerView={2.2}
         >
           {renderProjects()}
-          <div className="projects-page__amount">
-            {projects.length}
-            &ensp;
-            {declineWords(['проект', 'проекта', 'проектов'], projects.length)}
-          </div>
         </Swiper>
       </div>
+        <div className="projects-page__amount">
+          {projects.length}
+          &ensp;
+          {declineWords(['проект', 'проекта', 'проектов'], projects.length)}
+        </div>
     </div>
   )
 }

@@ -12,13 +12,13 @@ interface IProductCardProps {
   cover?: string,
   year?: number,
   title: string,
-  desription: string,
+  description: string,
   role?: string,
   transparent?: boolean
 }
 
 export default function ProjectCard(
-  { path, cover, year, title, desription, role, transparent  }: IProductCardProps
+  { path, cover, year, title, description, role, transparent }: IProductCardProps
 ): JSX.Element {
 
   const cardClasses = classNames('project-card', { 'project-card--transparent': transparent })
@@ -37,7 +37,7 @@ export default function ProjectCard(
             </div>
           </div>
           <div className="project-card__year">{year}</div>
-          <div className="project-card__description">{desription}</div>
+          <div className="project-card__description">{description}</div>
           {role && <div className="project-card__role">{role}</div>}
         </div>
       </>
