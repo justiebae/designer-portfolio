@@ -14,15 +14,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: scale(226);
+    margin-top: auto;
+  }
 
-    @include desktop {
-      margin-top: auto;
-    }
-
-    @include mobile {
-      margin-top: auto;
-    }
+  &__row {
+    overflow: hidden;
   }
 
   &__subtitle {
@@ -64,7 +60,9 @@
       }
 
       #{$component}__star--filled {
-        display: none;
+        @include mobile {
+          display: none;
+        }
       }
     }
 
@@ -112,29 +110,25 @@
 
   &__title {
     position: relative;
+  }
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: scale(24);
-      height: scale(2);
-      background-color: $c-black;
+  &__letter {
+    background-color: $c-gray;
+    position: relative;
+    z-index: 1;
 
-      @include mobile {
-        content: none;
-      }
+    @include mobile {
+      background-color: none;
     }
+  }
 
-    span {
-      background-color: $c-gray;
-      position: relative;
-
-      @include mobile {
-        background-color: none;
-      }
-    }
+  &__underline {
+    position: absolute;
+    left: 0;
+    bottom: scale(24);
+    height: scale(2);
+    width: 100%;
+    background-color: $c-black;
   }
 
   &__link {
@@ -146,6 +140,7 @@
     font-size: scale(16);
 
     svg {
+      animation: bouncing 2s linear infinite;
       margin-left: scale(5);
       width: scale(18);
       height: scale(18);
@@ -176,4 +171,10 @@
       width: scale(24);
     }
   }
+}
+
+@keyframes bouncing {
+  0%  { transform: translateX(scale(0)); }
+  50%  { transform: translateX(scale(3)); }
+  100%  { transform: translateX(scale(0)); }
 }

@@ -17,6 +17,8 @@
   }
 
   &__slider {
+    margin-top: auto;
+    
     .swiper {
       width: 100%;
       overflow: visible;
@@ -38,10 +40,14 @@
     }
   }
 
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__amount {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     font-family: $ff-m;
     font-size: scale(16);
   }

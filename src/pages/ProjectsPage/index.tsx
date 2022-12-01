@@ -34,14 +34,23 @@ export default function ProjectsPage(): JSX.Element {
           }
         ]);
 
-        gsap.from(q('.swiper-slide'), 1, {
+        gsap.from(q('.swiper-slide'), 0.8, {
           delay: 0.5,
           opacity: 0,
           translateY: 140,
           stagger: {
             amount: 0.6
           }
-        })
+        });
+
+        gsap.from(q('.projects-page__info'), 0.4, {
+          delay: 1,
+          opacity: 0,
+          translateY: 100,
+          stagger: {
+            amount: 0.4
+          }
+        });
       })
       .catch((error) => alert(error))
   }, [])
@@ -106,11 +115,19 @@ export default function ProjectsPage(): JSX.Element {
           {renderProjects()}
         </Swiper>
       </div>
-        <div className="projects-page__amount">
+      <div className="projects-page__footer container">
+        <div className="projects-page__info projects-page__amount">
           {projects.length}
           &ensp;
           {declineWords(['проект', 'проекта', 'проектов'], projects.length)}
         </div>
+        <a href="/" rel="noreferrer" target="_blank" className=" projects-page__info projects-page__telegram social-link">
+          <div className="social-link__text">Для связи со мной</div>
+          <div className="social-link__icon">
+            <Icon name="telegram" />
+          </div>
+        </a>
+      </div>
     </div>
   )
 }
