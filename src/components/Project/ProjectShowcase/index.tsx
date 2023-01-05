@@ -5,22 +5,24 @@ import Switch from '../../Switch';
 import './index.scss';
 
 interface IProjectShowcase {
-  variant?: string,
-  designImageURL: string,
-  protoImageURL: string,
+  showcase: {
+    variant?: string,
+    designImageURL: string,
+    protoImageURL: string,
+  }
 }
 
 export default function ProjectShowcase(
-  { variant, designImageURL, protoImageURL }: IProjectShowcase
+  { showcase }: IProjectShowcase
 ) {
-  const [currentImage, setCurrentImage] = useState(designImageURL);
+  const [currentImage, setCurrentImage] = useState(showcase.designImageURL);
 
   const changeImage = (value: boolean) => {
-    if (value) setCurrentImage(protoImageURL)
-    else setCurrentImage(designImageURL)
+    if (value) setCurrentImage(showcase.protoImageURL)
+    else setCurrentImage(showcase.designImageURL)
   }
 
-  if (variant === 'full')
+  if (showcase.variant === 'full')
     return (
       <div className="project-showcase project-page__section">
         <div className="project-showcase__banner">

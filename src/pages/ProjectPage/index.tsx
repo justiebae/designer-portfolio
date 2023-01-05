@@ -22,54 +22,40 @@ export default function ProjectPage(): JSX.Element {
   useEffect(() => {
     Projects
       .getProject(slug)
-      .then((response) => {
-        setData(response)
-      })
+      .then((response) => setData(response))
       .catch(() => navigate('/projects', { replace: true }))
   }, [])
   
   return (
     <div className="project-page page">
       <div className="project-hero project-page__section container">
-        <div className="project-hero__banner">
-          <ProjectBanner cover={data.cover} year={data.year} />
-        </div>
+        {
+          data.cover &&
+          <div className="project-hero__banner">
+            <ProjectBanner cover={data.cover} year={data.year} />
+          </div>
+        }
+        
         <div className="project-hero__info">
-          <div className="project-hero__name">{data.title}</div>
-          <div className="project-hero__year">{data.year}</div>
+          {data.title && <div className="project-hero__name">{data.title}</div>}
+          {data.year && <div className="project-hero__year">{data.year}</div>}
           <div className="project-hero__status">
+            {/* TODO: Додедлать статусы */}
             <Status />
           </div>
-          <div className="project-hero__description">{data.description}</div>
-          <div className="project-hero__role ">{data.role}</div>
+          {
+            data.description && 
+            <div className="project-hero__description">{data.description}</div>
+          }
+          {data.role && <div className="project-hero__role ">Роль — {data.role}</div>}
         </div>
       </div>
 
-      {
-        data.showcase && 
-        <ProjectShowcase 
-          variant={data.showcase?.variant}
-          designImageURL={data.showcase.designImageURL}
-          protoImageURL={data.showcase.protoImageURL}
-        />
-      }
+      {data.showcase && <ProjectShowcase showcase={data.showcase} />}
 
-      {
-        data.info &&
-        <ProjectInfo 
-          goals={data.info.goals}
-          tasks={data.info.tasks}
-        />
-      }
+      {data.info && <ProjectInfo info={data.info} />}
 
-      {
-        data.pages &&
-        <ProjectPages  
-          text={data.pages.text}
-          amount={data.pages.amount}
-          image={data.pages.image}
-        />
-      }
+      {data.pages && <ProjectPages pages={data.pages} />}
 
       {
         data.userflow &&

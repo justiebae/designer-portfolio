@@ -8,7 +8,7 @@ import Icon from '../Icon';
 import './index.scss';
 
 interface IProductCardProps {
-  path?: string,
+  slug?: string,
   cover?: string,
   year?: number,
   title: string,
@@ -18,7 +18,7 @@ interface IProductCardProps {
 }
 
 export default function ProjectCard(
-  { path, cover, year, title, description, role, transparent }: IProductCardProps
+  { slug, cover, year, title, description, role, transparent }: IProductCardProps
 ): JSX.Element {
 
   const cardClasses = classNames('project-card', { 'project-card--transparent': transparent })
@@ -44,9 +44,9 @@ export default function ProjectCard(
     )
   }
 
-  if (path) {
+  if (slug) {
     return (
-      <Link to={path} className={cardClasses}>
+      <Link to={'/projects/' + slug} className={cardClasses}>
         {renderContent()}
       </Link>
     )

@@ -29,6 +29,7 @@
     font-family: $ff-Mak-light;
     font-size: scale(150);
     line-height: 1.1;
+    white-space: nowrap;
 
     @include mobile {
       font-size: scale(70);

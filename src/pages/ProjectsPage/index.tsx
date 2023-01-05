@@ -14,7 +14,7 @@ import 'swiper/css';
 import './index.scss';
 
 export default function ProjectsPage(): JSX.Element {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<any>([]);
   const [slides, setSlides] = useState<any>([]);
   const screenWidth = useScreenWidth();
   const { q, el } = useGSAPSelector();
@@ -52,13 +52,13 @@ export default function ProjectsPage(): JSX.Element {
           }
         });
       })
-      .catch((error) => alert(error))
+      .catch((error) => console.error(error))
   }, [])
 
   const renderProjects = () => {
     return (
       <>
-        {slides.map(({id, title, description, year, role, path, cover, transparent}: any) => 
+        {slides.map(({id, title, description, year, role, slug, cover, transparent}: any) => 
           <SwiperSlide key={id}>
             <ProjectCard 
               title={title}
@@ -66,7 +66,7 @@ export default function ProjectsPage(): JSX.Element {
               year={year}
               role={role}
               cover={cover}
-              path={path}
+              slug={slug}
               transparent={transparent}
             />
           </SwiperSlide>
@@ -79,7 +79,7 @@ export default function ProjectsPage(): JSX.Element {
     return (
       <div className='projects-page page'>
         <div className="projects-page__cards">
-          {projects.map(({id, title, description, year, role, path, cover}: any) => 
+          {projects.map(({id, title, description, year, role, slug, cover}: any) => 
             <div className='projects-page__card' key={id}>
               <ProjectCard
                 title={title}
@@ -87,7 +87,7 @@ export default function ProjectsPage(): JSX.Element {
                 year={year}
                 role={role}
                 cover={cover}
-                path={path}
+                slug={slug}
               />
             </div>
           )}
