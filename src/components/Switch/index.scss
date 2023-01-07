@@ -54,7 +54,7 @@
       top: 50%;
       left: scale(3);
       transform: translateY(-50%);
-      transition: left ease $d-hover, right ease $d-hover
+      transition: left ease $d-hover, right ease $d-hover;
     }
 
     &.active {

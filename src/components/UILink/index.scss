@@ -1,0 +1,50 @@
+@import '../../styles/common/constants';
+@import '../../styles/common/mixins';
+
+.ui-link {
+  $component: &;
+
+  display: flex;
+  align-items: flex-end;
+
+  @include hover {
+    &:hover {
+      #{$component}__icon {
+        svg {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-size: scale(16);
+    color: $c-black;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $c-black;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    margin: {
+      left: scale(5);
+      bottom: scale(10);
+    };
+
+    svg {
+      transform: rotate(-45deg);
+      width: scale(15);
+      height: scale(15);
+      transition: transform ease $d-hover;
+    }
+  }
+}

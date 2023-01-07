@@ -13,7 +13,8 @@ export default function RoundedImage({ path, stars = false }: IRoundedImage): JS
   return (
     <div className="rounded-picture">
       <img className="rounded-picture__image" src={path} alt="" />
-      {stars && 
+      {
+        stars && 
         <div className="rounded-picture__stars">
           <div className="rounded-picture__star rounded-picture__star--outlined">
             <Icon name="outlinedStar" />

@@ -2,8 +2,30 @@
 @import '../../styles/common/mixins';
 
 .status {
+  $component: &;
+
   display: flex;
   align-items: center;
+
+  &--in-work {
+    #{$component}__icon path {
+      fill: $c-orange;
+    }
+
+    #{$component}__text {
+      color: $c-orange;
+    }
+  }
+
+  &--concept {
+    #{$component}__icon path {
+      fill: $c-violet;
+    }
+
+    #{$component}__text {
+      color: $c-violet;
+    }
+  }
 
   &__icon {
     width: scale(15);
