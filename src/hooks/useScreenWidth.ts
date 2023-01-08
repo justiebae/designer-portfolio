@@ -17,4 +17,4 @@ export default function useScreenWidth(): number {
   }, []);
 
   return screenWidth;
-};
+}

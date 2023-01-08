@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 
 interface ICircleButtonProps {
-  theme?: String,
-  path?: Object,
+  theme?: string,
+  path?: string,
   children: React.ReactNode
 }
 

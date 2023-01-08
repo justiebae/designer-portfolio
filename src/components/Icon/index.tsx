@@ -33,7 +33,7 @@ interface IIconProps {
   name: string
 }
 
-export default function Icon({ name, ...props }: IIconProps): JSX.Element {
+export default function Icon({ name }: IIconProps): JSX.Element {
   switch (name) {
     case 'ps':
       return <PsIcon />

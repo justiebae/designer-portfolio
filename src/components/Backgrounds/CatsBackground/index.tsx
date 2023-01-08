@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { gsap, Elastic } from 'gsap';
+import { gsap } from 'gsap';
 
 import Icon from '../../Icon';
 

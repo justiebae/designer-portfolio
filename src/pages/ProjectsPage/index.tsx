@@ -52,7 +52,6 @@ export default function ProjectsPage(): JSX.Element {
           }
         });
       })
-      .catch((error) => console.error(error))
   }, [])
 
   const renderProjects = () => {

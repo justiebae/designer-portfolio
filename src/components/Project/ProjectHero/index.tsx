@@ -49,8 +49,8 @@ export default function ProjectHero({ hero }: IHeroProps): JSX.Element {
           hero.links.length > 0 &&
           <div className='project-hero__links'>
             {
-              hero.links.map((link: any) => (
-                <UILink link={link} />
+              hero.links.map((link: any, index: number) => (
+                <UILink link={link} key={index} />
               ))
             }
           </div>
