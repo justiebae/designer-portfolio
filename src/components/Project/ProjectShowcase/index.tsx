@@ -24,7 +24,7 @@ export default function ProjectShowcase(
 
   if (showcase.variant === 'full')
     return (
-      <div className="project-showcase project-page__section">
+      <div className="project-showcase">
         <div className="project-showcase__banner">
           <img src={currentImage} alt="" className="project-showcase__image" />
         </div>
@@ -40,7 +40,7 @@ export default function ProjectShowcase(
     )
 
   return (
-    <div className="project-showcase project-page__section container">
+    <div className="project-showcase container">
       <div className="project-page__heading">
         <div className="project-page__heading-text">Главная страница</div>
         <div className="project-page__heading-aside">

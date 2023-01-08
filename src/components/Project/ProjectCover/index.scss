@@ -1,0 +1,15 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.project-cover {
+  width: 100%;
+  height: scale(840);
+  background-color: $c-gray-light;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

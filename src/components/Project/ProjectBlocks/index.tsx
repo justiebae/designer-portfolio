@@ -28,7 +28,7 @@ export default function ProjectBlocks({ title, description, centered, blocks }: 
     <div className="project-blocks container project-page__section">
       { title && description &&
         <div className="project-blocks__info">
-          {title && <div className="project-blocks__title project-page__title">{title}</div>}
+          {title && <div className="project-blocks__title title-third">{title}</div>}
           {description && <div className="project-blocks__description">{description}</div>}
         </div>
       }

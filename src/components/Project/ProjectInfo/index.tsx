@@ -6,18 +6,18 @@ import './index.scss';
 
 interface IProjectInfo {
   info: {
-    goals?: string,
+    goals: string,
     tasks?: Array<string>
   }
 }
 
 export default function ProjectInfo({ info }: IProjectInfo) {
   return (
-    <div className="project-info project-info__section container">
+    <div className="project-info container">
       {
         info.goals &&
         <div className="project-info__section">
-          <div className="project-info__title project-page__title">Цели</div>
+          <div className="project-info__title title-third">Цели</div>
           <div className="project-info__description">{info.goals}</div>
         </div>
       }
@@ -25,7 +25,7 @@ export default function ProjectInfo({ info }: IProjectInfo) {
         info.tasks && 
         info.tasks.length > 0 &&
         <div className="project-info__section">
-          <div className="project-info__title project-page__title">Задачи</div>
+          <div className="project-info__title title-third">Задачи</div>
           <ul className="project-info__list">
             {
               info.tasks.map((task, index) => (

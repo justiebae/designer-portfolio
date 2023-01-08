@@ -5,7 +5,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: scale(170);
-  margin-bottom: scale(200);
 
   @include desktop {
     grid-gap: scale(100);

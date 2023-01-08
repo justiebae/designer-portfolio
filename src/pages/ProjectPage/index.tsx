@@ -7,6 +7,8 @@ import ProjectInfo from '../../components/Project/ProjectInfo';
 import ProjectPages from '../../components/Project/ProjectPages';
 import ProjectUserflow from '../../components/Project/ProjectUserflow';
 import ProjectBlocks from '../../components/Project/ProjectBlocks';
+import ProjectCover from '../../components/Project/ProjectCover';
+import ProjectAdaptive from '../../components/Project/ProjectAdaptive';
 
 import Projects from '../../api/projects';
 import './index.scss';
@@ -17,11 +19,16 @@ type ShowcaseContent = {
   protoImageURL: string,
 }
 
+type InfoContent = {
+  goals: string,
+  tasks?: Array<string>
+}
+
 type Section<T> = {
   type: string,
   content: T
 }
-type Sections = Section<ShowcaseContent>[]
+type Sections = Section<ShowcaseContent | InfoContent>[]
 
 export default function ProjectPage(): JSX.Element {
   const { slug } = useParams();
@@ -36,10 +43,23 @@ export default function ProjectPage(): JSX.Element {
       .catch(() => navigate('/projects', { replace: true }))
   }, [])
 
-  const renderSections = (section: Section<ShowcaseContent>) => {
+  const renderSection = (section: any) => {
     switch(section.type) {
       case 'showcase':
         return <ProjectShowcase showcase={section.content} />;
+      case 'info':
+        return <ProjectInfo info={section.content} />;
+      case 'pages':
+        return <ProjectPages pages={section.content} />;
+      case 'userflow':
+        return <ProjectUserflow userflow={section.content} />;
+      case 'cover':
+        return <ProjectCover cover={section.content} />;
+      case 'adaptive':
+        return <ProjectAdaptive adaptive={section.content} />;
+        
+      default:
+        return;
     }
   }
   
@@ -49,17 +69,14 @@ export default function ProjectPage(): JSX.Element {
         {data.hero && <ProjectHero hero={data.hero} />}
       </div>
 
-
-      {data.info && <ProjectInfo info={data.info} />}
-
-      {data.pages && <ProjectPages pages={data.pages} />}
-
       {
-        data.userflow &&
-        <ProjectUserflow 
-          description={data.userflow.description}
-          image={data.userflow.image}
-        />
+        data.sections && 
+        data.sections.map((section: Section<ShowcaseContent | InfoContent>, index: number) => (
+          <div className="project-page__section" key={index}>
+            { renderSection(section) }
+          </div>
+        )
+        )
       }
 
       {/* {

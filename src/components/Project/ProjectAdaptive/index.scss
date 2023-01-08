@@ -1,0 +1,24 @@
+@import '../../../styles/common/constants';
+@import '../../../styles/common/mixins';
+
+.project-adaptive {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: scale(30);
+    max-width: scale(720);
+  }
+
+  &__description {
+    font-size: scale(18);
+    max-width: scale(510);
+    line-height: 1.5;
+  }
+
+  &__image {
+    align-self: flex-end;
+    margin-top: scale(-150);
+    max-width: 90%;
+  }
+}

@@ -15,14 +15,5 @@
       margin-bottom: scale(100);
     }
   }
-
-  &__title {
-    font-family: $ff-Mak;
-    font-size: scale(100);
-
-    @include mobile {
-      font-size: scale(40);
-    }
-  }
 }
 

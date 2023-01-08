@@ -26,3 +26,13 @@
     font-size: scale(70);
   }
 }
+
+.title-third {
+  font-family: $ff-Mak;
+  font-size: scale(100);
+  line-height: 1.1;
+
+  @include mobile {
+    font-size: scale(40);
+  }
+}
